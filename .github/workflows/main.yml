@@ -22,5 +22,6 @@ jobs:
       run: |
         export SURGE_LOGIN=mr.avgp@gmail.com
         export SURGE_TOKEN=14702e250c70d050c8d27d0239e1f61a
+        cd public
         npm i surge
-        node_modules/.bin/surge public divingfor.fun
+        node_modules/.bin/surge . divingfor.fun
