@@ -9,9 +9,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Setup Hugo
+      run: |
+        git clone https://github.com/gohugoio/hugo.git
+        cd hugo
+        go install
+        go build
+        cd ..
+    - name: Build site
+      run: |
+        hugo -D --minify
     - name: Deploy to Surge
       run: |
         export SURGE_LOGIN=mr.avgp@gmail.com
         export SURGE_TOKEN=14702e250c70d050c8d27d0239e1f61a
         npm i surge
-        node_modules/.bin/surge . divingfor.fun
+        node_modules/.bin/surge public divingfor.fun
