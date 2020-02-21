@@ -4,9 +4,7 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
     - name: Setup Hugo
@@ -15,10 +13,11 @@ jobs:
         cd hugo
         go install
         go build
+        chmod +x hugo
         cd ..
     - name: Build site
       run: |
-        hugo -D --minify
+        hugo/hugo -D --minify
     - name: Deploy to Surge
       run: |
         export SURGE_LOGIN=mr.avgp@gmail.com
