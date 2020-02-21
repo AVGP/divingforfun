@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Setup Hugo
+    - name: Setup Hugo and Surge
       run: |
         git clone https://github.com/gohugoio/hugo.git
         cd hugo
@@ -15,13 +15,14 @@ jobs:
         go build
         chmod +x hugo
         cd ..
+        npm i surge        
     - name: Build site
       run: |
         hugo/hugo -D --minify
     - name: Deploy to Surge
+      env:
+        SURGE_LOGIN: ${{ Secrets.SurgeLogin }}
+        SURGE_TOKEN: ${{ Secrets.SurgeToken }}
       run: |
-        export SURGE_LOGIN={{Secrets.SurgeLogin}}
-        export SURGE_TOKEN={{Secrets.SurgeToken}}
-        npm i surge
         cd public
         ../node_modules/.bin/surge . divingfor.fun
