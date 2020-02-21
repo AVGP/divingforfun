@@ -1,14 +1,13 @@
 baseURL = "https://divingfor.fun/"
 languageCode = "en-us"
 title = "Diving for fun dive adventures blog"
-theme = "ticky_tacky_dark"
+theme = "zzo"
 
 [params]
     favicon = "favicon.ico"
     description = "The diving adventures of Martin Splitt"
-    images = ["img/header01.jpg", "img/header02.jpg"]
-    #msvalidate = ""
-    #googlesiteverification = ""
-
+    themeOptions = ["light"]
+    summaryShape = "classic"
+    archiveGroupByDate = "2006-02"
 [Author]
     name = "Martin Splitt"
