@@ -1,6 +1,6 @@
 baseURL = "https://divingfor.fun/"
 languageCode = "en-us"
-title = "Martin Splitt is diving for fun"
+title = "Diving for fun dive adventures blog"
 theme = "ticky_tacky_dark"
 
 [params]
