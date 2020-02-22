@@ -14,6 +14,7 @@ jobs:
         git clone https://github.com/gohugoio/hugo.git
         cd hugo
         go install --tags extended
+        cd ..
         npm i surge        
     - name: Build site
       run: |
