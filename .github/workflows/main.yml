@@ -17,7 +17,7 @@ jobs:
         npm i surge        
     - name: Build site
       run: |
-        $(go env GOROOT)/bin/hugo --minify
+        $(go env GOPATH)/bin/hugo --minify
     - name: Deploy to Surge
       env:
         SURGE_LOGIN: ${{ Secrets.SurgeLogin }}
