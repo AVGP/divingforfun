@@ -14,13 +14,10 @@ jobs:
         git clone https://github.com/gohugoio/hugo.git
         cd hugo
         go install --tags extended
-        go build
-        chmod +x hugo
-        cd ..
         npm i surge        
     - name: Build site
       run: |
-        ~/go/bin/hugo -D --minify
+        $(go env GOROOT)/bin/hugo --minify
     - name: Deploy to Surge
       env:
         SURGE_LOGIN: ${{ Secrets.SurgeLogin }}
