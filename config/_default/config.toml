@@ -1,0 +1,13 @@
+baseURL = "http://divingfor.fun/"
+languageCode = "en-us"
+title = "Diving for fun dive adventures blog by Martin Splitt"
+theme = "zzo"
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+hasCJKLanguage = false
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"

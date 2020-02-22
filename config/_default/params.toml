@@ -1,0 +1,44 @@
+logoText = "Diving for fun"
+description = "Diving for fun dive adventures blog by Martin Splitt"
+
+# header
+homeHeaderType = "img" # text, img, slide
+
+# body
+enableBreadcrumb = true
+enablePhotoSwipe = true
+enableSearch = true
+enableGoToTop = true
+enableWhoami = true
+summaryShape = "classic" # card, classic, compact
+archiveGroupByDate = "2006-01" # "2006-01": group by month, "2006": group by year
+archivePaginate = 13
+paginateWindow = 1
+notAllowedTypesInHome = [ ]
+
+# sidebar
+enableSidebar = true
+enableSidebarTags = true # if you want to use tags.
+enableSidebarSeries = true
+enableSidebarCategories = true
+enableHomeSidebarTitles = true
+enableListSidebarTitles = true
+
+# whoami
+myname = "Martin Splitt"
+whoami = "PADI AOWD"
+useGravatar = false
+location = "Zurich, Switzerland"
+
+# footer
+showPoweredBy = true
+showFeedLinks = true
+showSocialLinks = true
+enableLangChange = true
+enableThemeChange = true
+themeOptions = ["light", "dark"]
+
+[header]
+  type = "img"
+  imageSrc = "img/header01.jpg"
+  imageSize = "cover"
