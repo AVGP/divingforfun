@@ -9,6 +9,8 @@ tags:
 - reef
 - wreck
 - tropical
+series:
+- dive-trips
 categories:
 - trips
 ---
