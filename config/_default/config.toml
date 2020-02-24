@@ -7,6 +7,8 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 hasCJKLanguage = false
 
+googleAnalytics = "UA-33444478-3"
+
 [taxonomies]
   category = "categories"
   tag = "tags"
