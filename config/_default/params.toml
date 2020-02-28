@@ -34,7 +34,7 @@ location = "Zurich, Switzerland"
 showPoweredBy = true
 showFeedLinks = true
 showSocialLinks = true
-enableLangChange = true
+enableLangChange = false
 enableThemeChange = true
 themeOptions = ["light", "dark"]
 
