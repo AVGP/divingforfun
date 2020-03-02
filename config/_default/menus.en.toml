@@ -1,0 +1,23 @@
+[[main]]
+identifier = "galleries"
+name = "Galleries"
+url = "gallery"
+weight = 1
+
+# [[main]]
+# identifier = "dives"
+# name = "Dive reports"
+# url = "dives"
+# weight = 2
+
+[[main]]
+identifier = "trips"
+name = "Dive trips"
+url = "trips"
+weight = 3
+
+[[main]]
+identifier = "about"
+name = "About"
+url = "about"
+weight = 4

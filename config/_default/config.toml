@@ -9,6 +9,9 @@ hasCJKLanguage = false
 
 googleAnalytics = "UA-33444478-3"
 
+[markup.goldmark.renderer] 
+  unsafe= true
+
 [taxonomies]
   category = "categories"
   tag = "tags"

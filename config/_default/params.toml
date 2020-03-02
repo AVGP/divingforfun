@@ -14,7 +14,7 @@ summaryShape = "classic" # card, classic, compact
 archiveGroupByDate = "2006-01" # "2006-01": group by month, "2006": group by year
 archivePaginate = 13
 paginateWindow = 1
-notAllowedTypesInHome = [ "about" ]
+notAllowedTypesInHome = [ "about", "gallery" ]
 
 # sidebar
 enableSidebar = true
@@ -27,6 +27,7 @@ enableListSidebarTitles = true
 # whoami
 myname = "Martin Splitt"
 whoami = "PADI AOWD"
+bioImageUrl = "/logo.png"
 useGravatar = false
 location = "Zurich, Switzerland"
 
@@ -42,3 +43,7 @@ themeOptions = ["light", "dark"]
   type = "img"
   imageSrc = "img/header01.jpg"
   imageSize = "cover"
+
+[socialOptions] # if set, social icons will show up.
+  twitter = "https://twitter.com/g33konaut"
+  instagram = "https://instagram.com/the_splitti"
