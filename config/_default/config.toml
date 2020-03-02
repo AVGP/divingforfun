@@ -1,4 +1,4 @@
-baseURL = "http://divingfor.fun/"
+baseURL = "https://divingfor.fun/"
 languageCode = "en-us"
 title = "Diving for fun dive adventures blog by Martin Splitt"
 theme = "zzo"
