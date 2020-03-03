@@ -8,6 +8,8 @@ draft: false
 
 ![Lake Blausee welcomes us with a stunning first impression](/previews/blausee-2020/lake-blausee-panorama.jpg)
 
+Go to the full [gallery of the Blausee dive](/gallery/blausee-2020).
+
 It's a sunny Sunday in March when a small group of seven divers meets at Hotel Blausee in Switzerland. Our plan: To dive in the clear, blue water of lake Blausee with lots of curious trouts, trees and a statue under the vibrant, colorful light of the late winter sun. With nearly two hours of driving behind us we all look forward to jump into the luring lake with its blue and crystal clear water.
 
 While the sun has warmed up the air to a comfy 13°C, the water is colder than usual with 6°C instead of 8°C. Good that we all brought our drysuits and warm undergarments.
@@ -48,6 +50,8 @@ We came back to the entrance after 24 minutes, happy, thirsty and ready for our 
 ## Warming up
 
 ![Martin is happy after the dive](/previews/blausee-2020/martin-happy-after-the-blausee-dive.jpeg)
+
+If you want to see a few more pictures, check out the [gallery of the Blausee dive](/gallery/blausee-2020).
 
 I really enjoyed diving in Blausee. The infrastructure is great, the lake beautiful and easy to dive. This day was also a little milestone for me - the first of the two dives was my 30th dive! Having been convinced that I might manage to go for a handful of dives each year, this seemed very far out. I keep learning and improving and it is amazing to be able to enjoy the underwater world with old and new friends so frequently!
 
