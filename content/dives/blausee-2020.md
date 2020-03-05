@@ -17,6 +17,10 @@ That did not worry us - with a maximum depth of 12 meters, we would neither go d
 
 A nice surprise is the heated hut the hotel provides for divers to change and stow away gear in between dives.
 
+Here is a little teaser: 
+
+<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/jeUR2zw0ZwM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## First dive: Rays of sunlight and the legend of lake Blausee
 
 My buddy Katja and I assemble our gear, check everything works and make the short way down to the entrance. We lower ourselfs onto the small platform and into the water. We signal OK to each other and start our descent.
