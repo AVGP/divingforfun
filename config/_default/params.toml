@@ -14,7 +14,7 @@ summaryShape = "classic" # card, classic, compact
 archiveGroupByDate = "2006-01" # "2006-01": group by month, "2006": group by year
 archivePaginate = 13
 paginateWindow = 1
-notAllowedTypesInHome = [ "about", "gallery" ]
+notAllowedTypesInHome = [ "about", "gallery", "hidden" ]
 
 # sidebar
 enableSidebar = true
