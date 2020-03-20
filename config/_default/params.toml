@@ -18,7 +18,7 @@ notAllowedTypesInHome = [ "about", "gallery", "hidden" ]
 
 # sidebar
 enableSidebar = true
-enableSidebarTags = true # if you want to use tags.
+enableSidebarTags = false # if you want to use tags.
 enableSidebarSeries = true
 enableSidebarCategories = true
 enableHomeSidebarTitles = true
