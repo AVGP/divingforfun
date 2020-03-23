@@ -4,6 +4,16 @@ description: "Diving in Blausee, Switzerland on a sunny Sunday in March 2020."
 date: 2020-03-01T20:00:22Z
 authorImage: "/logo.png"
 draft: false
+tags:
+- switzerland
+- cold-water
+- lake-dive
+series:
+- cold-water-dives
+- diving-switzerland
+- lake-dives
+categories:
+- sundaydives
 ---
 
 ![Lake Blausee welcomes us with a stunning first impression](/previews/blausee-2020/lake-blausee-panorama.jpg)
