@@ -29,7 +29,7 @@ type: hidden
 ## Cold water
 
 - Drysuit, hood, gloves
-- 12kg weights
+- 14kg weights
 
 ## Warm water
 
