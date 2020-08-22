@@ -16,6 +16,8 @@ googleAnalytics = "UA-33444478-3"
   category = "categories"
   tag = "tags"
   series = "series"
+  things = "things"
+#  divesites = "divesites"
 
 [outputs]
   page = ["HTML", "SearchIndex"]

@@ -14,7 +14,7 @@ summaryShape = "classic" # card, classic, compact
 archiveGroupByDate = "2006-01" # "2006-01": group by month, "2006": group by year
 archivePaginate = 13
 paginateWindow = 1
-notAllowedTypesInHome = [ "about", "gallery", "hidden" ]
+notAllowedTypesInHome = [ "about", "gallery", "divesites", "hidden" ]
 
 # sidebar
 enableSidebar = true
@@ -26,7 +26,7 @@ enableListSidebarTitles = true
 
 # whoami
 myname = "Martin Splitt"
-whoami = "PADI AOWD"
+whoami = "PADI Rescue Diver"
 bioImageUrl = "/logo.png"
 useGravatar = false
 location = "Zurich, Switzerland"

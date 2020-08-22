@@ -11,13 +11,19 @@ weight = 1
 # weight = 2
 
 [[main]]
+identifier = "divesites"
+name = "Dive sites"
+url = "divesites"
+weight = 3
+
+[[main]]
 identifier = "trips"
 name = "Dive trips"
 url = "trips"
-weight = 3
+weight = 4
 
 [[main]]
 identifier = "about"
 name = "About"
 url = "about"
-weight = 4
+weight = 5
