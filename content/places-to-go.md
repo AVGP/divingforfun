@@ -14,7 +14,7 @@ draft: false
 - Wall, garden gnomes, fish, sculptures, ...
 - DEEP!
 
-### Zürichsee, Eremitage
+### Zürichsee, Ermitage
 
 - Found on [kohmann](https://www.kohmann.ch/tauchen/tauchplaetze_kuesnacht.htm)
 - Stuff to see (dolls, springboard, crabs, tub, ...)
@@ -72,3 +72,9 @@ draft: false
 - Hotel Cempedak
 - Bunch of wrecks, lots of fish, great visibility
 
+# Italy 
+
+### Y-40 The deep joy, Venice
+
+- Found in a Dan study 
+- Deepest indoor pool in Europe (?) 
