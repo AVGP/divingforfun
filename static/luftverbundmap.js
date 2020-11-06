@@ -3,7 +3,7 @@ function initMap() {
     zoom: 7,
     center: {lat: 46.790174, lng: 8.253874}
   });
-  fetch('/luftverbund.json').then(r => r.json()).then((stations => {
+  fetch('/luftverbund.json').then(r => r.json()).then((stations) => {
     stations.map((station) => {
       const marker = new google.maps.Marker({
         position: station.position,
