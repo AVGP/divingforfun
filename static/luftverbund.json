@@ -1,0 +1,118 @@
+[
+  {
+    "name": "Scuba Viva Winterthur",
+    "info": "<p><strong>Scuba Viva Winterthur</strong></p><p>24h filling station</p><p>Air 200bar and 300bar</p><br><p><a href='https://g.page/scubaviva-winterthur?share'>Wartstr. 295, 8408 Winterthur</a></p>",
+    "position": {
+      "lat": 47.5106,
+      "lng": 8.695879
+    },
+    "types": [
+      "air200",
+      "air300",
+      "air"
+    ],
+    "area": "Lake Zurich"
+  },
+  {
+    "name": "Scuba Viva Zurich",
+    "info": "<p><strong>Scuba Viva Zurich</strong></p><p>24h filling station</p><p>Air 200bar</p><br><p><a href='https://goo.gl/maps/hrpYiKiw4SbQcqwP6'>Sihlfeldstrasse 10, 8003 Zurich</a></p>",
+    "position": {
+      "lat": 47.373052,
+      "lng": 8.517471
+    },
+    "types": [
+      "air200",
+      "air"
+    ],
+    "area": "Lake Zurich"
+  },
+  {
+    "name": "Hotel Pizzo Vogorno",
+    "info": "<p><strong>Hotel Pizzo Vogorno</strong></p><p>24h filling station</p><p>Air 200bar</p><br><p><a href='https://g.page/pizzovogorno-ch?share'>Via Valle Verzasca 58, 6632 Vogorno</a></p>",
+    "position": {
+      "lat": 46.221863,
+      "lng": 8.858442
+    },
+    "types": [
+      "air200",
+      "air"
+    ],
+    "area": "Verzasca"
+  },
+  {
+    "name": "Tauch-Treff Zug",
+    "info": "<p><strong>Tauch-Treff Zug</strong></p><p>24h filling station</p><p>Air 200bar, Nitrox 32%</p><br><p><a href='https://goo.gl/maps/aM5usoDhD8AymVh86'>Bahnhofstrasse 55, 6312 Steinhausen</a></p>",
+    "position": {
+      "lat": 47.196117,
+      "lng": 8.479655
+    },
+    "types": [
+      "air200",
+      "air",
+      "nitrox",
+      "nitrox32"
+    ],
+    "area": "Lake Zug"
+  },
+  {
+    "name": "Tiefenstein UnterwasserWelten",
+    "info": "<p><strong>Tiefenstein UnterwasserWelten</strong></p><p>24h filling station</p><p>Air 200bar, Nitrox 32%</p><br><p><a href='https://goo.gl/maps/8X25bXPiQ2sCQLZ88'>Seestrasse 19, 9326 Horn</a></p>",
+    "position": {
+      "lat": 47.491808,
+      "lng": 9.470233
+    },
+    "types": [
+      "air200",
+      "air",
+      "nitrox",
+      "nitrox32"
+    ],
+    "area": "Lake Constance"
+  },
+  {
+    "name": "Scuba-Shop Villeneuve",
+    "info": "<p><strong>Scuba-Shop Villeneuve</strong></p><p>24h filling station</p><p>Air 200bar, Nitrox 32%<, 36% and 40%</p><br><p><a href='https://goo.gl/maps/pQ1sHr2ZZouFkkGu5'>Route d'Arvel 106, 1844 Villeneuve</a></p>",
+    "position": {
+      "lat": 46.391776,
+      "lng": 6.936088
+    },
+    "types": [
+      "air200",
+      "air300",
+      "air",
+      "nitrox",
+      "nitrox32",
+      "nitrox36",
+      "nitrox40"
+    ],
+    "area": "Lake Geneva"
+  },
+  {
+    "name": "Tauch- und Wassersport-Verein Brunnen, TAWAS",
+    "info": "<p><strong>Tauch- und Wassersport-Verein Brunnen, TAWAS</strong></p><p>07:00 - 22:00</p><p>Air 200bar</p><br><p><a href='https://goo.gl/maps/JBnnHCJQccYdwBHy7'>Gersauerstrasse 91, 6440 Brunnen</a></p>",
+    "position": {
+      "lat": 47.000957,
+      "lng": 8.580472
+    },
+    "types": [
+      "air200",
+      "air"
+    ],
+    "area": "Lake Lucerne"
+  },
+  {
+    "name": "Dive Center Thunersee",
+    "info": "<p><strong>Dive Center Thunersee</strong></p><p>24h filling station</p><p>Air 200bar, Nitrox 36%</p><br><p><a href='https://g.page/divecenter-ch?share'>Hübelistrasse 1, 3654 Hilterfingen</a></p>",
+    "position": {
+      "lat": 46.734063,
+      "lng": 7.660733
+    },
+    "types": [
+      "air200",
+      "air",
+      "nitrox",
+      "nitrox36"
+    ],
+    "area": "Lake Thun"
+  }
+]
