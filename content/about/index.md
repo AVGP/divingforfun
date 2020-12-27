@@ -29,12 +29,10 @@ I collect dive photos and reports on this website, so have fun exploring with me
 
 ## My dive gear
 
-- 2x Apeks DS4 1st stage + 2x ATX40 2nd stage
-- Aqualung Axiom BCD
-- Mares Avanti Quattro+ fins
+- 2x Apeks MTX-RC
+- XDeep Zen NX Wing
+- Apeks RK3 fins
 - Cressi Big Eyes Evolution mask
-- Light &amp; Motion Sola Dive 1200 S/F lamp
-- Suunto D5 dive computer
-- Suunto tank pod sender for air integration
-- Suunto CB one SPG (backup)
+- Light &amp; Motion Sola Dive S/F lamp
+- Shearwater Perdix AI computer
 - GoPro Hero7 Black camera
