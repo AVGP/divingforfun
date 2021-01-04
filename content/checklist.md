@@ -5,34 +5,44 @@ draft: false
 type: hidden
 ---
 
-## Always bring
+## Land support 
+- Oxygen kit 
+- First Aid kit
+- Flag
+- Lamp 
+- Head lamp
+- Logbook 
 
-- Mask
+## Cold water 
+- Mask 
+- Fins
+- Regulator (2x)
+- BCD
+- Weights 
+- Lamp
+- Computer 
+- Undergarments 
+- Drysuit
+- Hood 
+- Gloves
+- Inner gloves
+- Extra socks
+
+## Warm water
+- Mask 
 - Fins
 - Regulator
 - BCD
-- Computer
+- Weights 
 - Lamp
-- Camera (extra battery)
-- Logbook
-- Drinking water
-- Towel
-- Aquamed card
-
-## Bring when necessary
-
-- Flag
-- C-cards
-- SMB
-- Slate / wetnotes
-
-## Cold water
-
-- Drysuit, hood, gloves
-- 14kg weights
-
-## Warm water
-
+- Computer
 - Wetsuit
-- 5kg weights
-- Neoprene boots
+- Hood 
+- Gloves
+- Boots
+
+## Extras 
+- SMB
+- Slate 
+- Scuba Sextant
+- Camera
