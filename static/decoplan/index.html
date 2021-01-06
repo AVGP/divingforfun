@@ -215,6 +215,36 @@ function initTissues(numCompartments, n2frac, psurf) {
   return compartments;
 }
 
+// Uses Schreiner-Kelley equation
+function depthChange(startDepth, endDepth, time, inertGasFraction, compartmentsToLoad, table) {
+  const deltaDepth = endDepth - startDepth;
+  const timeInSeconds = time * 60;
+  // change in inert gas partial pressure (bar/min)
+  const c = inertGasFraction * 0.1 * (depth / descentTime);
+  // initial inspired (=alveolar) pressure (i.e. ambient inert gass partial pressure - water vapor pressure)
+  const pio = inertGasFraction * (depthToPressure(startDepth) - P_WATER_VAPOR);
+
+  
+}
+/*
+function diveTo2(depth, time, inertGasFraction, compartmentsToLoad, table) {
+  const MAX_DESCENT_RATE = 5/60; // m/s
+  const timeInSeconds = time * 60;
+
+  // calculate descent
+  const descentTime = depth / MAX_DESCENT_RATE; // seconds
+  const pressureAtDepth = depthToPressure(depth);
+
+  // change in inert gas partial pressure (bar/min)
+  const c = inertGasFraction * 0.1 * (depth / descentTime);
+
+  return compartmentsToLoad.map((compPressure, compNumber) => {
+    const k = Math.log(2) / table[compNumber].halfTime;
+
+    return compPressure + c * t - (c / k) - (compPressure - x)
+  });
+}*/
+
 function diveTo(depth, time, inertGasFraction, compartmentsToLoad, table) {
   const ppInertGas = (depthToPressure(depth) - P_WATER_VAPOR) * inertGasFraction; // inspiratory inert gas pressure
   return compartmentsToLoad.map((compartmentPressure, compartmentIndex) => {
@@ -244,7 +274,7 @@ function calculateNextDecoStop(startCeiling, inertGasFraction, loadedCompartment
 
     // stay at the deco stop until the nextCeiling goes up
     do {
-        tempCompartments = diveTo(roundedStopCeiling, 1, inertGasFraction, tempCompartments, table);
+        tempCompartments = diveTo(roundedStopCeiling, 0.16, inertGasFraction, tempCompartments, table);
         nextCeiling = Math.ceil(calculateCeilingDepth(tempCompartments, table) / 3) * 3;
         time++;
     } while(nextCeiling == roundedStopCeiling);
