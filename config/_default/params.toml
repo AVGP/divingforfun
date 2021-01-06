@@ -1,5 +1,5 @@
 logoText = "Diving for fun"
-description = "Diving for fun dive adventures blog by Martin Splitt"
+description = "Dive adventures blog by Martin Splitt"
 
 # header
 homeHeaderType = "img" # text, img, slide
@@ -27,7 +27,6 @@ enableListSidebarTitles = true
 # whoami
 myname = "Martin Splitt"
 whoami = "PADI Rescue Diver"
-bioImageUrl = "/logo.png"
 useGravatar = false
 location = "Zurich, Switzerland"
 

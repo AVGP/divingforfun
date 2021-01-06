@@ -1,6 +1,6 @@
 baseURL = "https://divingfor.fun/"
 languageCode = "en-us"
-title = "Diving for fun dive adventures blog by Martin Splitt"
+title = "Diving for fun"
 theme = "zzo"
 
 defaultContentLanguage = "en"
