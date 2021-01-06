@@ -1,6 +1,6 @@
 ---
 title: "Riff Williams"
-date: 2020-07-06T20:33:36+02:00
+date: 2021-01-06T00:00:00Z
 description: "Nice and easy wall dive with lots of fish and easy navigation, perfect for a night dive."
 authorImage: "/logo.png"
 ---

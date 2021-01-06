@@ -1,7 +1,7 @@
 ---
 title: "Wassersportzentrum Tiefenbrunnen (WZT)"
 description: "Great and easy dive site in the outskirts of Zurich. Perfect for training and learning dives."
-date: 2020-08-22T00:00:00Z
+date: 2021-01-06T00:00:00Z
 authorImage: "/logo.png"
 ---
 

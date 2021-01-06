@@ -1,7 +1,7 @@
 ---
 title: "Kleiner Parkplatz"
 description: "Nice dive site from five to 40 meters, home of Oscar the skeleton"
-date: 2020-01-21T10:42:54Z
+date: 2021-01-06T00:00:00Z
 authorImage: "/logo.png"
 ---
 
