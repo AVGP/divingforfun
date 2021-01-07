@@ -1,5 +1,5 @@
 ---
-title: "Tauchschiff dives 2020"
+title: "Tauchschiff, Lake Lucerne 2020"
 date: 2020-12-31T12:00:00Z
 description: "Diving with tauchschiff.ch in Lake Lucerne in 2020"
 type: gallery

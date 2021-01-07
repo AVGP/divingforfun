@@ -1,5 +1,5 @@
 ---
-title: "Ermitage dives 2020"
+title: "Ermitage, Lake Zurich 2020"
 date: 2020-12-31T12:00:00Z
 description: "Diving at Ermitage, Lake Zurich in 2020"
 type: gallery
