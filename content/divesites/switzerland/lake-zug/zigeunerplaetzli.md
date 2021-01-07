@@ -28,3 +28,8 @@ Dive to the right along the wall (wall on right shoulder).
 The wall has small overhangs, crevasses and holes for fish to hide in. After a while, the wall makes a right turn, forming a bit of a bay, then turns back to the left and continues. Around 20 minutes into the dive you can start shallowing up on a sandy plateau to 12m.
 
 Turn back (shore on the left shoulder) and go along the wall. After a few minutes you will reach a big tree at 12-14m. You can often see lots of pikes and egli there. Continue along the wall, shallowing up to 8m. You may find a slate in the wall, commemorating the last dive of the swiss army divers in 1979. Keep ascending until you find the slope at 5-6m. When you arrive at sea grass, you are back at the exit.
+
+ ## Things to see
+ 
+ - Tree
+ - Memorial sign for the last dive of the Swiss Army Divers 1979
