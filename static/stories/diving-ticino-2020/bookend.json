@@ -1,0 +1,33 @@
+{
+  "bookendVersion": "v1.0",
+  "shareProviders": [
+    "facebook",
+    "twitter",
+    "email"
+  ],
+  "components": [
+    {
+      "type": "heading",
+      "text": "Learn more"
+    },
+    {
+      "type": "landscape",
+      "title": "See the full gallery",
+      "url": "/gallery/ticino-2020/",
+      "image": "assets/cover.jpg"
+    },
+    {
+      "type": "cta-link",
+      "links": [
+        {
+          "text": "Check out my dive blog",
+          "url": "https://divingfor.fun/"
+        },
+        {
+          "text": "My Instagram",
+          "url": "https://instagram.com/the_splitti"
+        }
+      ]
+    }
+  ]
+}
