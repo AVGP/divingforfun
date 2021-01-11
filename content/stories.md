@@ -5,6 +5,4 @@ draft: false
 type: hidden
 ---
 
-## Dive stories
-
 - [Diving in Ticino, September 2020](/stories/diving-ticino-2020/)
