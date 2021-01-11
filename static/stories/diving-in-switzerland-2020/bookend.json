@@ -1,0 +1,32 @@
+{
+    "bookendVersion": "v1.0",
+    "shareProviders": [
+        "facebook",
+        "twitter",
+        "email"
+    ],
+    "components": [
+        {
+            "type": "heading",
+            "text": "See more diving"
+        },
+        {
+            "type": "cta-link",
+            "links": [
+                {
+                    "text": "More Diving",
+                    "url": "https://divingfor.fun/"
+                },
+                {
+                    "text": "More Stories",
+                    "url": "https://divingfor.fun/stories"
+                },
+
+                {
+                    "text": "My Instagram",
+                    "url": "https://instagram.com/the_splitti"
+                }
+            ]
+        }
+    ]
+}
