@@ -15,5 +15,3 @@ series:
 - diving-switzerland
 - lake-dives
 ---
-
-Yolo.
