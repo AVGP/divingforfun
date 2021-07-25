@@ -78,7 +78,7 @@
       </label>
     </p>
   </fieldset>
-  <button type="button">Calculate</button>
+  <button id="mix" type="button">Calculate</button>
   <h2>Resulting mix</h2>
   <table border="1">
     <thead>
@@ -94,11 +94,30 @@
       </tr>
     </tbody>
   </table>
+
+  <h1> Equivalent Air Depth</h1>
+
+  <p>Calculate the equivalent depth of a Nitrox five when using air tables.</p>
+  <p>
+    <label>
+      Dive depth 
+      <input id="depth" type="number" value="30">m
+    </label>
+  </p>
+  <p>
+    <label>
+      O2 fraction
+      <input id="ead-o2" type="number" value="32">%
+    </label>
+  </p>
+<button id="ead" type="button">Calculate equivalent air depth</button>
+<p id="ead-result"></p>
+
   <script>
    if(!location.href.match('/nitrox/$')) location.href = '/nitrox/';
    if(!location.href.match('^https')) location.href = 'https://divingfor.fun/nitrox/';
 
-    document.querySelector('button').addEventListener('click', function () {
+    document.querySelector('button#mix').addEventListener('click', function () {
       // get all the numbers from the DOM
       const startPress = parseFloat(document.getElementById('startPressure').value);
       const o2Start = parseFloat(document.getElementById('startO2').value);
