@@ -37,6 +37,11 @@ At around 8m, turn left and stay at this depth. You should find the chain on the
 - Two lion statues (one called "Ferdinand")
 - A garden gnome
 - A sign
-- Two sunken boats
+- Three sunken boats
 - An alien
 - A shisha
+
+## Map
+
+![Map of the dive site](/maps/WZT.png)
+[Download full dive map here](/maps/WZT-Tauchplatzkarte.pdf)
