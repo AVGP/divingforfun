@@ -1,396 +1,129 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <title>DecoPlan - Decompression dive planner</title>
-  <meta name="description"
-    content="This tool lets you plan decompression dives">
-  <meta name="viewport" content="width=device-width">
-  <meta name="theme-color" content="#19d1f1">
-  <!--
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  
-  <link rel="manifest" href="/decoplan/manifest.webmanifest">
-  <link rel="apple-touch-icon" href="/decoplan/icon-192x192.png">
-  -->
-  <style>
-    body {
-      margin: 1em;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+    <head>
+        <title>Decoplanner v0</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
 
-    fieldset {
-      margin: 0.3em;
-    }
+            table.noborder, table.noborder th, table.noborder td { border: none; }
+            th, td {
+                padding: 1ch;
+            }
+        </style>
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <h1>Deco Planner</h1>
+        <p style="color: red; font-weight: bold;">Do not use this tool, it's just an experiment.</p>
+        <p>This tool uses the Bühlmann ZH-L16C algorithm.</p>
 
-    .warning {
-      border: 1px solid red;
-      padding: 0.1em 1em;
-    }
-
-    .issue {
-      font-weight: bold;
-      color: red;
-      border: 1px solid red;
-      background: #ff8;
-    }
-    
-    th, td { padding: 0.5em; }
-
-    input { text-align: right; }
-  </style>
-</head>
-
-<body>
-  <h1>Plan a decompression dive</h1>
-  <div class="warning">
-    <h2>Warning!</h2>
-    <p>
-      This tool is for convenience. It is provided as is and may be faulty.
-      <strong>It does not replace proper planning with a proper software and using your computer!</strong>
-    </p>
-    <p>
-      Use this at your own risk!
-    </p>
-  </div>
-
-  <fieldset>
-    <legend>Gas mixture</legend>
-    <label>
-      Percent N<sub>2</sub>:
-      <input type="number" min="0" max="100" id="n2" value="79" maxlength="2" style="width: 5ch">%
-    </label>
-    <!--label>
-      Percent O<sub>2</sub>:
-      <input type="number" min="0" max="100" id="o2" value="21" maxlength="3" style="width: 6ch">%
-    </label-->
-    <label>
-      Tank size:
-      <input type="number" min="1" max="40" id="tankvol" value="12" maxlength="2" style="width: 5ch">L
-    </label>
-    <label>
-      Tank pressure:
-      <input type="number" min="50" max="300" id="tankpressure" value="200" maxlength="3" style="width: 6ch">bar
-    </label>
-  </fieldset>
-
-  <fieldset>
-    <legend>Dive parameters</legend>
-    <!--label>
-      Surface pressure:
-      <input type="number" min="0" max="1" id="psurf" value="1" maxlength="3" style="width: 6ch">ata
-    </label-->
-    <label>
-      Depth:
-      <input type="number" min="0" max="200" id="depth" value="40" maxlength="3" style="width: 6ch">m
-    </label>
-    <label>
-      Bottom time:
-      <input type="number" min="0" max="3000" id="time" value="30" maxlength="4" style="width: 7ch">min
-    </label>
-    <label>
-      SAC:
-      <input type="number" min="0" max="50" id="sac" value="25" maxlength="2" style="width: 5ch">l/min
-    </label>
-
-  </fieldset>
-  <fieldset>
-    <legend>Decompression parameters</legend>
-    <label>
-      Algorithm:
-      <select>
-        <option value="A">ZHL16-A</option>
-        <option value="B">ZHL16-B</option>
-        <option value="C">ZHL16-C</option>
-      </select>
-    </label>
-    <!--label>
-      Gradient factor lo
-      <input type="number" id="gflo" value="35" min="0" max="100" maxlength="3" style="width: 6ch">
-    </label>
-    <label>
-      Gradient factor hi
-      <input type="number" id="gfhi" value="80" min="0" max="100" maxlength="3" style="width: 6ch">
-    </label-->
-  </fieldset>
-  <p><button>Calculate deco plan</button></p>
-
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Depth (m)</th>
-        <th>Time (min)</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-  <p>Total time: <span id="total"></span> minutes.</p>
-  <p id="gas"></p>
-
-  <script>
-//   if(!location.href.match('/nitrox/$')) location.href = '/nitrox/';
-//   if(!location.href.match('^https')) location.href = 'https://divingfor.fun/nitrox/';
-
-//
-// Deco code
-//
-
-// constants
-const P_WATER_VAPOR = 0.0567; // water vapor pressure in lungs
-const MAX_ASCENT_RATE = 10; // 10m/min max ascend speed
-const RESERVE_PRESSURE = 50;
-
-// tables
-
-const ZHL16A_HALFTIMES = [
-  {halfTime: 4,    a: 1.2600, b: 0.5050}, //c1
-  {halfTime: 8,    a: 1.0001, b: 0.6514}, //c2
-  {halfTime: 12.5, a: 0.8618, b: 0.7222}, //c3
-  {halfTime: 18.5, a: 0.7563, b: 0.7725}, //c4
-  {halfTime: 27,   a: 0.6667, b: 0.8125}, //c5
-  {halfTime: 38.3, a: 0.5934, b: 0.8434}, //c6
-  {halfTime: 54.3, a: 0.5282, b: 0.8693}, //c7
-  {halfTime: 77,   a: 0.4702, b: 0.8910}, //c8
-  {halfTime: 109,  a: 0.4188, b: 0.9092}, //c9
-  {halfTime: 146,  a: 0.3799, b: 0.9222}, //c10
-  {halfTime: 187,  a: 0.3498, b: 0.9319}, //c11
-  {halfTime: 239,  a: 0.3223, b: 0.9403}, //c12
-  {halfTime: 305,  a: 0.2972, b: 0.9477}, //c13
-  {halfTime: 390,  a: 0.2738, b: 0.9544}, //c14
-  {halfTime: 498,  a: 0.2524, b: 0.9602}, //c15
-  {halfTime: 635,  a: 0.2327, b: 0.9653}, //c16
-];
-
-const ZHL16B_HALFTIMES = [
-  {halfTime: 5,    a: 1.2600, b: 0.5578}, //c1
-  {halfTime: 8,    a: 1.0001, b: 0.6514}, //c2
-  {halfTime: 12.5, a: 0.8618, b: 0.7222}, //c3
-  {halfTime: 18.5, a: 0.7563, b: 0.7825}, //c4
-  {halfTime: 27,   a: 0.6667, b: 0.8126}, //c5
-  {halfTime: 38.3, a: 0.5600, b: 0.8434}, //c6
-  {halfTime: 54.3, a: 0.4947, b: 0.8693}, //c7
-  {halfTime: 77,   a: 0.4500, b: 0.8910}, //c8
-  {halfTime: 109,  a: 0.4188, b: 0.9092}, //c9
-  {halfTime: 146,  a: 0.3799, b: 0.9222}, //c10
-  {halfTime: 187,  a: 0.3498, b: 0.9319}, //c11
-  {halfTime: 239,  a: 0.3223, b: 0.9403}, //c12
-  {halfTime: 305,  a: 0.2850, b: 0.9477}, //c13
-  {halfTime: 390,  a: 0.2738, b: 0.9544}, //c14
-  {halfTime: 498,  a: 0.2524, b: 0.9602}, //c15
-  {halfTime: 635,  a: 0.2327, b: 0.9653}, //c16
-];
-
-const ZHL16C_HALFTIMES = [
-  {halfTime: 5,    a: 1.2600, b: 0.5578}, //c1
-  {halfTime: 8,    a: 1.0001, b: 0.6514}, //c2
-  {halfTime: 12.5, a: 0.8618, b: 0.7222}, //c3
-  {halfTime: 18.5, a: 0.7562, b: 0.7825}, //c4
-  {halfTime: 27,   a: 0.6200, b: 0.8126}, //c5
-  {halfTime: 38.3, a: 0.5034, b: 0.8434}, //c6
-  {halfTime: 54.3, a: 0.4410, b: 0.8693}, //c7
-  {halfTime: 77,   a: 0.4000, b: 0.8910}, //c8
-  {halfTime: 109,  a: 0.3750, b: 0.9092}, //c9
-  {halfTime: 146,  a: 0.3500, b: 0.9222}, //c10
-  {halfTime: 187,  a: 0.3295, b: 0.9319}, //c11
-  {halfTime: 239,  a: 0.3065, b: 0.9403}, //c12
-  {halfTime: 305,  a: 0.2835, b: 0.9477}, //c13
-  {halfTime: 390,  a: 0.2610, b: 0.9544}, //c14
-  {halfTime: 498,  a: 0.2480, b: 0.9602}, //c15
-  {halfTime: 635,  a: 0.2327, b: 0.9653}, //c16
-];
-
-function depthToPressure(depth) {
-  return 1.0 + (depth / 10.0);
-}
-
-function pressureToDepth(pressure) {
-  return (pressure - 1) * 10;
-}
-
-function initTissues(numCompartments, n2frac, psurf) {
-  const compartments = [];
-  for(let i=0; i<numCompartments; i++) {
-    // pp = fraction * (ambient pressure - pressure water vapor)
-    compartments[i] = n2frac * (psurf - P_WATER_VAPOR);
-  };
-
-  return compartments;
-}
-
-// Uses Schreiner-Kelley equation
-function depthChange(startDepth, endDepth, time, inertGasFraction, compartmentsToLoad, table) {
-  const deltaDepth = endDepth - startDepth;
-  const timeInSeconds = time * 60;
-  // change in inert gas partial pressure (bar/min)
-  const c = inertGasFraction * 0.1 * (depth / descentTime);
-  // initial inspired (=alveolar) pressure (i.e. ambient inert gass partial pressure - water vapor pressure)
-  const pio = inertGasFraction * (depthToPressure(startDepth) - P_WATER_VAPOR);
-
-  
-}
-/*
-function diveTo2(depth, time, inertGasFraction, compartmentsToLoad, table) {
-  const MAX_DESCENT_RATE = 5/60; // m/s
-  const timeInSeconds = time * 60;
-
-  // calculate descent
-  const descentTime = depth / MAX_DESCENT_RATE; // seconds
-  const pressureAtDepth = depthToPressure(depth);
-
-  // change in inert gas partial pressure (bar/min)
-  const c = inertGasFraction * 0.1 * (depth / descentTime);
-
-  return compartmentsToLoad.map((compPressure, compNumber) => {
-    const k = Math.log(2) / table[compNumber].halfTime;
-
-    return compPressure + c * t - (c / k) - (compPressure - x)
-  });
-}*/
-
-function diveTo(depth, time, inertGasFraction, compartmentsToLoad, table) {
-  const ppInertGas = (depthToPressure(depth) - P_WATER_VAPOR) * inertGasFraction; // inspiratory inert gas pressure
-  return compartmentsToLoad.map((compartmentPressure, compartmentIndex) => {
-    const loadPressure = ((ppInertGas - compartmentPressure) * (1 - Math.pow(2, (-1 * time) / table[compartmentIndex].halfTime)))
-    return compartmentPressure + loadPressure;
-  });
-}
-
-function calculateCeilingDepth(loadedCompartments, table) {
-  const maxTolerablePressures = [];
-  // calculate the tolerable pressures for each compartment
-  for(let i=0; i<16; i++) {
-    maxTolerablePressures.push((loadedCompartments[i] - table[i].a) * table[i].b);
-  }
-  // sort the maximally tolerable pressures and take the largest one (corresponds to deepest tolerable depth)
-  return Math.ceil(pressureToDepth(maxTolerablePressures.sort().pop()));
-}
-
-function calculateNextDecoStop(startCeiling, inertGasFraction, loadedCompartments, table) {
-    let tempCompartments = [...loadedCompartments]; // clone the compartments to avoid mutation
-    // we want our stops to be in 3m steps
-    let roundedStopCeiling = Math.ceil(startCeiling / 3) * 3;
-    let time = 0, nextCeiling = roundedStopCeiling;
-
-    // if this is a no-stop dive, we are done.
-    if(roundedStopCeiling <= 0) return null;
-
-    // stay at the deco stop until the nextCeiling goes up
-    do {
-        tempCompartments = diveTo(roundedStopCeiling, 0.16, inertGasFraction, tempCompartments, table);
-        nextCeiling = Math.ceil(calculateCeilingDepth(tempCompartments, table) / 3) * 3;
-        time++;
-    } while(nextCeiling == roundedStopCeiling);
-
-    return {ceiling: roundedStopCeiling, time};
-}
-
-function planDive(depth, time, table, n2Frac) {
-  const decoStops = new Array();
-  let compartments = initTissues(16, n2Frac, 1);
-  let totalTime = time;
-  let currentDepth = depth;
-  let currentStopTime = time;
-
-  while(currentDepth > 0) {
-    // 1. load compartments with current depth
-    compartments = diveTo(currentDepth, currentStopTime, n2Frac, compartments, table);
-    // 2. get ceiling & ascend time
-    let ceilingDepth = calculateCeilingDepth(compartments, table);
-    const ascendTime = (currentDepth - ceilingDepth) / MAX_ASCENT_RATE; // ascend to first stop
-    // 3. get deco stop
-    const stop = calculateNextDecoStop(ceilingDepth, n2Frac, compartments, table);
-    // 4. add time to total time
-    if(stop) {
-        stop.time += ascendTime; // calculateNextDecoStop does not include ascend time
-        totalTime += stop.time;
-        decoStops.push(stop);
-        // 5. set current depth to stop depth,
-        //    set current stop time to the stop time + ascend time 
-        currentDepth = stop.ceiling;
-        currentStopTime = stop.time;               
-    } else {
-        // if there is no stop, we can go straight up to the surface
-        totalTime += ascendTime;
-        currentDepth = 0;
-    }
-  }
-
-  return {
-    decoStops,
-    totalTime
-  }  
-}
-
-// TODO: Offer option to reverse-calculate (how long can I go to x meters with a max of y min deco?)
-// TODO: Gas planning
-
-//
-// App code
-//
-
-//const o2frac = parseFloat(document.getElementById("o2").value) / 100.0;
-//const psurf = parseFloat(document.getElementById("psurf").value);
-
-let table = ZHL16C_HALFTIMES;
-
-document.querySelector('button').addEventListener('click', () => {
-  const tableBody = document.querySelector('tbody');
-  const totalTimeOutput = document.getElementById('total');
-  const gasInfo = document.getElementById('gas');
-
-  // values from the form
-  const n2frac = parseFloat(document.getElementById("n2").value) / 100.0;
-  const depth = parseFloat(document.getElementById("depth").value);
-  const bottomTime = parseFloat(document.getElementById("time").value);
-  const tankVol = parseFloat(document.getElementById("tankvol").value);
-  const tankPressure = parseFloat(document.getElementById("tankpressure").value);
-  const sac = parseFloat(document.getElementById("sac").value);
-
-  tableBody.innerHTML = '';
-  total.textContent = '';
-
-  switch(document.querySelector('select').value) {
-    case 'A':
-      table = ZHL16A_HALFTIMES;
-    break;
-    case 'B':
-      table = ZHL16B_HALFTIMES;
-    break;
-    default:
-      table = ZHL16C_HALFTIMES;
-  }
-
-  const dive = planDive(depth, bottomTime, table, n2frac);
-  // output total time and stops
-  total.textContent = dive.totalTime.toFixed(2);
-  tableBody.appendChild(makeTableRow(depth, bottomTime));
-  dive.decoStops.forEach(stop => {
-    const row = makeTableRow(stop.ceiling, stop.time);
-    tableBody.appendChild(row);
-  });
-
-  // calculate gas available and gas needed
-  const gasAvailable = (tankPressure - RESERVE_PRESSURE) * tankVol;
-  let gasNeeded = (sac * depthToPressure(depth)) * bottomTime;
-  dive.decoStops.forEach(stop => {
-    gasNeeded += (sac * depthToPressure(stop.ceiling)) * stop.time;
-  });
-
-  gasInfo.innerHTML = `Gas: <strong>${gasAvailable}L</strong> available, <strong>${Math.ceil(gasNeeded)}L</strong> needed`;
-  if(gasNeeded > gasAvailable) gasInfo.className = 'issue';
-  else gasInfo.className = '';
-})
-
-function makeTableRow(d, t) {
-  let row = document.createElement('tr');
-  let de = document.createElement('td');
-  let te = document.createElement('td');
-  de.textContent = d;
-  te.textContent = t;
-  row.appendChild(de)
-  row.appendChild(te);
-
-  return row;
-}
-
-</script>
-</body>
+        <form>
+            <fieldset>
+                <legend>Dive profile</legend>
+                <table class="noborder">
+                    <tr>
+                        <td><label for="depth">Depth (m):</label></td>
+                        <td>
+                            <input id="depth" type="number" min="1" max="999" maxlength="3">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="bottom_time">Bottom time (min):</label></td>
+                        <td>
+                            <input id="bottom_time" type="number" min="1" max="999" maxlength="3">
+                            <button type="button" id="nostop">Get No-Stop limit</button>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <legend>Gases</legend>
+                <table class="noborder">
+                    <tr>
+                        <td><label for="bottom_o2">Bottom gas O2 (%):</label></td>
+                        <td><input id="bottom_o2" value="21" type="number" min="0" max="100" maxlength="3"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="deco_o2">Deco gas O2 (%):</label></td>
+                        <td><input id="deco_o2" value="50" type="number" min="0" max="100" maxlength="3"></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <legend>Decompression Settings</legend>
+                <table class="noborder">
+                    <tr>
+                        <td><label for="gf_lo">GF Low (%):</label></td>
+                        <td><input id="gf_lo" value="50" type="number" min="10" max="100"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="gf_hi">GF High (%):</label></td>
+                        <td><input id="gf_hi" value="70" type="number" min="10" max="100"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="max_ppo2_bottom">Max ppO2 Bottom (bar):</label></td>
+                        <td><input id="max_ppo2_bottom" value="1.4" type="number" min="0.1" max="1.6" step="0.1"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="max_ppo2_deco">Max ppO2 Deco (bar):</label></td>
+                        <td><input id="max_ppo2_deco" value="1.6" type="number" min="0.1" max="1.6" step="0.1"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="descent_rate">Descent rate (m/min):</label></td>
+                        <td><input id="descent_rate" value="30" type="number" min="1" max="50"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ascent_rate">Ascent rate (m/min):</label></td>
+                        <td><input id="ascent_rate" value="9" type="number" min="1" max="12"></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <button type="button" id="plan">Plan dive</button>
+        </form>
+        <h2>Dive information</h2>
+        <table>
+            <tr>
+                <td>Optimal nitrox mix at depth</td>
+                <td id="optimal_bottom_ean"></td>
+            </tr>
+            <tr>
+                <td>Optimal nitrox mix for deco</td>
+                <td id="optimal_deco_ean"></td>
+            </tr>
+            <tr>
+                <td>No-stop time</td>
+                <td id="no_stop"></td>
+            </tr>
+            <tr>
+                <td>Total deco stop time</td>
+                <td id="total_stop_time"></td>
+            </tr>
+        </table>
+        <h2>Dive plan</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Depth</th>
+                    <th>Stop time</th>
+                    <th>Run time</th>
+                    <th>Mix</th>
+                </tr>
+            </thead>
+            <tbody id="diveplan"></tbody>
+        </table>
+        <template>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </template>
+        <script src="decoplanner.js"></script>
+    </body>
 </html>
