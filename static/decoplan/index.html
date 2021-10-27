@@ -14,6 +14,12 @@
             th, td {
                 padding: 1ch;
             }
+
+            .hidden {
+              display: none;
+            }
+
+            #error { color: red; }
         </style>
         <meta name="viewport" content="width=device-width">
     </head>
@@ -46,7 +52,10 @@
                 <table class="noborder">
                     <tr>
                         <td><label for="bottom_o2">Bottom gas O2 (%):</label></td>
-                        <td><input id="bottom_o2" value="21" type="number" min="0" max="100" maxlength="3"></td>
+                        <td>
+                          <input id="bottom_o2" value="21" type="number" min="0" max="100" maxlength="3">
+                          <button id="best_mix" type="button">Get best mix</button>
+                        </td>
                     </tr>
                     <tr>
                         <td><label for="deco_o2">Deco gas O2 (%):</label></td>
@@ -81,41 +90,56 @@
                         <td><label for="ascent_rate">Ascent rate (m/min):</label></td>
                         <td><input id="ascent_rate" value="9" type="number" min="1" max="12"></td>
                     </tr>
+                    <tr>
+                        <td><label for="table">Algorithm</label></td>
+                        <td>
+                          <select id="table">
+                            <option value="B">ZHL16B</option>
+                            <option selected value="C">ZHL16C</option>
+                          </select>
+                        </td>
+                    </tr>
                 </table>
             </fieldset>
-            <button type="button" id="plan">Plan dive</button>
+            <p style="text-align: center;">
+              <button type="button" id="plan">Plan dive</button>
+              <div id="error" style="text-align: center;"></div>
+            </p>
         </form>
-        <h2>Dive information</h2>
-        <table>
-            <tr>
-                <td>Optimal nitrox mix at depth</td>
-                <td id="optimal_bottom_ean"></td>
-            </tr>
-            <tr>
-                <td>Optimal nitrox mix for deco</td>
-                <td id="optimal_deco_ean"></td>
-            </tr>
-            <tr>
-                <td>No-stop time</td>
-                <td id="no_stop"></td>
-            </tr>
-            <tr>
-                <td>Total deco stop time</td>
-                <td id="total_stop_time"></td>
-            </tr>
-        </table>
-        <h2>Dive plan</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Depth</th>
-                    <th>Stop time</th>
-                    <th>Run time</th>
-                    <th>Mix</th>
-                </tr>
-            </thead>
-            <tbody id="diveplan"></tbody>
-        </table>
+        <section id="results" class="hidden">
+          <h2>Dive information</h2>
+          <table>
+              <tr>
+                  <td>Optimal nitrox mix at depth</td>
+                  <td id="optimal_bottom_ean"></td>
+              </tr>
+              <tr>
+                  <td>Optimal nitrox mix for deco</td>
+                  <td id="optimal_deco_ean"></td>
+              </tr>
+              <tr>
+                  <td>No-stop time</td>
+                  <td id="no_stop"></td>
+              </tr>
+              <tr>
+                  <td>Total deco stop time</td>
+                  <td id="total_stop_time"></td>
+              </tr>
+          </table>
+          <h2>Dive plan</h2>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Depth</th>
+                      <th>Stop time</th>
+                      <th>Run time</th>
+                      <th>Mix</th>
+                  </tr>
+              </thead>
+              <tbody id="diveplan"></tbody>
+          </table>
+        </section>
+
         <template>
             <tr>
                 <td></td>
@@ -124,6 +148,9 @@
                 <td></td>
             </tr>
         </template>
+        <script>
+          if(window.location.href.slice(-1) !== '/') window.location.href = window.location.href + '/'; // weird hosting quirk
+        </script>
         <script src="decoplanner.js"></script>
     </body>
 </html>
