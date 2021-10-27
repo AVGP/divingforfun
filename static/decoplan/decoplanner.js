@@ -157,11 +157,11 @@ function getOptimalBottomMixForDepth(depth, maxPPO2) {
     return maxPPO2 / depthToPressure(depth);
 }
 
-function getOptimalDecoMixFor(depth, time, n2Fraction, descentRate, ascentRate, maxPPO2, gfLo, gfHi) {
-    const plan = getDivePlan(depth, time, n2Fraction, n2Fraction, descentRate, ascentRate, maxPPO2, gfLo, gfHi);
+function getOptimalDecoMixFor(depth, time, n2Fraction, descentRate, ascentRate, maxPPO2, gfLo, gfHi, buehlmannTable = COMPARTMENTS_ZHL16C) {
+    const plan = getDivePlan(depth, time, n2Fraction, n2Fraction, descentRate, ascentRate, maxPPO2, gfLo, gfHi, buehlmannTable);
     if(plan.length === 1) return 1; // bail out if there are no deco stops. 100% O2 is always great at the surface ;-)
     const deepestStopDepth = plan[1].depth; // plan[0] is the bottom time, plan[1] is the first deco stop
-    return maxPPO2 / depthToPressure(deepestStopDepth);    
+    return Math.min(1, maxPPO2 / depthToPressure(deepestStopDepth)); // better safe than sorry, limiting to EAN100.
 }
 
 // This produces slightly too long values
@@ -223,7 +223,7 @@ function getSettingErrors(depth, bottomTime, o2FractionBottom, o2FractionDeco, m
 
 // UI event handlers
 
-let currentBuehlmannTable = COMPARTMENTS_ZHL16C;
+var currentBuehlmannTable = COMPARTMENTS_ZHL16C;
 
 function planDive() {
     const o2FractionBottom = (parseFloat(document.getElementById('bottom_o2').value) / 100);
@@ -272,7 +272,7 @@ function planDive() {
     });
 
     document.getElementById('optimal_bottom_ean').textContent = 'EAN' + Math.round(getOptimalBottomMixForDepth(depth, maxPO2Bottom) * 100);
-    document.getElementById('optimal_deco_ean').textContent = 'EAN' + Math.round(getOptimalDecoMixFor(depth, time, n2FractionBottom, descentRate, ascentRate, maxPO2Deco, gfLo, gfHi) * 100);
+    document.getElementById('optimal_deco_ean').textContent = 'EAN' + Math.round(getOptimalDecoMixFor(depth, time, n2FractionBottom, descentRate, ascentRate, maxPO2Deco, gfLo, gfHi, currentBuehlmannTable) * 100);
     document.getElementById('no_stop').textContent = noStopTime + ' min';
     document.getElementById('total_stop_time').textContent = totalStopTime + ' min';
     resultsSection.classList.remove('hidden');
