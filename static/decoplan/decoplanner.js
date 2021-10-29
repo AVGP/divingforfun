@@ -134,16 +134,17 @@ function getDivePlan(depth, bottomTime, n2FractionBottom, n2FractionDeco, descen
     while(currentCeilingDepth > 0) {
         let stopTime = 0, nextCeilingDepth = currentCeilingDepth;
         // off-gas until we can go to the next stop
+        const usesDecoMix = (bottomMixO2 !== decoMixO2) && isDecoMixBreathable(decoMixO2/100, currentCeilingDepth, maxPO2Deco)
         do {
-            const n2frac = isDecoMixBreathable(decoMixO2/100, currentCeilingDepth, maxPO2Deco) ? n2FractionDeco : n2FractionBottom;
+            const n2frac = usesDecoMix ? n2FractionDeco : n2FractionBottom;
             compartments = loadCompartmentsAtConstantDepth(compartments, currentCeilingDepth, n2frac, 1, buehlmannTable);
             const gf = deltaGf * currentCeilingDepth + gfHi;
             nextCeilingDepth = getAscentCeilingDepth(compartments, gf, buehlmannTable);
             stopTime++;
         } while(nextCeilingDepth === currentCeilingDepth && nextCeilingDepth > 0);
         currentRunTime += stopTime;
-        const mixO2 = isDecoMixBreathable(decoMixO2/100, currentCeilingDepth, maxPO2Deco) ? decoMixO2 : bottomMixO2;
-        plan.push({depth: currentCeilingDepth, stopTime: stopTime, runTime: currentRunTime, mix: (mixO2 == 21 ? 'Air' : 'EAN' + mixO2)});
+        const mixO2 = usesDecoMix ? decoMixO2 : bottomMixO2;
+        plan.push({depth: currentCeilingDepth, stopTime: stopTime, runTime: currentRunTime, o2Percent: mixO2, isDecoMix: usesDecoMix, mix: (mixO2 == 21 ? 'Air' : 'EAN' + mixO2)});
         currentCeilingDepth = nextCeilingDepth;
     }
     return plan;
@@ -221,6 +222,18 @@ function getSettingErrors(depth, bottomTime, o2FractionBottom, o2FractionDeco, m
     };
 }
 
+function getGasPlan(divePlan, sacBottom, sacDeco) {
+
+    const bottomMixVolume = divePlan.filter((stop) => !stop.isDecoMix).reduce((volume, stop) => {
+        return volume + (depthToPressure(stop.depth) * sacBottom * stop.stopTime);
+    }, 0);
+    const decoMixVolume = divePlan.filter((stop) => stop.isDecoMix).reduce((volume, stop) => {
+        return volume + (depthToPressure(stop.depth) * sacDeco * stop.stopTime);
+    }, 0); // might not have any deco mix, so we initialize to 0.
+
+    return [bottomMixVolume, decoMixVolume];
+}
+
 // UI event handlers
 
 var currentBuehlmannTable = COMPARTMENTS_ZHL16C;
@@ -236,6 +249,8 @@ function planDive() {
     const ascentRate = parseFloat(document.getElementById('ascent_rate').value);
     const maxPO2Bottom = parseFloat(document.getElementById('max_ppo2_bottom').value);
     const maxPO2Deco = parseFloat(document.getElementById('max_ppo2_deco').value);
+    const sacBottom = parseFloat(document.getElementById('sac_bottom').value);
+    const sacDeco = parseFloat(document.getElementById('sac_deco').value);
     const gfLo = parseFloat(document.getElementById('gf_lo').value) / 100;
     const gfHi = parseFloat(document.getElementById('gf_hi').value) / 100;
 
@@ -261,7 +276,7 @@ function planDive() {
 
     let totalStopTime = -time; // the first stop in the dive plan adds the bottom time, so we offset this here.
     plan.forEach((stop) => {
-        const tr = document.querySelector('template').content.cloneNode(true);
+        const tr = document.querySelector('template#decostop_template').content.cloneNode(true);
         const tableCells = tr.querySelectorAll('td');
         tableCells[0].textContent = stop.depth + 'm';
         tableCells[1].textContent = stop.stopTime + ' min';
@@ -271,10 +286,39 @@ function planDive() {
         totalStopTime += stop.stopTime;
     });
 
+    // get contingency
+    const backupPlan = getDivePlan(depth + 3, time + 3, n2FractionBottom, n2FractionDeco, descentRate, ascentRate, maxPO2Deco, gfLo, gfHi, currentBuehlmannTable);
+    const backupTableBody = document.getElementById('contingencyplan');
+    backupTableBody.innerHTML = '';    
+    backupPlan.forEach((stop) => {
+        const tr = document.querySelector('template#decostop_template').content.cloneNode(true);
+        const tableCells = tr.querySelectorAll('td');
+        tableCells[0].textContent = stop.depth + 'm';
+        tableCells[1].textContent = stop.stopTime + ' min';
+        tableCells[2].textContent = stop.runTime + ' min';
+        tableCells[3].textContent = stop.mix;
+        backupTableBody.appendChild(tr);
+    });
+    // get dive info
     document.getElementById('optimal_bottom_ean').textContent = 'EAN' + Math.round(getOptimalBottomMixForDepth(depth, maxPO2Bottom) * 100);
     document.getElementById('optimal_deco_ean').textContent = 'EAN' + Math.round(getOptimalDecoMixFor(depth, time, n2FractionBottom, descentRate, ascentRate, maxPO2Deco, gfLo, gfHi, currentBuehlmannTable) * 100);
     document.getElementById('no_stop').textContent = noStopTime + ' min';
     document.getElementById('total_stop_time').textContent = totalStopTime + ' min';
+
+    // get gas plan
+    const gasVolumesNeeded = getGasPlan(backupPlan, sacBottom, sacDeco);
+    const gasPlanContainer = document.getElementById('gasplan');
+    const bottomMixRow = document.getElementById('gas_template').content.cloneNode(true);
+    gasPlanContainer.innerHTML = '';
+    bottomMixRow.querySelectorAll('td')[0].textContent = Math.round(o2FractionBottom * 100) == 21 ? 'Air' : 'EAN' + Math.round(o2FractionBottom * 100);
+    bottomMixRow.querySelectorAll('td')[1].textContent = gasVolumesNeeded[0];
+    gasPlanContainer.appendChild(bottomMixRow);
+    if(o2FractionBottom !== o2FractionDeco) {
+        const decoMixRow = document.getElementById('gas_template').content.cloneNode(true);
+        decoMixRow.querySelectorAll('td')[0].textContent = Math.round(o2FractionDeco * 100) == 21 ? 'Air' : 'EAN' + Math.round(o2FractionDeco * 100);
+        decoMixRow.querySelectorAll('td')[1].textContent = gasVolumesNeeded[1];
+        gasPlanContainer.appendChild(decoMixRow);
+    }
     resultsSection.classList.remove('hidden');
 }
 
@@ -322,7 +366,12 @@ function changeAlgorithm() {
     }
 }
 
+function useBottomMixForDeco() {
+    document.getElementById('deco_o2').value = document.getElementById('bottom_o2').value;
+}
+
 document.getElementById('plan').addEventListener('click', planDive);
 document.getElementById('nostop').addEventListener('click', getNoStopTime);
 document.getElementById('best_mix').addEventListener('click', getBestMix);
+document.getElementById('no_decomix').addEventListener('click', useBottomMixForDeco);
 document.getElementById('table').addEventListener('change', changeAlgorithm);

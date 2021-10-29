@@ -24,133 +24,178 @@
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
-        <h1>Deco Planner</h1>
-        <p style="color: red; font-weight: bold;">Do not use this tool, it's just an experiment.</p>
-        <p>This tool uses the Bühlmann ZH-L16C algorithm.</p>
+      <h1>Deco Planner</h1>
+      <p style="color: red; font-weight: bold;">Do not use this tool, it's just an experiment.</p>
+      <p>This tool uses the Bühlmann ZH-L16C algorithm.</p>
 
-        <form>
-            <fieldset>
-                <legend>Dive profile</legend>
-                <table class="noborder">
-                    <tr>
-                        <td><label for="depth">Depth (m):</label></td>
-                        <td>
-                            <input id="depth" type="number" min="1" max="999" maxlength="3">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label for="bottom_time">Bottom time (min):</label></td>
-                        <td>
-                            <input id="bottom_time" type="number" min="1" max="999" maxlength="3">
-                            <button type="button" id="nostop">Get No-Stop limit</button>
-                        </td>
-                    </tr>
-                </table>
-            </fieldset>
-            <fieldset>
-                <legend>Gases</legend>
-                <table class="noborder">
-                    <tr>
-                        <td><label for="bottom_o2">Bottom gas O2 (%):</label></td>
-                        <td>
-                          <input id="bottom_o2" value="21" type="number" min="0" max="100" maxlength="3">
-                          <button id="best_mix" type="button">Get best mix</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label for="deco_o2">Deco gas O2 (%):</label></td>
-                        <td><input id="deco_o2" value="50" type="number" min="0" max="100" maxlength="3"></td>
-                    </tr>
-                </table>
-            </fieldset>
-            <fieldset>
-                <legend>Decompression Settings</legend>
-                <table class="noborder">
-                    <tr>
-                        <td><label for="gf_lo">GF Low (%):</label></td>
-                        <td><input id="gf_lo" value="50" type="number" min="10" max="100"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="gf_hi">GF High (%):</label></td>
-                        <td><input id="gf_hi" value="70" type="number" min="10" max="100"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="max_ppo2_bottom">Max ppO2 Bottom (bar):</label></td>
-                        <td><input id="max_ppo2_bottom" value="1.4" type="number" min="0.1" max="1.6" step="0.1"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="max_ppo2_deco">Max ppO2 Deco (bar):</label></td>
-                        <td><input id="max_ppo2_deco" value="1.6" type="number" min="0.1" max="1.6" step="0.1"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="descent_rate">Descent rate (m/min):</label></td>
-                        <td><input id="descent_rate" value="30" type="number" min="1" max="50"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="ascent_rate">Ascent rate (m/min):</label></td>
-                        <td><input id="ascent_rate" value="9" type="number" min="1" max="12"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="table">Algorithm</label></td>
-                        <td>
-                          <select id="table">
-                            <option value="B">ZHL16B</option>
-                            <option selected value="C">ZHL16C</option>
-                          </select>
-                        </td>
-                    </tr>
-                </table>
-            </fieldset>
-            <p style="text-align: center;">
-              <button type="button" id="plan">Plan dive</button>
-              <div id="error" style="text-align: center;"></div>
-            </p>
-        </form>
-        <section id="results" class="hidden">
-          <h2>Dive information</h2>
-          <table>
-              <tr>
-                  <td>Optimal nitrox mix at depth</td>
-                  <td id="optimal_bottom_ean"></td>
-              </tr>
-              <tr>
-                  <td>Optimal nitrox mix for deco</td>
-                  <td id="optimal_deco_ean"></td>
-              </tr>
-              <tr>
-                  <td>No-stop time</td>
-                  <td id="no_stop"></td>
-              </tr>
-              <tr>
-                  <td>Total deco stop time</td>
-                  <td id="total_stop_time"></td>
-              </tr>
-          </table>
-          <h2>Dive plan</h2>
-          <table>
-              <thead>
+      <form>
+          <fieldset>
+              <legend>Dive profile</legend>
+              <table class="noborder">
                   <tr>
-                      <th>Depth</th>
-                      <th>Stop time</th>
-                      <th>Run time</th>
-                      <th>Mix</th>
+                      <td><label for="depth">Depth (m):</label></td>
+                      <td>
+                          <input id="depth" type="number" min="1" max="999" maxlength="3">
+                      </td>
                   </tr>
-              </thead>
-              <tbody id="diveplan"></tbody>
-          </table>
-        </section>
-
-        <template>
+                  <tr>
+                      <td><label for="bottom_time">Bottom time (min):</label></td>
+                      <td>
+                          <input id="bottom_time" type="number" min="1" max="999" maxlength="3">
+                          <button type="button" id="nostop">Get No-Stop limit</button>
+                      </td>
+                  </tr>
+              </table>
+          </fieldset>
+          <fieldset>
+              <legend>Gases</legend>
+              <table class="noborder">
+                  <tr>
+                      <td><label for="bottom_o2">Bottom gas O2 (%):</label></td>
+                      <td>
+                        <input id="bottom_o2" value="21" type="number" min="0" max="100" maxlength="3">
+                        <button id="best_mix" type="button">Get best mix</button>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td><label for="deco_o2">Deco gas O2 (%):</label></td>
+                      <td>
+                        <input id="deco_o2" value="50" type="number" min="0" max="100" maxlength="3">
+                        <button id="no_decomix" type="button">Use bottom mix</button>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td><label for="sac_bottom">Bottom SAC rate (l/min):</label></td>
+                    <td><input id="sac_bottom" value="20" type="number" min="1" max="50"></td>
+                  </tr>
+                  <tr>
+                    <td><label for="sac_deco">Deco SAC rate (l/min):</label></td>
+                    <td><input id="sac_deco" value="20" type="number" min="1" max="50"></td>
+                  </tr>
+              </table>
+          </fieldset>
+          <fieldset>
+              <legend>Decompression Settings</legend>
+              <table class="noborder">
+                  <tr>
+                      <td><label for="gf_lo">GF Low (%):</label></td>
+                      <td><input id="gf_lo" value="50" type="number" min="10" max="100"></td>
+                  </tr>
+                  <tr>
+                      <td><label for="gf_hi">GF High (%):</label></td>
+                      <td><input id="gf_hi" value="70" type="number" min="10" max="100"></td>
+                  </tr>
+                  <tr>
+                      <td><label for="max_ppo2_bottom">Max ppO2 Bottom (bar):</label></td>
+                      <td><input id="max_ppo2_bottom" value="1.4" type="number" min="0.1" max="1.6" step="0.1"></td>
+                  </tr>
+                  <tr>
+                      <td><label for="max_ppo2_deco">Max ppO2 Deco (bar):</label></td>
+                      <td><input id="max_ppo2_deco" value="1.6" type="number" min="0.1" max="1.6" step="0.1"></td>
+                  </tr>
+                  <tr>
+                      <td><label for="descent_rate">Descent rate (m/min):</label></td>
+                      <td><input id="descent_rate" value="30" type="number" min="1" max="50"></td>
+                  </tr>
+                  <tr>
+                      <td><label for="ascent_rate">Ascent rate (m/min):</label></td>
+                      <td><input id="ascent_rate" value="9" type="number" min="1" max="12"></td>
+                  </tr>
+                  <tr>
+                      <td><label for="table">Algorithm</label></td>
+                      <td>
+                        <select id="table">
+                          <option value="B">ZHL16B</option>
+                          <option selected value="C">ZHL16C</option>
+                        </select>
+                      </td>
+                  </tr>
+              </table>
+          </fieldset>
+          <p style="text-align: center;">
+            <button type="button" id="plan">Plan dive</button>
+            <div id="error" style="text-align: center;"></div>
+          </p>
+      </form>
+      <section id="results" class="hidden">
+        <h2>Dive information</h2>
+        <table>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>Optimal nitrox mix at depth</td>
+                <td id="optimal_bottom_ean"></td>
             </tr>
-        </template>
-        <script>
-          if(window.location.href.slice(-1) !== '/') window.location.href = window.location.href + '/'; // weird hosting quirk
-        </script>
-        <script src="decoplanner.js"></script>
+            <tr>
+                <td>Optimal nitrox mix for deco</td>
+                <td id="optimal_deco_ean"></td>
+            </tr>
+            <tr>
+                <td>No-stop time</td>
+                <td id="no_stop"></td>
+            </tr>
+            <tr>
+                <td>Total deco stop time</td>
+                <td id="total_stop_time"></td>
+            </tr>
+        </table>
+        <h2>Dive plan</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Depth</th>
+                    <th>Stop time</th>
+                    <th>Run time</th>
+                    <th>Mix</th>
+                </tr>
+            </thead>
+            <tbody id="diveplan"></tbody>
+        </table>
+        <h2>Contingency plan</h2>
+        <p>For bottom time +3 min, +3 meters.</p>
+        <table>
+          <thead>
+              <tr>
+                  <th>Depth</th>
+                  <th>Stop time</th>
+                  <th>Run time</th>
+                  <th>Mix</th>
+              </tr>
+          </thead>
+          <tbody id="contingencyplan"></tbody>
+        </table>
+        <h2>Gas plan</h2>
+        <p>Calculated for the contingency plan.</p>
+        <table>
+          <thead>
+              <tr>
+                  <th>Gas O2%</th>
+                  <th>Volume</th>
+              </tr>
+          </thead>
+          <tbody id="gasplan"></tbody>
+      </table>
+      <!--
+      <h2>Minimum gas</h2>
+      <p>Gas needed to bring two divers to the surface at the end of the bottom time: <span id="minimum_gas"></span> liters.</p>
+      -->
+      </section>
+
+      <template id="decostop_template">
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+      </template>
+      <template id="gas_template">
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </template>
+      <script>
+        if(window.location.href.slice(-1) !== '/') window.location.href = window.location.href + '/'; // weird hosting quirk
+      </script>
+      <script src="decoplanner.js"></script>
     </body>
 </html>
