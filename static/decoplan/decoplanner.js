@@ -343,7 +343,7 @@ function planDive() {
     if(o2FractionBottom !== o2FractionDeco) {
         const decoMixRow = document.getElementById('gas_template').content.cloneNode(true);
         decoMixRow.querySelectorAll('td')[0].textContent = Math.round(o2FractionDeco * 100) == 21 ? 'Air' : 'EAN' + Math.round(o2FractionDeco * 100);
-        decoMixRow.querySelectorAll('td')[1].textContent = gasVolumesNeeded[1];
+        decoMixRow.querySelectorAll('td')[1].textContent = Math.ceil(gasVolumesNeeded[1]);
         gasPlanContainer.appendChild(decoMixRow);
     }
 
