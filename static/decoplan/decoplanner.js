@@ -38,6 +38,8 @@ const NUM_COMPARTMENTS = 16; // ZHL16C uses 16 compartments.
 const PN2_SURF = 0.79; // in bar. Surface saturation of N2 in compartments
 const LN2 = 0.6931; // ln(2) used in calculating the halftime constant for each compartment
 const pH2O = 0.062; // in bar. See https://www.dekostop.ch/tauchen-know-how/tauchen-dekompression/248-buehlman-zh-l16-inspiratorischer-und-alveolarer-inertgasdruck
+const SAC_CONTINGENCY = 40; // in l/min. Two divers, 20 l/min each in case a gas emergency happens
+const MIN_RESERVE_PRESSURE = 50; // in bar. Minimal acceptable pressure in the tank.
 // Schreiner constants we're not using for now.
 //const RESPIRATORY_QUOTIENT = 1; // unitless. Comes from the diff in O2 inhalation & CO2 exhalation. Buehlmann: 1, US Navy: 0.8, Schreiner: 0.9
 //const DELTA_pCO2 = 0.0534; // in bar. See https://www.dekostop.ch/tauchen-know-how/tauchen-dekompression/248-buehlman-zh-l16-inspiratorischer-und-alveolarer-inertgasdruck
@@ -198,6 +200,43 @@ function calculateNoStopTime(depth, n2Fraction, descentRate, ascentRate, gfLo, g
     return time - 1; // we know that the current value of time produces a deco stop, so the no stop time is one minute shorter.
 }
 
+function getGasPlan(divePlan, sacBottom, sacDeco) {
+
+    const bottomMixVolume = divePlan.filter((stop) => !stop.isDecoMix).reduce((volume, stop) => {
+        return volume + (depthToPressure(stop.depth) * sacBottom * stop.stopTime);
+    }, 0);
+    const decoMixVolume = divePlan.filter((stop) => stop.isDecoMix).reduce((volume, stop) => {
+        return volume + (depthToPressure(stop.depth) * sacDeco * stop.stopTime);
+    }, 0); // might not have any deco mix, so we initialize to 0.
+
+    return [bottomMixVolume, decoMixVolume];
+}
+
+function getMinimumGasVolume(divePlan, ascentRate) {
+    // get maximum depth from first stop (=bottom time) in the dive plan
+    const maxDepth = divePlan[0].depth;
+    const changeoverVolume = depthToPressure(maxDepth) * 2 * SAC_CONTINGENCY; // two minutes to change gas supply in emergency.
+    let currentDepth = maxDepth;
+    let totalGasVolume = changeoverVolume;
+    // get the gas needed for ascent to each stop and the gas needed at that stop
+    divePlan.slice(1).forEach((stop) => {
+        const avgAscentDepth = currentDepth - ((currentDepth - stop.depth) / 2);
+        const avgAscentPressure = depthToPressure(avgAscentDepth);
+        const ascTime = (currentDepth - stop.depth) / ascentRate;
+        const ascentVolume = Math.ceil(avgAscentPressure * ascTime) * SAC_CONTINGENCY;
+        const stopVolume = depthToPressure(stop.depth) * stop.stopTime * SAC_CONTINGENCY;
+        totalGasVolume += ascentVolume + stopVolume;
+        currentDepth = stop.depth;
+    });
+    // finally, add the ascent to the surface (either from the bottom if no deco stops happened or from the last stop)
+    const avgAscentDepth = currentDepth / 2;
+    const avgAscentPressure = depthToPressure(avgAscentDepth);
+    const ascTime = Math.ceil(currentDepth / ascentRate) + 1; // 1 minute extra margin
+    const ascentVolume = Math.ceil(avgAscentPressure * ascTime) * SAC_CONTINGENCY;
+    totalGasVolume += ascentVolume;
+    return totalGasVolume;
+}
+
 // returns an error message to display or false if there is none.
 function getSettingErrors(depth, bottomTime, o2FractionBottom, o2FractionDeco, maxPO2Bottom, gfLo, gfHi) {
     // is bottom mix within limits for the depth?
@@ -220,18 +259,6 @@ function getSettingErrors(depth, bottomTime, o2FractionBottom, o2FractionDeco, m
     } else {
         return false;
     };
-}
-
-function getGasPlan(divePlan, sacBottom, sacDeco) {
-
-    const bottomMixVolume = divePlan.filter((stop) => !stop.isDecoMix).reduce((volume, stop) => {
-        return volume + (depthToPressure(stop.depth) * sacBottom * stop.stopTime);
-    }, 0);
-    const decoMixVolume = divePlan.filter((stop) => stop.isDecoMix).reduce((volume, stop) => {
-        return volume + (depthToPressure(stop.depth) * sacDeco * stop.stopTime);
-    }, 0); // might not have any deco mix, so we initialize to 0.
-
-    return [bottomMixVolume, decoMixVolume];
 }
 
 // UI event handlers
@@ -319,6 +346,12 @@ function planDive() {
         decoMixRow.querySelectorAll('td')[1].textContent = gasVolumesNeeded[1];
         gasPlanContainer.appendChild(decoMixRow);
     }
+
+    // get minimum gas
+    const minimumGasVolume = getMinimumGasVolume(backupPlan, ascentRate);
+    document.getElementById('minimum_gas').textContent = minimumGasVolume;
+    document.getElementById('minimum_gas_bar').textContent = Math.max(MIN_RESERVE_PRESSURE, Math.ceil(minimumGasVolume / parseFloat(document.getElementById('tank_size').value)));
+
     resultsSection.classList.remove('hidden');
 }
 
@@ -370,8 +403,14 @@ function useBottomMixForDeco() {
     document.getElementById('deco_o2').value = document.getElementById('bottom_o2').value;
 }
 
+function updateMinimumGasPressure() {
+    const minGasVolume = parseFloat(document.getElementById('minimum_gas').textContent);
+    document.getElementById('minimum_gas_bar').textContent = Math.max(MIN_RESERVE_PRESSURE, Math.ceil(minGasVolume / parseFloat(this.value)));
+}
+
 document.getElementById('plan').addEventListener('click', planDive);
 document.getElementById('nostop').addEventListener('click', getNoStopTime);
 document.getElementById('best_mix').addEventListener('click', getBestMix);
 document.getElementById('no_decomix').addEventListener('click', useBottomMixForDeco);
 document.getElementById('table').addEventListener('change', changeAlgorithm);
+document.getElementById('tank_size').addEventListener('change', updateMinimumGasPressure);
