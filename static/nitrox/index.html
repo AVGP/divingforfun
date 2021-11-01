@@ -101,13 +101,13 @@
   <p>
     <label>
       Dive depth 
-      <input id="depth" type="number" value="30">m
+      <input id="depth" type="number" value="30" min="1" max="999">m
     </label>
   </p>
   <p>
     <label>
       O2 fraction
-      <input id="ead-o2" type="number" value="32">%
+      <input id="ead-o2" type="number" value="32" min="1" max="99">%
     </label>
   </p>
 <button id="ead" type="button">Calculate equivalent air depth</button>
@@ -133,6 +133,14 @@
       document.getElementById('mod').textContent = (((1.4 / o2ContentEnd) - 1).toPrecision(2) * 10) + 'm';
     });
 
+    document.getElementById('ead').addEventListener('click', function() {
+      const depth = parseFloat(document.getElementById('depth').value);
+      const o2Percentage = parseFloat(document.getElementById('ead-o2').value);
+      
+      // (Depth + 10) × Fraction of N2 / 0.79 − 10
+      const ead = (depth + 10) * (1 - o2Percentage)/0.79 - 10;
+      document.getElementById('ead-result').textContent = ead + 'm';
+    });
     if('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/nitrox/sw.js');
