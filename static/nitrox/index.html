@@ -135,11 +135,11 @@
 
     document.getElementById('ead').addEventListener('click', function() {
       const depth = parseFloat(document.getElementById('depth').value);
-      const o2Percentage = parseFloat(document.getElementById('ead-o2').value);
+      const o2Frac = parseFloat(document.getElementById('ead-o2').value) / 100;
       
       // (Depth + 10) × Fraction of N2 / 0.79 − 10
-      const ead = (depth + 10) * (1 - o2Percentage)/0.79 - 10;
-      document.getElementById('ead-result').textContent = ead + 'm';
+      const ead = (depth + 10) * (1 - o2Frac)/0.79 - 10;
+      document.getElementById('ead-result').textContent = ead.toFixed(2) + 'm';
     });
     if('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
