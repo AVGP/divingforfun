@@ -31,7 +31,8 @@ The wall has lots of little holes and you find plateaus at different depths alon
 
 There are numerous buoys anchored near the wall, so you can count the chains for the way back.
 
-After 25 to 30 minutes at 24 meters, you should come across a big tree trunk where there are a bunch of gnomes, at 23m there is a traffic marker. You can shallow up there and dive back to the exit.
+After 25 to 30 minutes at 24 meters, you should come across a big tree trunk where there are a bunch of gnomes, at 23m there is a traffic marker. You can slowly shallow up to 16m there and continue the dive for a few minutes towards Zurich. There you will find
+the old water intake pipe from the former distillery. Turn the dive along the shoreline. In the shallow water you can sometimes see (harmless) snakes underwater.
 
 Do not dive to the left of the entrance as there's an active boat pier there.
 
@@ -41,3 +42,4 @@ Do not dive to the left of the entrance as there's an active boat pier there.
 - Marker post
 - Gnomes
 - Tree
+- Old water intake from the former distillery
