@@ -298,7 +298,7 @@ function planDive() {
     const n2FractionBottom = 1.0 - o2FractionBottom;
     const n2FractionDeco = 1.0 - o2FractionDeco;
     const depth = parseFloat(document.getElementById('depth').value);
-    const criteria = document.getElementById('criteria').value;
+    const criteria = document.forms[0].criteria.value;
 
     const descentRate = parseFloat(document.getElementById('descent_rate').value);
     const ascentRate = parseFloat(document.getElementById('ascent_rate').value);
@@ -397,6 +397,7 @@ function planDive() {
     document.getElementById('minimum_gas_bar').textContent = Math.max(MIN_RESERVE_PRESSURE, Math.ceil(minimumGasVolume / parseFloat(document.getElementById('tank_size').value)));
 
     resultsSection.classList.remove('hidden');
+    resultsSection.scrollIntoView(true);
 }
 
 function getNoStopTime() {
@@ -456,5 +457,5 @@ document.getElementById('plan').addEventListener('click', planDive);
 document.getElementById('nostop').addEventListener('click', getNoStopTime);
 document.getElementById('best_mix').addEventListener('click', getBestMix);
 document.getElementById('no_decomix').addEventListener('click', useBottomMixForDeco);
-document.getElementById('table').addEventListener('change', changeAlgorithm);
 document.getElementById('tank_size').addEventListener('change', updateMinimumGasPressure);
+//document.forms[0].table.addEventListener('change', changeAlgorithm);

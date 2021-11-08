@@ -1,134 +1,133 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Decoplanner v0</title>
-        <style>
-            body {
-                font-family: Arial, Helvetica, sans-serif;
-            }
-            table, th, td {
-                border: 1px solid black;
-            }
-
-            table.noborder, table.noborder th, table.noborder td { border: none; }
-            th, td {
-                padding: 1ch;
-            }
-
+        <title>Decoplanner</title>
+        <style>  
             .hidden {
               display: none;
             }
 
             #error { color: red; }
         </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
+        <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="decoplanner.css">
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
       <h1>Deco Planner</h1>
-      <p style="color: red; font-weight: bold;">Do not use this tool, it's just an experiment.</p>
-      <p>This tool uses the Bühlmann ZH-L16C algorithm.</p>
+      <p style="color: red; font-weight: bold;">Use at your own risk.</p>
+      <p>This tool uses the Bühlmann ZH-L16 algorithm.</p>
+      <p>Version: 1.0.0</p>
 
+      <h2>Plan your dive</h2>
       <form>
-          <fieldset>
-              <legend>Dive profile</legend>
-              <p>Enter depth and one of either bottom time, deco stop time, runtime or time to surface</p>
-              <table class="noborder">
-                  <tr>
-                      <td><label for="depth">Depth (m):</label></td>
-                      <td>
-                          <input id="depth" type="number" min="1" max="999" maxlength="3">
-                      </td>
-                  </tr>
-                  <tr>
-                    <td><label for="criteria">Plan by:</label></td>
-                    <td>
-                        <select id="criteria">
-                          <option value="BOTTOM">Bottom time</option>
-                          <option value="DECO">Stop time</option>
-                          <option value="RUN">Run time</option>
-                          <option value="TTS">Time to surface</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                      <td><label for="time">Time (min):</label></td>
-                      <td>
-                          <input id="time" type="number" min="1" max="999" maxlength="3">
-                          <button type="button" id="nostop">Get No-Stop limit</button>
-                      </td>
-                  </tr>
-            </table>
-          </fieldset>
-          <fieldset>
-              <legend>Gases</legend>
-              <table class="noborder">
-                  <tr>
-                      <td><label for="bottom_o2">Bottom gas O2 (%):</label></td>
-                      <td>
-                        <input id="bottom_o2" value="21" type="number" min="0" max="100" maxlength="3">
-                        <button id="best_mix" type="button">Get best mix</button>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td><label for="deco_o2">Deco gas O2 (%):</label></td>
-                      <td>
-                        <input id="deco_o2" value="50" type="number" min="0" max="100" maxlength="3">
-                        <button id="no_decomix" type="button">Use bottom mix</button>
-                      </td>
-                  </tr>
-                  <tr>
-                    <td><label for="sac_bottom">Bottom SAC rate (l/min):</label></td>
-                    <td><input id="sac_bottom" value="20" type="number" min="1" max="50"></td>
-                  </tr>
-                  <tr>
-                    <td><label for="sac_deco">Deco SAC rate (l/min):</label></td>
-                    <td><input id="sac_deco" value="20" type="number" min="1" max="50"></td>
-                  </tr>
-              </table>
-          </fieldset>
-          <fieldset>
-              <legend>Decompression Settings</legend>
-              <table class="noborder">
-                  <tr>
-                      <td><label for="gf_lo">GF Low (%):</label></td>
-                      <td><input id="gf_lo" value="50" type="number" min="10" max="100"></td>
-                  </tr>
-                  <tr>
-                      <td><label for="gf_hi">GF High (%):</label></td>
-                      <td><input id="gf_hi" value="70" type="number" min="10" max="100"></td>
-                  </tr>
-                  <tr>
-                      <td><label for="max_ppo2_bottom">Max ppO2 Bottom (bar):</label></td>
-                      <td><input id="max_ppo2_bottom" value="1.4" type="number" min="0.1" max="1.6" step="0.1"></td>
-                  </tr>
-                  <tr>
-                      <td><label for="max_ppo2_deco">Max ppO2 Deco (bar):</label></td>
-                      <td><input id="max_ppo2_deco" value="1.6" type="number" min="0.1" max="1.6" step="0.1"></td>
-                  </tr>
-                  <tr>
-                      <td><label for="descent_rate">Descent rate (m/min):</label></td>
-                      <td><input id="descent_rate" value="30" type="number" min="1" max="50"></td>
-                  </tr>
-                  <tr>
-                      <td><label for="ascent_rate">Ascent rate (m/min):</label></td>
-                      <td><input id="ascent_rate" value="9" type="number" min="1" max="12"></td>
-                  </tr>
-                  <tr>
-                      <td><label for="table">Algorithm</label></td>
-                      <td>
-                        <select id="table">
-                          <option value="B">ZHL16B</option>
-                          <option selected value="C">ZHL16C</option>
-                        </select>
-                      </td>
-                  </tr>
-              </table>
-          </fieldset>
+        <details open>
+          <summary>Dive profile</summary>
+          <p>Enter depth and one of either bottom time, deco stop time, runtime or time to surface</p>
+          <div class="input-group">
+            <label for="depth" class="col-half">
+              Depth (m)
+              <input id="depth" type="number" min="1" max="999" maxlength="3">
+            </label>
+            <label for="time" class="col-half">
+              Time (min)
+              <input id="time" type="number" min="1" max="999" maxlength="3">
+            </label>
+            <button type="button" id="nostop">Get No-Stop limit</button>
+          </div>
+          <div class="input-group">
+            <h3>Time limit</h3>
+            <input name="criteria" type="radio" id="criteria-bottom" value="BOTTOM" checked>
+            <label for="criteria-bottom">Bottom time</label>  
+            <input name="criteria" type="radio" id="criteria-stop" value="DECO">
+            <label for="criteria-stop">Stop time</label>
+            <input name="criteria" type="radio" id="criteria-run" value="RUN">
+            <label for="criteria-run">Run time</label>
+            <input name="criteria" type="radio" id="criteria-tts" value="TTS">
+            <label for="criteria-tts">Time to surface</label>
+          </div>
+        </details>
+
+        <details>
+          <summary>Gases</summary>
+          <div class="input-group">
+            <label for="bottom_o2">
+              Bottom gas O2 (%)
+              <input id="bottom_o2" value="21" type="number" min="0" max="100" maxlength="3">
+            </label>
+            <button id="best_mix" type="button">Get best mix</button>
+            <label for="deco_o2">
+              Deco gas O2 (%)
+              <input id="deco_o2" value="50" type="number" min="0" max="100" maxlength="3">
+            </label>
+            <button id="no_decomix" type="button">Use bottom mix</button>  
+          </div>
+          <div class="input-group">
+            <h3>Partial pressure limits</h3>
+            <label for="max_ppo2_bottom">
+              Max ppO2 Bottom (bar):
+              <input id="max_ppo2_bottom" value="1.4" type="number" min="0.1" max="1.6" step="0.1">
+            </label>
+            <label for="max_ppo2_deco">
+              Max ppO2 Deco (bar)
+              <input id="max_ppo2_deco" value="1.6" type="number" min="0.1" max="1.6" step="0.1">
+            </label>
+          </div>
+          <div class="input-group">
+            <h3>Gas consumption</h3>
+            <label for="sac_bottom">
+              Working SAC rate (l/min)
+              <input id="sac_bottom" value="20" type="number" min="1" max="50">
+            </label>
+            <label for="sac_deco">
+              Deco SAC rate (l/min)
+              <input id="sac_deco" value="20" type="number" min="1" max="50">
+            </label>
+          </div>
+        </details>
+        <details>
+          <summary>Decompression settings</summary>
+          <div class="input-group">
+            <label for="gf_lo">
+              GF Low (%)
+              <input id="gf_lo" value="50" type="number" min="10" max="100">
+            </label>
+            <label for="gf_hi">
+              GF High (%)
+              <input id="gf_hi" value="70" type="number" min="10" max="100">
+            </label>            
+          </div>
+          <div class="input-group">
+            <label for="descent_rate">
+              Descent rate (m/min)
+              <input id="descent_rate" value="30" type="number" min="1" max="50">
+            </label>
+            <label for="ascent_rate">
+              Ascent rate (m/min)
+              <input id="ascent_rate" value="9" type="number" min="1" max="12">
+            </label>
+          </div>
+          <!--div class="input-group">
+            <h3>Algorithm</h3>
+            <input name="table" type="radio" id="table-b" value="B">
+            <label for="table-b">ZHL16B</label>
+            <input name="table" type="radio" id="table-c" value="C" checked>
+            <label for="table-c">ZHL16C</label>
+          </div-->
+        </details>
+        <div class="input-group">
           <p style="text-align: center;">
             <button type="button" id="plan">Plan dive</button>
             <div id="error" style="text-align: center;"></div>
-          </p>
+          </p>          
+        </div>
       </form>
+
       <section id="results" class="hidden">
         <h2>Dive information</h2>
         <table>
