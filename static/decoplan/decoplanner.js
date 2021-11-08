@@ -34,12 +34,18 @@ const COMPARTMENTS_ZHL16C = [
     {halftime: 498.0, a: 0.2480, b: 0.9602},
     {halftime: 635.0, a: 0.2327, b: 0.9653}
 ];
+
 const NUM_COMPARTMENTS = 16; // ZHL16C uses 16 compartments.
 const PN2_SURF = 0.79; // in bar. Surface saturation of N2 in compartments
 const LN2 = 0.6931; // ln(2) used in calculating the halftime constant for each compartment
 const pH2O = 0.062; // in bar. See https://www.dekostop.ch/tauchen-know-how/tauchen-dekompression/248-buehlman-zh-l16-inspiratorischer-und-alveolarer-inertgasdruck
 const SAC_CONTINGENCY = 40; // in l/min. Two divers, 20 l/min each in case a gas emergency happens
 const MIN_RESERVE_PRESSURE = 50; // in bar. Minimal acceptable pressure in the tank.
+// Constants that help us save some copy & paste later
+const BY_DECO_TIME = 1;
+const BY_RUN_TIME = 2;
+const BY_TTS = 3;
+
 // Schreiner constants we're not using for now.
 //const RESPIRATORY_QUOTIENT = 1; // unitless. Comes from the diff in O2 inhalation & CO2 exhalation. Buehlmann: 1, US Navy: 0.8, Schreiner: 0.9
 //const DELTA_pCO2 = 0.0534; // in bar. See https://www.dekostop.ch/tauchen-know-how/tauchen-dekompression/248-buehlman-zh-l16-inspiratorischer-und-alveolarer-inertgasdruck
@@ -237,6 +243,27 @@ function getMinimumGasVolume(divePlan, ascentRate) {
     return totalGasVolume;
 }
 
+function getBottomTimeFor(criteria, maxTime, depth, n2FractionBottom, n2FractionDeco, descentRate, ascentRate, maxPO2Deco, gfLo, gfHi, buehlmannTable) {
+    let time = 1;
+    let isWithinTimeLimit = false;
+    do {
+        time++;
+        const stops = getDivePlan(depth, time, n2FractionBottom, n2FractionDeco, descentRate, ascentRate, maxPO2Deco, gfLo, gfHi, buehlmannTable);
+        if(criteria == BY_DECO_TIME) {
+            // total deco time is the stop time of all stops (except the first stop as it's bottom time)
+            const totalDecoTime = stops.slice(1).reduce((stopTime, stop) => {
+                return stopTime + stop.stopTime;
+            }, 0)
+            isWithinTimeLimit = totalDecoTime <= maxTime;
+        } else if(criteria == BY_RUN_TIME) {
+            isWithinTimeLimit = stops.pop().runTime <= maxTime;
+        } else if(criteria == BY_TTS) {
+            isWithinTimeLimit = (stops.pop().runTime - time) <= maxTime;
+        }
+    } while(isWithinTimeLimit && time < 1000);
+    return time - 1; // we know that the current time violates the constraint
+}
+
 // returns an error message to display or false if there is none.
 function getSettingErrors(depth, bottomTime, o2FractionBottom, o2FractionDeco, maxPO2Bottom, gfLo, gfHi) {
     // is bottom mix within limits for the depth?
@@ -271,7 +298,8 @@ function planDive() {
     const n2FractionBottom = 1.0 - o2FractionBottom;
     const n2FractionDeco = 1.0 - o2FractionDeco;
     const depth = parseFloat(document.getElementById('depth').value);
-    const time = parseFloat(document.getElementById('bottom_time').value);
+    const criteria = document.getElementById('criteria').value;
+
     const descentRate = parseFloat(document.getElementById('descent_rate').value);
     const ascentRate = parseFloat(document.getElementById('ascent_rate').value);
     const maxPO2Bottom = parseFloat(document.getElementById('max_ppo2_bottom').value);
@@ -286,6 +314,8 @@ function planDive() {
     resultsSection.classList.add('hidden');
     errorContainer.classList.add('hidden');
 
+    let time = parseFloat(document.getElementById('time').value); // what time this means depends on criteria...
+
     const errMsg = getSettingErrors(depth, time, o2FractionBottom, o2FractionDeco, maxPO2Bottom, gfLo, gfHi);
     if(errMsg) {
         errorContainer.textContent = errMsg;
@@ -297,6 +327,20 @@ function planDive() {
     const noStopTime = calculateNoStopTime(depth, n2FractionBottom, descentRate, ascentRate, gfLo, gfHi);
 
     // get dive plan...
+    switch(criteria) {
+        case 'BOTTOM':
+            // Nothing, time is already our desired bottom time...
+        break;
+        case 'DECO':
+            time = getBottomTimeFor(BY_DECO_TIME, time, depth, n2FractionBottom, n2FractionDeco, descentRate, ascentRate, maxPO2Deco, gfLo, gfHi, currentBuehlmannTable);
+        break;
+        case 'RUN':
+            time = getBottomTimeFor(BY_RUN_TIME, time, depth, n2FractionBottom, n2FractionDeco, descentRate, ascentRate, maxPO2Deco, gfLo, gfHi, currentBuehlmannTable);
+        break;
+        case 'TTS':
+            time = getBottomTimeFor(BY_TTS, time, depth, n2FractionBottom, n2FractionDeco, descentRate, ascentRate, maxPO2Deco, gfLo, gfHi, currentBuehlmannTable);
+        break;
+    }
     const plan = getDivePlan(depth, time, n2FractionBottom, n2FractionDeco, descentRate, ascentRate, maxPO2Deco, gfLo, gfHi, currentBuehlmannTable);
     const tableBody = document.getElementById('diveplan');
     tableBody.innerHTML = '';
@@ -375,13 +419,13 @@ function getNoStopTime() {
     if(errMsg) {
         errorContainer.textContent = errMsg;
         errorContainer.classList.remove('hidden');
-        document.getElementById('bottom_time').value = 0;
+        document.getElementById('time').value = 0;
         return;
     }
 
     const noStopTime = calculateNoStopTime(depth, n2Fraction, descentRate, ascentRate, gfLo, gfHi, currentBuehlmannTable);
-
-    document.getElementById('bottom_time').value = noStopTime;
+    document.getElementById('criteria').value = 'BOTTOM';
+    document.getElementById('time').value = noStopTime;
 }
 
 function getBestMix() {

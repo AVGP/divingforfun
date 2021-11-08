@@ -31,6 +31,7 @@
       <form>
           <fieldset>
               <legend>Dive profile</legend>
+              <p>Enter depth and one of either bottom time, deco stop time, runtime or time to surface</p>
               <table class="noborder">
                   <tr>
                       <td><label for="depth">Depth (m):</label></td>
@@ -39,13 +40,24 @@
                       </td>
                   </tr>
                   <tr>
-                      <td><label for="bottom_time">Bottom time (min):</label></td>
+                    <td><label for="criteria">Plan by:</label></td>
+                    <td>
+                        <select id="criteria">
+                          <option value="BOTTOM">Bottom time</option>
+                          <option value="DECO">Stop time</option>
+                          <option value="RUN">Run time</option>
+                          <option value="TTS">Time to surface</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                      <td><label for="time">Time (min):</label></td>
                       <td>
-                          <input id="bottom_time" type="number" min="1" max="999" maxlength="3">
+                          <input id="time" type="number" min="1" max="999" maxlength="3">
                           <button type="button" id="nostop">Get No-Stop limit</button>
                       </td>
                   </tr>
-              </table>
+            </table>
           </fieldset>
           <fieldset>
               <legend>Gases</legend>
