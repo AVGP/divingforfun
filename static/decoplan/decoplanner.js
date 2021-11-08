@@ -393,7 +393,7 @@ function planDive() {
 
     // get minimum gas
     const minimumGasVolume = getMinimumGasVolume(backupPlan, ascentRate);
-    document.getElementById('minimum_gas').textContent = minimumGasVolume;
+    document.getElementById('minimum_gas').textContent = Math.ceil(minimumGasVolume);
     document.getElementById('minimum_gas_bar').textContent = Math.max(MIN_RESERVE_PRESSURE, Math.ceil(minimumGasVolume / parseFloat(document.getElementById('tank_size').value)));
 
     resultsSection.classList.remove('hidden');
@@ -425,7 +425,7 @@ function getNoStopTime() {
     }
 
     const noStopTime = calculateNoStopTime(depth, n2Fraction, descentRate, ascentRate, gfLo, gfHi, currentBuehlmannTable);
-    document.getElementById('criteria').value = 'BOTTOM';
+    document.forms[0].criteria.value = 'BOTTOM';
     document.getElementById('time').value = noStopTime;
 }
 
