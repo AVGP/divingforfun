@@ -382,7 +382,7 @@ function planDive() {
     const bottomMixRow = document.getElementById('gas_template').content.cloneNode(true);
     gasPlanContainer.innerHTML = '';
     bottomMixRow.querySelectorAll('td')[0].textContent = Math.round(o2FractionBottom * 100) == 21 ? 'Air' : 'EAN' + Math.round(o2FractionBottom * 100);
-    bottomMixRow.querySelectorAll('td')[1].textContent = gasVolumesNeeded[0];
+    bottomMixRow.querySelectorAll('td')[1].textContent = Math.ceil(gasVolumesNeeded[0]);
     gasPlanContainer.appendChild(bottomMixRow);
     if(o2FractionBottom !== o2FractionDeco) {
         const decoMixRow = document.getElementById('gas_template').content.cloneNode(true);
