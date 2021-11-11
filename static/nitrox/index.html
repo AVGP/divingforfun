@@ -26,6 +26,14 @@
     
     th, td { padding: 0.5em; }
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
+  <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="nitrox.css">
+
 </head>
 
 <body>
@@ -46,41 +54,41 @@
   other mixture to a given end pressure.
   It only provides an approximation and you <strong>always have to measure the actual tank content</strong> after
   filling with an O2 analyzer!
-  <fieldset>
-    <legend>
-      Current tank info
-    </legend>
-    <p>
+
+  <details open>
+    <summary>Current tank content</summary>
+    <div class="input-group">
       <label>
-        Current tank pressure
-        <input id="startPressure" type="number" min="0" max="300" value="100" maxlength="3"> bar
+        Current tank pressure (bar)
+        <input id="startPressure" type="number" min="0" max="300" value="100" maxlength="3">
       </label>
-    </p>
-    <p>
+    </div>
+    <div class="input-group">
       <label>
-        Current oxygen content
-        <input id="startO2" value="21" type="number" min="0" max="100" step="1" maxlength="3"> %
+        Current oxygen content (%)
+        <input id="startO2" value="21" type="number" min="0" max="100" step="1" maxlength="3">
       </label>
-    </p>
-  </fieldset>
-  <fieldset>
-    <legend>Filling info</legend>
-    <p>
+    </div>
+  </details>
+  <details open>
+    <summary>Filling information</summary>
+    <div class="input-group">
       <label>
-        Final pressure
-        <input id="endPressure" type="number" value="210" min="0" max="300" step="5" maxlength="3"> bar
+        Final pressure (bar)
+        <input id="endPressure" type="number" value="210" min="0" max="300" step="5" maxlength="3">
       </label>
-    </p>
-    <p>
+    </div>
+    <div class="input-group">
       <label>
-        Filling oxygen content
-        <input id="fillO2" type="number" value="21" min="0" max="100" step="1" maxlength="3"> %
+        Filling oxygen content (%)
+        <input id="fillO2" type="number" value="21" min="0" max="100" step="1" maxlength="3">
       </label>
-    </p>
-  </fieldset>
+    </div>
+  </details>
+
   <button id="mix" type="button">Calculate</button>
   <h2>Resulting mix</h2>
-  <table border="1">
+  <table>
     <thead>
       <tr>
         <th>Oxygen content</th>
@@ -100,22 +108,22 @@
   <p>Calculate the equivalent depth of a Nitrox five when using air tables.</p>
   <p>
     <label>
-      Dive depth 
-      <input id="depth" type="number" value="30" min="1" max="999">m
+      Dive depth (m)
+      <input id="depth" type="number" value="30" min="1" max="999">
     </label>
   </p>
   <p>
     <label>
-      O2 fraction
-      <input id="ead-o2" type="number" value="32" min="1" max="99">%
+      O2 content (%)
+      <input id="ead-o2" type="number" value="32" min="1" max="99">
     </label>
   </p>
 <button id="ead" type="button">Calculate equivalent air depth</button>
 <p id="ead-result"></p>
 
   <script>
-   if(!location.href.match('/nitrox/$')) location.href = '/nitrox/';
-   if(!location.href.match('^https')) location.href = 'https://divingfor.fun/nitrox/';
+  if(!location.href.match('/nitrox/$')) location.href = '/nitrox/';
+  if(!location.href.match('^https')) location.href = 'https://divingfor.fun/nitrox/';
 
     document.querySelector('button#mix').addEventListener('click', function () {
       // get all the numbers from the DOM
