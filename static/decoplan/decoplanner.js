@@ -119,7 +119,7 @@ function getDivePlan(depth, bottomTime, n2FractionBottom, n2FractionDeco, descen
     const bottomMixO2 = Math.round((1 - n2FractionBottom) * 100);
     const decoMixO2 = Math.round((1 - n2FractionDeco) * 100);
     // add bottom time as first row in the dive plan
-    plan.push({depth: depth, stopTime: bottomTime, runTime: bottomTime, mix: (bottomMixO2 == 21 ? 'Air' : 'EAN' + bottomMixO2)});
+    plan.push({depth: depth, stopTime: bottomTime, runTime: bottomTime, o2Percent: bottomMixO2, mix: (bottomMixO2 == 21 ? 'Air' : 'EAN' + bottomMixO2)});
     let compartments = createCompartments(NUM_COMPARTMENTS, PN2_SURF); // surface N2 pressure
     // descent
     compartments = loadCompartmentsDuringDepthChange(compartments, n2FractionBottom, 0, depth, descentRate, buehlmannTable);
@@ -264,6 +264,42 @@ function getBottomTimeFor(criteria, maxTime, depth, n2FractionBottom, n2Fraction
     return time - 1; // we know that the current time violates the constraint
 }
 
+function getCnsToxicityForPlan(plan) {
+    // These come from https://www.shearwater.com/wp-content/uploads/2012/08/Oxygen_Toxicity_Calculations.pdf
+    const CNS_LIMITS = [
+        {m: -1800, b: 1800}, // 0.5 - <0.6 bar PO2
+        {m: -1500, b: 1620}, // 0.6 - <0.7 bar PO2
+        {m: -1200, b: 1410}, // 0.7 - <0.8 bar PO2
+        {m:  -900, b: 1170}, // 0.8 - <0.9 bar PO2
+        {m:  -600, b:  900}, // 0.9 - <1.1 bar PO2
+        {m:  -300, b:  570}, // 1.1 - <1.5 bar PO2
+        {m:  -750, b: 1245}, // 1.5 -  1.6 bar PO2
+    ];
+    // go through each stop and calculate the CNS limit percentage, then sum them up
+    return plan.map((stop) => {
+        const pO2 = (stop.o2Percent / 100) * depthToPressure(stop.depth);
+        if(pO2 < 0.5) {
+            return 0;
+        } else if(pO2 < 0.6) {
+            var {m,b} = CNS_LIMITS[0];
+        } else if(pO2 < 0.7) {
+            var {m,b} = CNS_LIMITS[1];
+        } else if(pO2 < 0.8) {
+            var {m,b} = CNS_LIMITS[2];
+        } else if(pO2 < 0.9) {
+            var {m,b} = CNS_LIMITS[3];
+        } else if(pO2 < 1.1) {
+            var {m,b} = CNS_LIMITS[4];
+        } else if(pO2 < 1.5) {
+            var {m,b} = CNS_LIMITS[5];
+        } else {
+            var {m,b} = CNS_LIMITS[6];
+        }
+        const cnsLimit = m * pO2 + b;
+        return stop.stopTime / cnsLimit;
+    }).reduce((sum, cnsPercent) => { return sum + cnsPercent }, 0);
+}
+
 // returns an error message to display or false if there is none.
 function getSettingErrors(depth, bottomTime, o2FractionBottom, o2FractionDeco, maxPO2Bottom, gfLo, gfHi) {
     // is bottom mix within limits for the depth?
@@ -373,6 +409,7 @@ function planDive() {
     // get dive info
     document.getElementById('optimal_bottom_ean').textContent = 'EAN' + Math.round(getOptimalBottomMixForDepth(depth, maxPO2Bottom) * 100);
     document.getElementById('optimal_deco_ean').textContent = 'EAN' + Math.round(getOptimalDecoMixFor(depth, time, n2FractionBottom, descentRate, ascentRate, maxPO2Deco, gfLo, gfHi, currentBuehlmannTable) * 100);
+    document.getElementById('cns_percent').textContent = Math.ceil(getCnsToxicityForPlan(plan) * 100);
     document.getElementById('no_stop').textContent = noStopTime + ' min';
     document.getElementById('total_stop_time').textContent = totalStopTime + ' min';
 
