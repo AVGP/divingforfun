@@ -409,7 +409,7 @@ function planDive() {
     // get dive info
     document.getElementById('optimal_bottom_ean').textContent = 'EAN' + Math.round(getOptimalBottomMixForDepth(depth, maxPO2Bottom) * 100);
     document.getElementById('optimal_deco_ean').textContent = 'EAN' + Math.round(getOptimalDecoMixFor(depth, time, n2FractionBottom, descentRate, ascentRate, maxPO2Deco, gfLo, gfHi, currentBuehlmannTable) * 100);
-    document.getElementById('cns_percent').textContent = Math.ceil(getCnsToxicityForPlan(plan) * 100);
+    document.getElementById('cns_percent').textContent = Math.ceil(getCnsToxicityForPlan(plan) * 100) + '%';
     document.getElementById('no_stop').textContent = noStopTime + ' min';
     document.getElementById('total_stop_time').textContent = totalStopTime + ' min';
 
