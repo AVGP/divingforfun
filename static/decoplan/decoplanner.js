@@ -41,6 +41,7 @@ const LN2 = 0.6931; // ln(2) used in calculating the halftime constant for each 
 const pH2O = 0.062; // in bar. See https://www.dekostop.ch/tauchen-know-how/tauchen-dekompression/248-buehlman-zh-l16-inspiratorischer-und-alveolarer-inertgasdruck
 const SAC_CONTINGENCY = 40; // in l/min. Two divers, 20 l/min each in case a gas emergency happens
 const MIN_RESERVE_PRESSURE = 50; // in bar. Minimal acceptable pressure in the tank.
+const MIN_WORKABLE_PRESSURE = 20; // a regulator works with at least 20 bar.
 // Constants that help us save some copy & paste later
 const BY_DECO_TIME = 1;
 const BY_RUN_TIME = 2;
@@ -487,7 +488,7 @@ function useBottomMixForDeco() {
 
 function updateMinimumGasPressure() {
     const minGasVolume = parseFloat(document.getElementById('minimum_gas').textContent);
-    document.getElementById('minimum_gas_bar').textContent = Math.max(MIN_RESERVE_PRESSURE, Math.ceil(minGasVolume / parseFloat(this.value)));
+    document.getElementById('minimum_gas_bar').textContent = MIN_WORKABLE_PRESSURE + Math.max(MIN_RESERVE_PRESSURE, Math.ceil(minGasVolume / parseFloat(this.value)));
 }
 
 document.getElementById('plan').addEventListener('click', planDive);
@@ -495,4 +496,4 @@ document.getElementById('nostop').addEventListener('click', getNoStopTime);
 document.getElementById('best_mix').addEventListener('click', getBestMix);
 document.getElementById('no_decomix').addEventListener('click', useBottomMixForDeco);
 document.getElementById('tank_size').addEventListener('change', updateMinimumGasPressure);
-//document.forms[0].table.addEventListener('change', changeAlgorithm);
+//document.forms[0].table.addEventListener('input', changeAlgorithm);
