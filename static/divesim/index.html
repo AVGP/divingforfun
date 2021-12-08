@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DiveSim</title>
+    <meta name="description" content="Simulate a dive and the corresponding decompression and gas loading of tissue compartments">
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Import the webpage's javascript file -->
+    <script src="deco.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>DiveSim</h1>
+    <details>
+        <summary>What is this?</summary>
+        <h2>What happens during a dive?</h2>
+        <p>
+            Our body absorbs inert gasses (such as nitrogen) from the blood into the tissues during a dive. When the pressure is reduced during ascent,
+            these absorbed inert gases are released into the blood stream again, leaving the body through the lungs.
+        </p>
+        <p>
+            Throughout the descent and bottom time, the absorbed inert gases increase their partial pressure until the tissues
+            are at an equilibrium (=equal partial pressure) in the breathing gas and tissues. 
+            When this equilibrium is reached, we call the tissue <em>saturated</em>.
+            Once the ambient pressure decreases, it is possible for the partial pressure of inert gas in the tissues to be bigger than the partial pressure in the breathing gas.
+            We call a tissue with a higher partial pressure of inert gas than the partial pressure in the breathing gas <em>supersaturated</em>.
+        </p>
+        <p>
+            Each tissue can only tolerate a limited amount of supersaturation. 
+            Beyond this limit the inert gas might form bubbles in the blood stream.
+            Bubbles can cause decompression sickness (DCS) and may lead to injury or death of the diver.
+        </p>
+        <p>
+            Scientists, like Bühlmann, have come up with theoretical models to estimate the tissue pressure of inert gases during dives.
+            With these models divers can plan their dives in a way that reduces the likelihood of bubbles forming and DSC happening.
+            The main problem of these models is that these models operate on theoretical tissue groups (called compartments) 
+            and ignore a bunch of known factors that can influence gas uptake and release.
+        </p>
+        <h2>What is DiveSim?</h2>
+        <p>
+            DiveSim lets you plan a dive and then see both the dive profile including decompression stops and the compartment tension.
+            It uses Bühlmann's ZHL16C model with 16 different compartments for this.
+            DiveSim currently only supports air and nitrox dives, so it only tracks nitrogen as an inert gas.
+        </p>
+        <p>
+            It shows two graphs:
+            <ol>
+                <li>The dive profile</li>
+                <li>The compartment tensions</li>
+            </ol>
+        </p>
+        <p>
+            In the dive profile, you see the planned dive in terms of depth and time. You might see decompression stops instead of a direct ascent to the surface, 
+            if needed to avoid supersaturation that is higher than the Bühlmann limits as modified by your chosen gradient factors.
+        </p>
+        <p>
+            In the compartment tensions graph, you see each of the 16 compartments and their inert gas pressure.
+            <ul>
+                <li>Each blue bar represents the inert gas pressure of one compartment with the fastest compartments on the left and the slowest compartment on the right.</li>
+                <li>The green area of the graph is the current ambient pressure at the currently displayed time in the dive.</li>
+                <li>The yellow area is the lowest tolerated inert gas pressure of all compartments at the current ambient pressure.</li>
+                <li>The red area is where the inert gas pressure exceeds the lowest Buehlmann limit of all compartments at the current ambient pressure.</li>
+                <li>The black line is the inert gas partial pressure of the breathing gas at the current depth.</li>
+                <li>Each grey line is 1 bar.</li>
+            </ul>
+        </p>
+    </details>
+    <details open>
+      <summary>Dive data</summary>
+      <p class="input-group">
+        <label class="col-half">
+          Depth (m): 
+          <input id="plan_depth" type="number" min="1" max="999" value="30">
+        </label>
+        <label class="col-half">
+          Total dive time (min):
+          <input id="plan_time" type="number" min="1" max="999" value="60">
+        </label>
+      </p>
+      <p>
+        <label class="col-third">
+          Breathing gas (O2 %):
+          <input id="plan_o2percent" type="number" min="1" max="100" value="21">
+        </label>
+        <label class="col-third">
+          GF Low (%)
+          <input id="plan_gflo" type="number" min="1" max="100" value="50">
+        </label>
+        <label class="col-third">
+          GF High (%):
+          <input id="plan_gfhi" type="number" min="1" max="100" value="80">
+        </label>
+      </p>
+      <p class="input-group">
+        <label class="col-half">
+          Descent rate (m/min): 
+          <input id="plan_descrate" type="number" min="1" max="999" value="15">
+        </label>
+        <label class="col-half">
+          Ascent rate (m/min):
+          <input id="plan_ascrate" type="number" min="1" max="999" value="9">
+        </label>
+      </p>
+
+    </details>
+    <details open>
+      <summary>Simulation</summary>
+      <p class="error" id="error_msg">
+        
+      </p>
+      <div id="results">
+        <div class="input-group row">
+          <input id="sim_time" type="range" min="0" max="60" value="0">
+          <p id="info"></p>
+        </div>
+        <canvas id="sim_profile" width="300" height="300"></canvas>
+        <canvas id="sim_compartments" width="300" height="300"></canvas>        
+      </div>
+    </details>
+  </body>
+</html>
