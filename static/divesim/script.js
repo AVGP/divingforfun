@@ -116,28 +116,23 @@ function updateCompartmentGraph() {
   const ppN2 = (1 - (parseFloat(planO2Percentage.value) / 100)) * currentAmbientPressure;
   const compartments = graphData[currentTime].compartments;
   const PIXEL_PER_BAR = CANVAS_HEIGHT / (maxAmbientPressure * 100);
-  
-  // find lowest tolerated compartment pressure...
-  let lowestToleratedPressure = maxAmbientPressure;
-  for(let c=0;c<NUM_COMPARTMENTS;c++) {
-    const toleratedPressure = getToleratedPressureForCompartmentAtDepth(graphData[currentTime].depth, COMPARTMENTS_ZHL16C[c]);
-    if(toleratedPressure < lowestToleratedPressure) {
-      lowestToleratedPressure = toleratedPressure;
-    }
-  }
 
   // clear graph
   compartmentGraph.fillStyle = 'white';
   compartmentGraph.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-  //draw critical oversaturation zone
-  compartmentGraph.fillStyle = '#ff8888';
-  compartmentGraph.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT - lowestToleratedPressure * 100 * PIXEL_PER_BAR);
-  
-  // draw oversaturation zone
-  compartmentGraph.fillStyle = '#ffff88';
-  compartmentGraph.fillRect(0, CANVAS_HEIGHT - lowestToleratedPressure * 100 * PIXEL_PER_BAR, CANVAS_WIDTH, CANVAS_HEIGHT - (currentAmbientPressure * 100 * PIXEL_PER_BAR));
-  
+  const barWidth = (CANVAS_WIDTH / (NUM_COMPARTMENTS*2));
+  for(let c=0; c<NUM_COMPARTMENTS; c++) {
+    const toleratedPressure = getToleratedPressureForCompartmentAtDepth(graphData[currentTime].depth, COMPARTMENTS_ZHL16C[c]);
+    //draw critical supersaturation zone
+    compartmentGraph.fillStyle = '#ff8888';
+    compartmentGraph.fillRect(c * 2 * barWidth, 0, (c+1) * 2 * barWidth + 1, CANVAS_HEIGHT - toleratedPressure * 100 * PIXEL_PER_BAR);
+    
+    // draw supersaturation zone
+    compartmentGraph.fillStyle = '#ffff88';
+    compartmentGraph.fillRect(0, CANVAS_HEIGHT - toleratedPressure * 100 * PIXEL_PER_BAR, CANVAS_WIDTH, CANVAS_HEIGHT - (currentAmbientPressure * 100 * PIXEL_PER_BAR));
+  }
+
   // draw ambient pressure zone
   compartmentGraph.fillStyle = '#88ff88';
   compartmentGraph.fillRect(0, CANVAS_HEIGHT - (currentAmbientPressure * 100 * PIXEL_PER_BAR), CANVAS_WIDTH, currentAmbientPressure * 100 * PIXEL_PER_BAR);
@@ -152,7 +147,6 @@ function updateCompartmentGraph() {
   }
   
   // draw compartments
-  const barWidth = (CANVAS_WIDTH / (NUM_COMPARTMENTS*2));
   compartmentGraph.fillStyle = 'blue';
   for(let i=0;i<NUM_COMPARTMENTS;i++) {
     compartmentGraph.fillRect(barWidth * 1.5 + ((i * barWidth) + (i-1)*barWidth), CANVAS_HEIGHT - PIXEL_PER_BAR * (compartments[i] * 100), barWidth, PIXEL_PER_BAR * (compartments[i] * 100));
@@ -244,6 +238,17 @@ document.querySelectorAll('input').forEach((inpEl) => inpEl.addEventListener('in
   results.classList.remove('hidden');
   errorMsg.textContent = '';
   graphData = simulateDive(parseFloat(planDepth.value), parseFloat(planTime.value));
-  info.textContent = `Time: ${currentTime}min Depth: ${graphData[currentTime].depth}m`
-  updateGraphs()
+  const currentAmbientPressure = depthToPressure(graphData[currentTime].depth);
+  /*
+  const maxSaturationPercent = Array.from(
+    {length: NUM_COMPARTMENTS}, 
+    (v, i) => getToleratedPressureForCompartmentAtDepth(graphData[currentTime].depth, COMPARTMENTS_ZHL16C[i])
+  ).reduce((prevMaxSat, currentToleratedPressure, currentIndex) => {
+    return Math.max(prevMaxSat, (graphData[currentTime].compartments[currentIndex] - currentAmbientPressure) / (currentToleratedPressure - currentAmbientPressure));
+  }, 0) * 100;*/
+  info.textContent = `
+    Time: ${currentTime}min
+    Depth: ${graphData[currentTime].depth}m
+  `;
+  updateGraphs();
 }));

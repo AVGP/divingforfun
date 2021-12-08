@@ -7,11 +7,11 @@
     <meta name="description" content="Simulate a dive and the corresponding decompression and gas loading of tissue compartments">
 
     <!-- Import the webpage's stylesheet -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/divesim/style.css" />
 
     <!-- Import the webpage's javascript file -->
-    <script src="deco.js" defer></script>
-    <script src="script.js" defer></script>
+    <script src="/divesim/deco.js" defer></script>
+    <script src="divesim/script.js" defer></script>
   </head>
   <body>
     <h1>DiveSim</h1>
@@ -19,26 +19,31 @@
         <summary>What is this?</summary>
         <h2>What happens during a dive?</h2>
         <p>
-            Our body absorbs inert gasses (such as nitrogen) from the blood into the tissues during a dive. When the pressure is reduced during ascent,
+            Our body absorbs inert gases (such as nitrogen) from the blood into the tissues during a dive. When the pressure is reduced during ascent,
             these absorbed inert gases are released into the blood stream again, leaving the body through the lungs.
         </p>
         <p>
             Throughout the descent and bottom time, the absorbed inert gases increase their partial pressure until the tissues
             are at an equilibrium (=equal partial pressure) in the breathing gas and tissues. 
             When this equilibrium is reached, we call the tissue <em>saturated</em>.
-            Once the ambient pressure decreases, it is possible for the partial pressure of inert gas in the tissues to be bigger than the partial pressure in the breathing gas.
+            The process of inert gas diffusing from the blood stream into the tissues is called <em>on-gassing</em>.
+            Once the ambient pressure decreases during ascent, it is possible for the partial pressure of inert gas in the tissues to be bigger than the partial pressure in the breathing gas.
             We call a tissue with a higher partial pressure of inert gas than the partial pressure in the breathing gas <em>supersaturated</em>.
         </p>
         <p>
             Each tissue can only tolerate a limited amount of supersaturation. 
             Beyond this limit the inert gas might form bubbles in the blood stream.
-            Bubbles can cause decompression sickness (DCS) and may lead to injury or death of the diver.
+            Bubbles can cause <a href="https://en.wikipedia.org/wiki/Decompression_sickness">decompression sickness</a> (DCS) and may lead to injury or death of the diver.
+            This is why divers may have to make intermediate stops during ascent to allow the inert gas to leave the tissues. 
+            The process of inert gas diffusing out of the tissues into the blood stream and then being exhaled by the diver is called <em>off-gassing</em>.
         </p>
         <p>
-            Scientists, like Bühlmann, have come up with theoretical models to estimate the tissue pressure of inert gases during dives.
-            With these models divers can plan their dives in a way that reduces the likelihood of bubbles forming and DSC happening.
+            Scientists, like <a href="https://en.wikipedia.org/wiki/Albert_A._B%C3%BChlmann">Professor Bühlmann</a>, have come up with <a href="https://en.wikipedia.org/wiki/Decompression_equipment#Decompression_algorithms">decompression algorithms</a> which are theoretical models to estimate the tissue pressure of inert gases during dives.
+            With these models divers can plan their dives in a way that reduces the likelihood of bubbles forming and DCS ocurring.
             The main problem of these models is that these models operate on theoretical tissue groups (called compartments) 
-            and ignore a bunch of known factors that can influence gas uptake and release.
+            and ignore a bunch of known factors that can influence gas uptake and release. 
+            Different divers may vary greatly in how they on- and off-gas during a dive.
+            Even the same diver may have different on- and off-gassing behaviour, depending on factors such as temperature, hydration, exercise during and before the dive and others.
         </p>
         <h2>What is DiveSim?</h2>
         <p>
@@ -50,7 +55,7 @@
             It shows two graphs:
             <ol>
                 <li>The dive profile</li>
-                <li>The compartment tensions</li>
+                <li>The compartment graph</li>
             </ol>
         </p>
         <p>
@@ -58,12 +63,12 @@
             if needed to avoid supersaturation that is higher than the Bühlmann limits as modified by your chosen gradient factors.
         </p>
         <p>
-            In the compartment tensions graph, you see each of the 16 compartments and their inert gas pressure.
+            In the compartment graph, you see each of the 16 compartments and their inert gas pressure.
             <ul>
                 <li>Each blue bar represents the inert gas pressure of one compartment with the fastest compartments on the left and the slowest compartment on the right.</li>
                 <li>The green area of the graph is the current ambient pressure at the currently displayed time in the dive.</li>
-                <li>The yellow area is the lowest tolerated inert gas pressure of all compartments at the current ambient pressure.</li>
-                <li>The red area is where the inert gas pressure exceeds the lowest Buehlmann limit of all compartments at the current ambient pressure.</li>
+                <li>The yellow area is the tolerated inert gas pressure of each compartment at the current ambient pressure.</li>
+                <li>The red area is where the inert gas pressure exceeds the Buehlmann limit of each compartment at the current ambient pressure.</li>
                 <li>The black line is the inert gas partial pressure of the breathing gas at the current depth.</li>
                 <li>Each grey line is 1 bar.</li>
             </ul>
