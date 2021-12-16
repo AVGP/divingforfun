@@ -11,10 +11,11 @@
 
     <!-- Import the webpage's javascript file -->
     <script src="/divesim/deco.js" defer></script>
-    <script src="divesim/script.js" defer></script>
+    <script src="/divesim/script.js" defer></script>
   </head>
   <body>
     <h1>DiveSim</h1>
+    <p>Version 1.1.0</p>
     <details>
         <summary>What is this?</summary>
         <h2>What happens during a dive?</h2>
@@ -76,38 +77,44 @@
     </details>
     <details open>
       <summary>Dive data</summary>
+      <!--p class="input-group">
+          <label>
+            Import profile
+            <input id="plan_profile" class="plan" type="file" accept="text/csv">
+          </label>
+      </p-->
       <p class="input-group">
         <label class="col-half">
           Depth (m): 
-          <input id="plan_depth" type="number" min="1" max="999" value="30">
+          <input id="plan_depth" class="plan" type="number" min="1" max="999" value="30">
         </label>
         <label class="col-half">
           Total dive time (min):
-          <input id="plan_time" type="number" min="1" max="999" value="60">
+          <input id="plan_time" class="plan" type="number" min="1" max="999" value="60">
         </label>
       </p>
       <p>
         <label class="col-third">
           Breathing gas (O2 %):
-          <input id="plan_o2percent" type="number" min="1" max="100" value="21">
+          <input id="plan_o2percent" class="plan" type="number" min="1" max="100" value="21">
         </label>
         <label class="col-third">
           GF Low (%)
-          <input id="plan_gflo" type="number" min="1" max="100" value="50">
+          <input id="plan_gflo" class="plan" type="number" min="1" max="100" value="50">
         </label>
         <label class="col-third">
           GF High (%):
-          <input id="plan_gfhi" type="number" min="1" max="100" value="80">
+          <input id="plan_gfhi" class="plan" type="number" min="1" max="100" value="80">
         </label>
       </p>
       <p class="input-group">
         <label class="col-half">
           Descent rate (m/min): 
-          <input id="plan_descrate" type="number" min="1" max="999" value="15">
+          <input id="plan_descrate" class="plan" type="number" min="1" max="999" value="15">
         </label>
         <label class="col-half">
           Ascent rate (m/min):
-          <input id="plan_ascrate" type="number" min="1" max="999" value="9">
+          <input id="plan_ascrate" class="plan" type="number" min="1" max="999" value="9">
         </label>
       </p>
 

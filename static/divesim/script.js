@@ -101,15 +101,15 @@ function simulateDive(depth, time) {
   return snapshots;
 }
 
-let graphData = simulateDive(parseFloat(planDepth.value), parseFloat(planTime.value));
-updateGraphs();
+let diveData = simulateDive(parseFloat(planDepth.value), parseFloat(planTime.value));
+updateGraphs(diveData);
 
-function updateGraphs() {
-  updateCompartmentGraph();
-  updateDiveProfileGraph();
+function updateGraphs(graphData) {
+  updateCompartmentGraph(graphData);
+  updateDiveProfileGraph(graphData);
 }
 
-function updateCompartmentGraph() {
+function updateCompartmentGraph(graphData) {
   const currentTime = parseFloat(simTimeSlider.value);
   const currentAmbientPressure = depthToPressure(graphData[currentTime].depth);
   const maxAmbientPressure = depthToPressure(parseFloat(planDepth.value)) + 1;
@@ -158,7 +158,7 @@ function updateCompartmentGraph() {
   compartmentGraph.stroke();
 }
 
-function updateDiveProfileGraph() {
+function updateDiveProfileGraph(graphData) {
   const currentTime = parseFloat(simTimeSlider.value);
   const currentDepth = graphData[currentTime].depth;
   const diveTime = parseFloat(planTime.value);
@@ -220,8 +220,45 @@ simTimeInput.addEventListener('input', () => {
   simTimeSlider.value = simTimeInput.value;
 })
 */
+/*
+document.getElementById('plan_profile').addEventListener('change', function importCSV() {
+    const blob = new Blob([this.files[0]], {type: 'text/csv'});
+    const reader = new FileReader();
+    reader.onload = function() {
+        let maxDepth = 0;
+        const depthPoints = reader.result
+            .split('\n')
+            .slice(1)
+            .map((line) => {
+                if(line.split(',').length < 5) return;
+                const runtimeMins = line.split(',')[3].replace(/"/g, '');
+                const runtimeSecs = parseFloat(runtimeMins.split(':')[0]) * 60 + parseFloat(runtimeMins.split(':')[1]);
+                const depth = parseFloat(line.split(',')[4].replace(/"/g, ''));
+                if(depth > maxDepth) maxDepth = depth;
+                return {seconds: runtimeSecs, depth: depth};
+            })
+            .filter((dataPoint) => dataPoint);
+        const deltaMinutes = (depthPoints[0].seconds - depthPoints[1].seconds) / 60;
+        const n2Fraction = (1 - (parseFloat(planO2Percentage.value) / 100));
+        const compartments = createCompartments(16, 0.75);
+        const snapshots = Array.from({length: depthPoints.length});
+        for(let i=0; i<depthPoints.length-1; i++) {
+            loadCompartmentsAtConstantDepth(compartments, depthPoints[i].depth, n2Fraction, 1);
+            snapshots[i] = { depth: depthPoints[i].depth, compartments: [].concat(compartments) };
+        }
+        simTimeSlider.value = 0;
+        simTimeSlider.setAttribute('max', depthPoints.length-2);
+        planDepth.value = maxDepth + 1;
+        planTime.value = depthPoints.length-2;
+        diveData = snapshots;
+        console.log(diveData.length);
+        updateGraphs(snapshots);
+    }
+    reader.readAsText(blob);
+});
+*/
 
-document.querySelectorAll('input').forEach((inpEl) => inpEl.addEventListener('input', () => {
+document.querySelectorAll('.plan').forEach((inpEl) => inpEl.addEventListener('input', () => {
   const depth = parseFloat(planDepth.value);
   const time = parseFloat(planTime.value);
   const descentRate = parseFloat(planDescRate.value);
@@ -237,8 +274,9 @@ document.querySelectorAll('input').forEach((inpEl) => inpEl.addEventListener('in
   
   results.classList.remove('hidden');
   errorMsg.textContent = '';
-  graphData = simulateDive(parseFloat(planDepth.value), parseFloat(planTime.value));
-  const currentAmbientPressure = depthToPressure(graphData[currentTime].depth);
+  const data = simulateDive(parseFloat(planDepth.value), parseFloat(planTime.value));
+  diveData = data;
+  //const currentAmbientPressure = depthToPressure(data[currentTime].depth);
   /*
   const maxSaturationPercent = Array.from(
     {length: NUM_COMPARTMENTS}, 
@@ -248,7 +286,17 @@ document.querySelectorAll('input').forEach((inpEl) => inpEl.addEventListener('in
   }, 0) * 100;*/
   info.textContent = `
     Time: ${currentTime}min
-    Depth: ${graphData[currentTime].depth}m
+    Depth: ${data[currentTime].depth}m
   `;
-  updateGraphs();
+  updateGraphs(data);
 }));
+
+document.getElementById('sim_time').addEventListener('input', () => {
+    // ??
+    const currentTime = parseFloat(simTimeSlider.value);
+    info.textContent = `
+        Time: ${currentTime}min
+        Depth: ${diveData[currentTime].depth}m
+    `;
+    updateGraphs(diveData);
+});
