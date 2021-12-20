@@ -14,7 +14,9 @@ Seestrasse 60, 8704 Herrliberg
 
 ## Summary
 
-
+ Difficulty  | max. Depth | Notes
+ ------------|------------|------------------------------------------------------------------------
+ Easy/Medium | 40m        | Lots of fish in summer and autumn, a "statue" at 28m
 
 ## Dive plan
 
