@@ -1,0 +1,428 @@
+/******************************************************************************
+START Glitch hello-app default styles
+
+The styles in this section do some minimal CSS resets, set default fonts and 
+colors, and handle the layout for our footer and "Remix on Glitch" button. If
+you're new to CSS they may seem a little complicated, but you can scroll down
+to this section's matching END comment to see page-specific styles.
+******************************************************************************/
+
+
+/* 
+  The style rules specify elements by type and by attributes such as class and ID
+  Each section indicates an element or elements, then lists the style properties to apply
+  See if you can cross-reference the rules in this file with the elements in index.html
+*/
+
+/* Our default values set as CSS variables */
+:root {
+    --color-bg: #69F7BE;
+    --color-text-main: #000000;
+    --color-primary: #FFFF00;
+    --wrapper-height: 87vh;
+    --image-max-width: 300px;
+    --image-margin: 3rem;
+    --font-family: "HK Grotesk";
+    --font-family-header: "HK Grotesk";
+  }
+  
+  /* Basic page style resets */
+  * {
+    box-sizing: border-box;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  
+  /* Import fonts */
+  @font-face {
+    font-family: HK Grotesk;
+    src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+      format("opentype");
+  }
+  @font-face {
+    font-family: HK Grotesk;
+    font-weight: bold;
+    src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+      format("opentype");
+  }
+  
+  /* Our remix on glitch button */
+  .btn--remix {
+    font-family: HK Grotesk;
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    line-height: 1rem;
+    font-weight: 500;
+    height: 2.75rem;
+    align-items: center;
+    cursor: pointer;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #000;
+    white-space: nowrap;
+    margin-left: auto;
+  }
+  .btn--remix img {
+    margin-right: 0.5rem;
+  }
+  .btn--remix:hover {
+    background-color: #D0FFF1;
+  }
+  
+  /* Navigation grid */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem auto 0;
+    padding: 1rem 0 0.75rem 0;
+    width: 100%;
+    flex-wrap: wrap;
+    border-top: 4px solid #fff;
+  }
+  
+  .footer a:not(.btn--remix):link,
+  a:not(.btn--remix):visited {
+    font-family: HK Grotesk;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.1rem;
+    color: #000;
+    text-decoration: none;
+    border-style: none;
+  }
+  .footer a:hover {
+    background: var(--color-primary);
+  }
+  
+  .footer .links {
+    padding: 0.5rem 1rem 1.5rem;
+    white-space: nowrap;
+  }
+  
+  .divider {
+    padding: 0 1rem;
+  }
+  /******************************************************************************
+  END Glitch hello-app default styles
+  ******************************************************************************/
+  
+  body {
+    font-family: HK Grotesk;
+    background-color: var(--color-bg);
+  }
+  
+  /* Page structure */
+  .wrapper {
+    min-height: var(--wrapper-height);
+    display: grid;
+    place-items: center;
+    margin: 0 1rem;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Very light scaling for our illustration */
+  .title {
+    color: #2800FF;
+    font-family: HK Grotesk;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 105%;
+    margin: 0;
+  }
+  
+  /* Very light scaling for our illustration */
+  .illustration {
+    max-width: 100%;
+    max-height: var(--image-max-width);
+    margin-top: var(--image-margin);
+  }
+  
+  /* Instructions */
+  .instructions {
+    margin: 1rem auto 0;
+  }
+  
+  /* Button - Add it from the README instructions */
+  button,
+  input {
+    font-family: inherit;
+    font-size: 100%;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    transition: 500ms;
+  }
+  
+  /* Subheading */
+  h2 {
+    color: #2800FF;
+  }
+  
+  /* Interactive image */
+  .illustration:active {
+    transform: translateY(5px);
+  }
+  
+  /* Button dip
+  - Toggling this class on and off will move it down and up again
+  - The button transition property above determines the speed of the translate (500ms)
+  */
+  .dipped {
+    transform: translateY(5px);
+  }
+  
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  body {
+    padding: 1em;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #333;
+    background-color: #f8f8f8;
+  }
+  details {
+      margin: 1em 0;
+  }
+  table, td, th {
+      border: 1px solid #326c86;
+  }
+  td, th {
+      padding: 0.5em;
+  }
+  legend, h3, summary {
+    color: #2a70cc;
+    font-weight: bold;
+    font-size: 1.15rem;
+  }
+  input,
+  button,
+  input[type="radio"] + label,
+  input[type="checkbox"] + label:before,
+  select option,
+  select {
+    width: 100%;
+    padding: 1em;
+    line-height: 1.4;
+    background-color: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    -webkit-transition: 0.35s ease-in-out;
+    -moz-transition: 0.35s ease-in-out;
+    -o-transition: 0.35s ease-in-out;
+    transition: 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+  }
+  button {
+    margin: 1em 0;
+    color: #fff;
+    background-color: #3b86a8;
+    border-color: #326c86;  
+  }
+  input:focus {
+    outline: 0;
+    border-color: #326c86;
+  }
+  input:focus + .input-icon i {
+    color: #5cc7f8;
+  }
+  input:focus + .input-icon:after {
+    border-right-color: #3b86a8;
+  }
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="radio"] + label,
+  select {
+    width: 50%;
+    text-align: center;
+    float: left;
+    border-radius: 0;
+  }
+  input[type="radio"] + label:first-of-type {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  input[type="radio"] + label:last-of-type {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  input[type="radio"] + label i {
+    padding-right: 0.4em;
+  }
+  input[type="radio"]:checked + label,
+  input:checked + label:before,
+  select:focus,
+  select:active {
+    background-color: #3b86a8;
+    color: #fff;
+    border-color: #326c86;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"] + label {
+    position: relative;
+    display: block;
+    padding-left: 1.6em;
+  }
+  input[type="checkbox"] + label:before {
+    position: absolute;
+    top: 0.2em;
+    left: 0;
+    display: block;
+    width: 1em;
+    height: 1em;
+    padding: 0;
+    content: "";
+  }
+  input[type="checkbox"] + label:after {
+    position: absolute;
+    top: 0.45em;
+    left: 0.2em;
+    font-size: 0.8em;
+    color: #fff;
+    opacity: 0;
+    font-family: FontAwesome;
+    content: "\f00c";
+  }
+  input:checked + label:after {
+    opacity: 1;
+  }
+  input[type="color"] {
+    padding: 1px;
+  }
+  select {
+    height: 3.4em;
+    line-height: 2;
+  }
+  select:first-of-type {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  select:last-of-type {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  select:focus,
+  select:active {
+    outline: 0;
+  }
+  select option {
+    background-color: #3b86a8;
+    color: #fff;
+  }
+  .input-group {
+    margin-bottom: 1em;
+    zoom: 1;
+  }
+  .input-group:before,
+  .input-group:after {
+    content: "";
+    display: table;
+  }
+  .input-group:after {
+    clear: both;
+  }
+  .input-group-icon {
+    position: relative;
+  }
+  .input-group-icon input {
+    padding-left: 4.4em;
+  }
+  .input-group-icon .input-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3.4em;
+    height: 3.4em;
+    line-height: 3.4em;
+    text-align: center;
+    pointer-events: none;
+  }
+  .input-group-icon .input-icon:after {
+    position: absolute;
+    top: 0.6em;
+    bottom: 0.6em;
+    left: 3.4em;
+    display: block;
+    border-right: 1px solid #e5e5e5;
+    content: "";
+    -webkit-transition: 0.35s ease-in-out;
+    -moz-transition: 0.35s ease-in-out;
+    -o-transition: 0.35s ease-in-out;
+    transition: 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+  }
+  .input-group-icon .input-icon i {
+    -webkit-transition: 0.35s ease-in-out;
+    -moz-transition: 0.35s ease-in-out;
+    -o-transition: 0.35s ease-in-out;
+    transition: 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+  }
+  .container {
+    max-width: 38em;
+    padding: 1em 3em 2em 3em;
+    margin: 0em auto;
+    background-color: #fff;
+    border-radius: 4.2px;
+    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+  }
+  .row {
+    zoom: 1;
+  }
+  .row:before,
+  .row:after {
+    content: "";
+    display: table;
+  }
+  .row:after {
+    clear: both;
+  }
+  .col-half {
+    padding-right: 10px;
+    float: left;
+    width: 50%;
+  }
+  .col-half:last-of-type {
+    padding-right: 0;
+  }
+  .col-third {
+    padding-right: 10px;
+    float: left;
+    width: 33.33333333%;
+  }
+  .col-third:last-of-type {
+    padding-right: 0;
+  }
+  @media only screen and (max-width: 540px) {
+    .col-half {
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+  
+  .error {
+    font-weight: bold;
+    color: red;
+  }
+  
+  .hidden {
+    display: none;
+  }

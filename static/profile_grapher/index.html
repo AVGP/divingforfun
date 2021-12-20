@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dive Profile Grapher</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
+        <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/profile_grapher/style.css">
+    </head>
+    <body>
+        <h1>Profile Grapher</h1>
+        <details open>
+            <summary>Visualisation settings</summary>
+            <div class="input-group">
+                <label>
+                    Dive Profiles (CSV):
+                    <input id="profile" type="file" accept="text/csv">
+                </label>    
+            </div>
+            <div class="input-group">
+                <label class="col-half">
+                    Image width:
+                    <input id="width" type="number" value="600">
+                </label>
+                <label class="col-half">
+                    Image height:
+                    <input id="height" type="number" value="300">
+                </label>
+            </div>
+            <div class="input-group">
+                <label class="col-half">
+                    Start color:
+                    <input id="gradientstart" type="color" value="#0088cc">
+                </label>
+                <label class="col-half">
+                    End color:
+                    <input id="gradientstop" type="color" value="#00aaff">
+                </label>
+            </div>
+            <button>Update graph</button>
+        </details>
+        <canvas width="600" height="300"></canvas>
+        <script src="/profile_grapher/script.js"></script>
+    </body>
+</html>
