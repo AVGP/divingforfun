@@ -75,14 +75,24 @@
             </ul>
         </p>
     </details>
-    <details open>
-      <summary>Dive data</summary>
-      <!--p class="input-group">
-          <label>
-            Import profile
-            <input id="plan_profile" class="plan" type="file" accept="text/csv">
-          </label>
-      </p-->
+    <details open id="real_profile">
+      <summary>Upload dive profile</summary>
+      <p>You can upload a dive profile CSV from Subsurface desktop here</p>
+      <p class="input-group">
+        <label>
+          Import profile
+          <input id="profile_file" class="profile" type="file" accept="text/csv">
+        </label>
+      </p>
+      <p class="input-group">
+        <label>
+          Breathing gas O2%
+          <input id="profile_o2" class="profile" type="number" value="21">
+        </label>
+      </p>
+    </details>
+    <details id="virtual_profile">
+      <summary>Enter dive profile</summary>
       <p class="input-group">
         <label class="col-half">
           Depth (m): 
@@ -116,8 +126,7 @@
           Ascent rate (m/min):
           <input id="plan_ascrate" class="plan" type="number" min="1" max="999" value="9">
         </label>
-      </p>
-
+      </p>        
     </details>
     <details open>
       <summary>Simulation</summary>

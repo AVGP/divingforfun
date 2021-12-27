@@ -220,8 +220,8 @@ simTimeInput.addEventListener('input', () => {
   simTimeSlider.value = simTimeInput.value;
 })
 */
-/*
-document.getElementById('plan_profile').addEventListener('change', function importCSV() {
+/* */
+document.getElementById('profile_file').addEventListener('change', function importCSV() {
     const blob = new Blob([this.files[0]], {type: 'text/csv'});
     const reader = new FileReader();
     reader.onload = function() {
@@ -238,25 +238,25 @@ document.getElementById('plan_profile').addEventListener('change', function impo
                 return {seconds: runtimeSecs, depth: depth};
             })
             .filter((dataPoint) => dataPoint);
-        const deltaMinutes = (depthPoints[0].seconds - depthPoints[1].seconds) / 60;
+        const pointsPerMinute = 60 / (depthPoints[1].seconds - depthPoints[0].seconds);
         const n2Fraction = (1 - (parseFloat(planO2Percentage.value) / 100));
         const compartments = createCompartments(16, 0.75);
-        const snapshots = Array.from({length: depthPoints.length});
-        for(let i=0; i<depthPoints.length-1; i++) {
-            loadCompartmentsAtConstantDepth(compartments, depthPoints[i].depth, n2Fraction, 1);
-            snapshots[i] = { depth: depthPoints[i].depth, compartments: [].concat(compartments) };
+        const snapshots = Array.from({length: Math.ceil(depthPoints.length/pointsPerMinute)});
+        for(let i=0; i<depthPoints.length-1; i+=pointsPerMinute) {
+            const avgDepth = Math.round(depthPoints.slice(i, i+6).reduce((sum, val) => sum+val.depth, 0) / pointsPerMinute);
+            loadCompartmentsAtConstantDepth(compartments, avgDepth, n2Fraction, 1);
+            snapshots[Math.floor(i/pointsPerMinute)] = { depth: avgDepth, compartments: [].concat(compartments) };
         }
         simTimeSlider.value = 0;
-        simTimeSlider.setAttribute('max', depthPoints.length-2);
+        simTimeSlider.setAttribute('max', Math.floor((depthPoints.length-2) / pointsPerMinute));
         planDepth.value = maxDepth + 1;
-        planTime.value = depthPoints.length-2;
+        planTime.value = Math.floor((depthPoints.length-2) / pointsPerMinute);
         diveData = snapshots;
-        console.log(diveData.length);
         updateGraphs(snapshots);
     }
     reader.readAsText(blob);
 });
-*/
+/**/
 
 document.querySelectorAll('.plan').forEach((inpEl) => inpEl.addEventListener('input', () => {
   const depth = parseFloat(planDepth.value);
@@ -300,3 +300,19 @@ document.getElementById('sim_time').addEventListener('input', () => {
     `;
     updateGraphs(diveData);
 });
+
+const profilePlanDialog = document.getElementById('virtual_profile');
+const profileUploadDialog = document.getElementById('real_profile');
+
+profilePlanDialog.addEventListener('click', togglePlanDialogs);
+profileUploadDialog.addEventListener('click', togglePlanDialogs);
+
+function togglePlanDialogs() {
+  if(profileUploadDialog.hasAttribute('open')) {
+    profileUploadDialog.removeAttribute('open');
+    profilePlanDialog.setAttribute('open', 'open');
+  } else {
+    profileUploadDialog.setAttribute('open', 'open');
+    profilePlanDialog.removeAttribute('open');
+  }
+}
