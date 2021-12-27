@@ -39,3 +39,9 @@ identifier = "tools"
 name = "Tools"
 url = "tools"
 weight = 7
+
+[[main]]
+identifier = "patreon"
+name = "Become a supporter"
+url = "https://patreon.com/divingforfun"
+weight = 8
