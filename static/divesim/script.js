@@ -307,12 +307,18 @@ const profileUploadDialog = document.getElementById('real_profile');
 profilePlanDialog.addEventListener('click', togglePlanDialogs);
 profileUploadDialog.addEventListener('click', togglePlanDialogs);
 
-function togglePlanDialogs() {
-  if(profileUploadDialog.hasAttribute('open')) {
-    profileUploadDialog.removeAttribute('open');
-    profilePlanDialog.setAttribute('open', 'open');
+function togglePlanDialogs(evt) {
+  if(evt.target.id !== profilePlanDialog.id && evt.target.id !== profileUploadDialog.id) return;
+  
+  const clickedContainer = this;
+  const otherContainer = this.id === profilePlanDialog.id ? profileUploadDialog : profilePlanDialog;
+  if(clickedContainer.hasAttribute('open')) {
+    clickedContainer.removeAttribute('open');
+    otherContainer.setAttribute('open', 'open');
   } else {
-    profileUploadDialog.setAttribute('open', 'open');
-    profilePlanDialog.removeAttribute('open');
+    otherContainer.removeAttribute('open');
+    clickedContainer.setAttribute('open', 'open');
   }
+  evt.preventDefault();
+  return false;
 }
