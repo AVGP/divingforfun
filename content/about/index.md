@@ -25,6 +25,9 @@ Then, in 2019, I began diving more actively. I took my advanced open water diver
 
 ![On my way to a dry suit dive](/img/about/on-my-way-to-a-dry-suit-dive.jpg)
 
+2021 I became a PADI Divemaster and began technical diving.
+2022 I got my TDI Helitrox certification with Tom Steiner at [plongee](https://plongee.ch) near Vevey and am currently training to become a PADI instructor.
+
 I collect dive photos and reports on this website, so have fun exploring with me :)
 
 ## My dive gear
@@ -32,22 +35,22 @@ I collect dive photos and reports on this website, so have fun exploring with me
 ### Backmount
 - 2x Apeks MTX-RC
 - XDeep Zen NX Wing
-- 12l or 15l mono steel tank
+- 12l or 15l mono steel tanks
 
 ### Sidemount
-- 2x Apeks DST + XTX
+- 2x Apeks DST + XTX50
 - XDeep Stealth 2.0 Tec
 - 2x 12l steel or 2x 7l alu tanks
 
 ### General gear
-- Fourth Element Argonaut Stealth 2.0 drysuit
+- SFTech TNT Pro custom drysuit
 - Apeks RK3 fins
 - Cressi Big Eyes Evolution mask
 - Shearwater Perdix AI computer
 - TillyTec Maxi uni lamp with 4200-70000-10 LED head
+- Light &amp; Motion Sola Dive S/F lamp
 
 ### Camera gear
 - GoPro Hero7 Black camera
-- Light &amp; Motion Sola Dive S/F lamp
-- Sony a6600 in a Nauticam housing
+- Sony alpha6600 in a Nauticam housing
 - 2x X-Adventure M8000 video lights
