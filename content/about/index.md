@@ -26,7 +26,7 @@ Then, in 2019, I began diving more actively. I took my advanced open water diver
 ![On my way to a dry suit dive](/img/about/on-my-way-to-a-dry-suit-dive.jpg)
 
 2021 I became a PADI Divemaster and began technical diving.
-2022 I got my TDI Helitrox certification with Tom Steiner at [plongee](https://plongee.ch) near Vevey and am currently training to become a PADI instructor.
+2022 I got my TDI Helitrox certification with Tom Steiner at [plongee](https://plongee.ch) near Vevey and became a PADI instructor.
 
 I collect dive photos and reports on this website, so have fun exploring with me :)
 
