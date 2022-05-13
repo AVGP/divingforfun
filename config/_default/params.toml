@@ -26,7 +26,7 @@ enableListSidebarTitles = true
 
 # whoami
 myname = "Martin Splitt"
-whoami = "PADI Divemaster"
+whoami = "PADI Instructor"
 useGravatar = false
 location = "Zurich, Switzerland"
 
@@ -46,3 +46,4 @@ themeOptions = ["light", "dark"]
 [socialOptions] # if set, social icons will show up.
   twitter = "https://twitter.com/g33konaut"
   instagram = "https://instagram.com/the_splitti"
+  youtube = "https://www.youtube.com/channel/UCPMAwX1S-O5iOqczHVcOH4Q"
