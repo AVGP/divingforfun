@@ -63,3 +63,21 @@ Swimming back upstream, we were gliding along the canyon wall on the German side
       }
     }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Diving at Alte Zollbruecke Rheinau",
+  "description": "For our last dive in 2021 we chose the dive site "Alte Zollbrücke" in Rheinau. While visibility was not as great as it often is, we still had fun and discovered a few new things, like the new christmas tree and the nativity diorama. #diving #dive #switzerland #underwater #scubadiving",
+  "thumbnailUrl": [
+        "https://divingfor.fun/gallery/alte-zollbruecke-2020/algae.jpg",
+        "https://divingfor.fun/gallery/alte-zollbruecke-2020/annette-at-the-bridge.jpg",
+        "https://divingfor.fun/gallery/alte-zollbruecke-2020/susanne-and-martin.jpg"
+    ],
+  "uploadDate": "2021-12-31T08:00:00+08:00",
+  "duration": "PT4M51S",
+  "contentUrl": "https://youtu.be/anYXVCfNvxA",
+  "embedUrl": "https://youtu.be/anYXVCfNvxA"
+}
+</script>
