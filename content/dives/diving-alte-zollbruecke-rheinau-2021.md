@@ -32,3 +32,34 @@ Starting from the stairs on the German side, we dove upstream, through the brige
 The river then turns into a canyon landscape underwater where we found the freshly-installed christmas tree, a nativity scene and the rotting remains of the Halloween pumpkins.
 
 Swimming back upstream, we were gliding along the canyon wall on the German side, ended with our safety stop and went back to the exit.
+
+<script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://divingfor.fun/dives/diving-alte-zollbruecke-rheinau-2021"
+      },
+      "headline": "Diving Alte Zollbrücke Rheinau - last dive 2021",
+      "image": [
+        "https://divingfor.fun/gallery/alte-zollbruecke-2020/algae.jpg",
+        "https://divingfor.fun/gallery/alte-zollbruecke-2020/annette-at-the-bridge.jpg",
+        "https://divingfor.fun/gallery/alte-zollbruecke-2020/susanne-and-martin.jpg"
+      ],
+      "datePublished": "2021-12-31T08:20:00+08:00",
+      "author": {
+        "@type": "Person",
+        "name": "Martin Splitt",
+        "url": "https://divingfor.fun/about"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Diving For Fun",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://divingfor.fun/logo.png"
+        }
+      }
+    }
+</script>
