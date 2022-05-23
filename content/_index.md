@@ -20,3 +20,5 @@ header:
     subtitleFontSize: 16
     spaceBetweenTitleSubtitle: 20
 ---
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6482509731144927" crossorigin="anonymous"></script>
