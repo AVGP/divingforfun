@@ -7,7 +7,7 @@ type: about
 
 ![Martin Splitt diving](/logo.png)
 
-Welcome to my dive blog! I'm a PADI Divemaster, dive nerd and I make dive tools, videos and photos.
+Welcome to my dive blog! I'm a PADI Master Scuba Diver Trainer, dive nerd and I make dive tools, videos and photos.
 
 ## Becoming a diver
 
@@ -25,12 +25,20 @@ Then, in 2019, I began diving more actively. I took my advanced open water diver
 
 ![On my way to a dry suit dive](/img/about/on-my-way-to-a-dry-suit-dive.jpg)
 
-2021 I became a PADI Divemaster and began technical diving.
-2022 I got my TDI Helitrox certification with Tom Steiner at [plongee](https://plongee.ch) near Vevey and became a PADI instructor.
+- 2021 I became a PADI Divemaster and began technical diving.
+- 2022 I got my TDI Helitrox certification with Tom Steiner at [plongee](https://plongee.ch) near Vevey and became a PADI instructor.
+- 2023 I became TDI Intro To Cave certified and became an IANTD Advanced Recreational Trimix CCR plus on the Divesoft Liberty CCR.
+
+![PADI Elite Instructor Bronze](/img/padi-elite-22.png)
 
 I collect dive photos and reports on this website, so have fun exploring with me :)
 
 ## My dive gear
+
+### CCR
+
+- Liberty Heavy 2x3L with ODA
+- Salamandre Oxygen CCR
 
 ### Backmount
 - 2x Apeks MTX-RC
@@ -46,11 +54,10 @@ I collect dive photos and reports on this website, so have fun exploring with me
 - SFTech TNT Pro custom drysuit
 - Apeks RK3 fins
 - Cressi Big Eyes Evolution mask
-- Shearwater Perdix AI computer
+- Shearwater Perdix 2 computer
 - TillyTec Maxi uni lamp with 4200-70000-10 LED head
-- Light &amp; Motion Sola Dive S/F lamp
 
 ### Camera gear
-- GoPro Hero7 Black camera
+- GoPro Hero 11 camera
 - Sony alpha6600 in a Nauticam housing
 - 2x X-Adventure M8000 video lights
