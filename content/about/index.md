@@ -29,9 +29,11 @@ Then, in 2019, I began diving more actively. I took my advanced open water diver
 - 2022 I got my TDI Helitrox certification with Tom Steiner at [plongee](https://plongee.ch) near Vevey and became a PADI instructor.
 - 2023 I became TDI Intro To Cave certified and became an IANTD Advanced Recreational Trimix CCR plus on the Divesoft Liberty CCR.
 
-![PADI Elite Instructor Bronze](/img/about/padi-elite-22.png)
+<img alt="PADI Elite Instructor Bronze 2022" src="/img/about/padi-elite-22.png" width="250">
 
 I collect dive photos and reports on this website, so have fun exploring with me :)
+
+![Sidemount diving at the MV Karwela in Gozo](/img/about/sidemount-diving-in-gozo.jpg)
 
 ## My dive gear
 
