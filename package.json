@@ -1,0 +1,23 @@
+{
+  "name": "divingfor-fun",
+  "version": "1.0.0",
+  "description": "Martin Splitt - SDI/TDI Dive Instructor in Zurich, Switzerland",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "keywords": [
+    "diving",
+    "instructor",
+    "sdi",
+    "tdi",
+    "switzerland",
+    "zurich",
+    "courses"
+  ],
+  "author": "Martin Splitt",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

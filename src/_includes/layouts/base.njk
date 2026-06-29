@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Metadata -->
+  <title>{{ title }} | Martin Splitt - SDI/TDI Dive Instructor</title>
+  <meta name="description" content="{{ description or 'Professional SDI & TDI Scuba Diving Instruction and Guided Dives in Zurich, Switzerland. Learn drysuit diving, technical diving, and refine buoyancy.' }}">
+  <meta name="author" content="Martin Splitt">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  
+  <!-- Favicon placeholder or styling -->
+  <style>
+    /* Inline styles or fallback options if necessary */
+  </style>
+</head>
+<body class="deep-sea-theme">
+  
+  <!-- Sticky Header -->
+  {% include "components/header.njk" %}
+  
+  <!-- Main Content Wrapper -->
+  <main id="main-content" class="content-wrapper">
+    {{ content | safe }}
+  </main>
+  
+  <!-- Footer -->
+  {% include "components/footer.njk" %}
+  
+  <!-- Scripts -->
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

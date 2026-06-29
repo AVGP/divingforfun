@@ -1,0 +1,25 @@
+<header id="main-header" class="site-header">
+  <div class="header-container">
+    <a href="/" class="logo-link" id="logo-link">
+      <span class="logo-name">Martin Splitt</span>
+      <span class="logo-tagline">SDI / TDI Dive Instructor</span>
+    </a>
+    
+    <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    
+    <nav class="nav-menu" id="nav-menu-container">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}" id="nav-home">Home</a></li>
+        <li class="nav-item"><a href="/courses/beginners/" class="nav-link {% if page.url == '/courses/beginners/' %}active{% endif %}" id="nav-beginners">Beginners</a></li>
+        <li class="nav-item"><a href="/courses/advanced/" class="nav-link {% if page.url == '/courses/advanced/' %}active{% endif %}" id="nav-advanced">Advanced & Tech</a></li>
+        <li class="nav-item"><a href="/guided-dives/" class="nav-link {% if page.url == '/guided-dives/' %}active{% endif %}" id="nav-guided">Guided Dives</a></li>
+        <li class="nav-item"><a href="/coaching/" class="nav-link {% if page.url == '/coaching/' %}active{% endif %}" id="nav-coaching">Coaching</a></li>
+        <li class="nav-item"><a href="/contact/" class="nav-link btn btn-primary {% if page.url == '/contact/' %}active{% endif %}" id="nav-contact">Book Dives</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
