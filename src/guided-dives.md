@@ -40,7 +40,7 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
       <div class="card" id="site-zuerichsee-zugersee">
         <span class="card-icon">🌊</span>
         <h3 class="card-title">Zuerichsee & Zugersee</h3>
-        <p>Excellent shore entries, night diving, and silt navigation. Zuerichsee offers local treasures like the submerged camel statue and rich nocturnal life (burbots). Zugersee features steep silt slopes, ideal for practicing technical training skills.</p>
+        <p>Excellent shore entries, night diving, and silt navigation. Zuerichsee offers local treasures like sunken structures, northern pikes, and rich nocturnal life (burbots). Zugersee features steep silt slopes, ideal for practicing technical training skills.</p>
         <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem; margin-top: 1rem;">
           <strong>Difficulty:</strong> Beginner to Advanced<br>
           <strong>Diving Style:</strong> Shore entries, night dives, silt flats

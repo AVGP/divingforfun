@@ -31,9 +31,9 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
     </div>
     <div class="bio-visual">
       <div class="split-frame">
-        <img src="/assets/images/camel-statue.jpg" alt="Submerged camel statue in Lake Zurich" class="split-img">
+        <img src="/assets/images/pike.jpg" alt="Northern pike resting in Lake Zurich" class="split-img">
       </div>
-      <p style="font-size: 0.85rem; text-align: center; margin-top: 0.75rem; font-style: italic;">Lake Zurich's famous submerged camel statue—one of the many treasures we visit on guided dives.</p>
+      <p style="font-size: 0.85rem; text-align: center; margin-top: 0.75rem; font-style: italic;">A northern pike (Hecht) hovering near branches in the shallows of Lake Zurich.</p>
     </div>
   </div>
 </section>
