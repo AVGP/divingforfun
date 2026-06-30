@@ -61,7 +61,7 @@ description: "Recreational scuba diving courses in Zurich, Switzerland. SDI Open
         <p>A comprehensive course covering primary care (CPR) and secondary care (First Aid) for adults, children, and infants. Necessary prerequisite for the SDI Rescue Diver course and highly recommended for all active divers.</p>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; padding: 1rem; background: rgba(2, 6, 23, 0.4); border-radius: 8px;">
-          <div><strong>Price:</strong> Contact for pricing / Bundle options</div>
+          <div><strong>Price:</strong> 250 CHF <span style="font-size: 0.8rem; color: var(--color-primary); display: block;">(Bundle: 350 CHF with O2)</span></div>
           <div><strong>Prerequisites:</strong> None (open to divers and non-divers)</div>
           <div><strong>Duration:</strong> 1 Day (classroom & practical scenarios)</div>
           <div><strong>Certification:</strong> FRTI (First Response Training International)</div>
@@ -78,7 +78,7 @@ description: "Recreational scuba diving courses in Zurich, Switzerland. SDI Open
         <p>Administering 100% emergency oxygen is the most critical first aid step for decompression illness (DCI) and other scuba diving injuries. Learn to identify diving illnesses and safely administer emergency oxygen.</p>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; padding: 1rem; background: rgba(2, 6, 23, 0.4); border-radius: 8px;">
-          <div><strong>Price:</strong> Contact for pricing / Bundle options</div>
+          <div><strong>Price:</strong> 150 CHF <span style="font-size: 0.8rem; color: var(--color-primary); display: block;">(Bundle: 350 CHF with CPR/FA)</span></div>
           <div><strong>Prerequisites:</strong> None (open to divers and non-divers)</div>
           <div><strong>Duration:</strong> Half Day (classroom & practical runs)</div>
           <div><strong>Focus:</strong> Oxygen systems, demand valves, pocket masks</div>
