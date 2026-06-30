@@ -13,7 +13,7 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
     <p class="hero-subtitle">Professional SDI & TDI Scuba instruction, technical dive training, and guided cold-water adventures in Switzerland.</p>
     <div class="hero-actions">
       <a href="/courses/recreational/" class="btn btn-primary" id="hero-btn-beginners">Start Diving</a>
-      <a href="/courses/advanced/" class="btn btn-secondary" id="hero-btn-advanced">Go Technical</a>
+      <a href="/courses/technical/" class="btn btn-secondary" id="hero-btn-advanced">Go Technical</a>
     </div>
   </div>
 </section>
@@ -58,7 +58,7 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
         <span class="card-meta">TDI Courses</span>
         <h3 class="card-title">Technical Diving</h3>
         <p>Cross the threshold into technical diving. Learn advanced nitrox, planned decompression, helitrox mixtures, and specialized gear configs.</p>
-        <a href="/courses/advanced/" class="card-link" id="card-link-advanced">Technical Diving &rarr;</a>
+        <a href="/courses/technical/" class="card-link" id="card-link-advanced">Technical Diving &rarr;</a>
       </div>
 
       <!-- Card 3: Guided Dives -->
