@@ -36,12 +36,13 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
     <h2 class="text-center">Featured Swiss Dive Sites</h2>
     <div class="grid-3" style="margin-top: 3rem;">
       
-      <!-- Destination 1: Zuerichsee -->
+      <!-- Destination 1: Zürichsee -->
       <div class="card" id="site-zuerichsee">
         <span class="card-icon">🌊</span>
-        <h3 class="card-title">Zuerichsee</h3>
-        <p>Excellent shore entries, night diving, and silt navigation. Zuerichsee offers local treasures like sunken structures, northern pikes, and rich nocturnal life (burbots).</p>
-        <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem; margin-top: 1rem;">
+        <h3 class="card-title">Zürichsee</h3>
+        <p>Lake Zürich offers a variety from deep walls to shallow dive sites with crayfish, fish, and interesting things to see. Excellent shore entries, easy night diving access, and rich nocturnal life (burbots).</p>
+        <img src="/assets/images/zuerichsee-fish.jpg" alt="A sunfish swimming near rocks in Zürichsee" style="width: 100%; border-radius: 6px; margin: 1rem 0; border: 1px solid var(--border-light); aspect-ratio: 4/3; object-fit: cover;">
+        <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem;">
           <strong>Difficulty:</strong> Beginner-friendly<br>
           <strong>Diving Style:</strong> Shore entries, night dives, silt flats
         </div>
