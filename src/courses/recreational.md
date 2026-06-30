@@ -19,6 +19,8 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
     
     <div class="courses-list">
       
+      <div class="grid-2" style="margin-bottom: 3rem; gap: 3rem;">
+      
       <!-- Open Water Diver -->
       <div class="card" style="margin-bottom: 3rem;" id="course-owd">
         <span class="card-meta">SDI Entry Level</span>
@@ -86,6 +88,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
         
         <h4 style="color: var(--color-primary); margin-top: 1rem; margin-bottom: 0.5rem;">What you will learn:</h4>
         <p>Recognizing decompression sickness and arterial gas embolism, assembly and disassembly of emergency oxygen equipment, using demand inhalator valves, constant flow masks, and pocket masks on breathing and non-breathing divers.</p>
+      </div>
       </div>
 
       <!-- Specialties Grid -->

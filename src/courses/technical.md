@@ -16,7 +16,7 @@ description: "Technical diving courses in Switzerland. TDI Advanced Nitrox, Deco
       <p style="margin-bottom: 0; color: var(--color-text-main);"><strong>Please note:</strong> I do not provide any diving gear. All technical equipment (backplates, wings, technical regulators, double cylinders, decompression bottles, drysuits, harnesses, etc.) must be rented or owned by the student for the duration of the course. I am happy to advise you on local rental options and gear configuration choices.</p>
     </div>
 
-    <div class="courses-list">
+    <div class="courses-list grid-2" style="gap: 3rem;">
       
       <!-- Course 1 -->
       <div class="card" style="margin-bottom: 3rem; border-color: rgba(255, 82, 82, 0.3);" id="course-adv-nitrox">
