@@ -57,7 +57,7 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
         <span class="card-icon">🧪</span>
         <span class="card-meta">TDI Courses</span>
         <h3 class="card-title">Technical Diving</h3>
-        <p>Cross the threshold into technical diving. Learn advanced nitrox, planned decompression, helitrox mixtures, and specialized gear configs.</p>
+        <p>Cross the threshold into technical diving. Learn advanced nitrox, planned decompression, and specialized gear configs.</p>
         <a href="/courses/technical/" class="card-link" id="card-link-advanced">Technical Diving &rarr;</a>
       </div>
 
