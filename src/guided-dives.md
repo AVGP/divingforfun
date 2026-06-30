@@ -47,12 +47,13 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
         </div>
       </div>
 
-      <!-- Destination 2: Walensee & Vierwaldstaettersee -->
+      <!-- Destination 2: Walensee & Vierwaldstättersee -->
       <div class="card" id="site-walensee-vierwaldstaettersee">
         <span class="card-icon">🏔️</span>
-        <h3 class="card-title">Walensee & Vierwaldstaettersee</h3>
-        <p>Lake Walen features massive, sheer vertical rock walls plummeting straight down into the cold deep water. Lake Lucerne (Vierwaldstaettersee) offers dramatic underwater topography, deep dropoffs, and complex freshwater walls.</p>
-        <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem; margin-top: 1rem;">
+        <h3 class="card-title">Walensee & Vierwaldstättersee</h3>
+        <p>Lake Walen features massive vertical rock walls plummeting straight down. Lake Lucerne (Vierwaldstättersee) offers dramatic underwater topography, deep dropoffs, and encounters with local toad migrations over green weed beds.</p>
+        <img src="/assets/images/lucerne-toad.jpg" alt="A common toad walking over bottom vegetation in Lake Lucerne" style="width: 100%; border-radius: 6px; margin: 1rem 0; border: 1px solid var(--border-light); aspect-ratio: 4/3; object-fit: cover;">
+        <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem;">
           <strong>Difficulty:</strong> Advanced to Technical<br>
           <strong>Diving Style:</strong> Wall diving, deep cold water
         </div>
