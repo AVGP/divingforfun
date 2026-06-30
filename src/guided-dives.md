@@ -62,8 +62,9 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
       <div class="card" id="site-rhein">
         <span class="card-icon">⚡</span>
         <h3 class="card-title">Rhein (Rhine River)</h3>
-        <p>Experience the thrill of river diving in the Rhine. We handle drift diving techniques, active current navigation, and local safety rules. Drift along the river bottom, observing fishes resting behind rocks and experiencing the flow.</p>
-        <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem; margin-top: 1rem;">
+        <p>Experience the thrill of river diving in the Rhine. We handle drift diving techniques, active current navigation, and local safety rules. Drift along the river bottom, observing massive Wels catfish (Wels) resting behind rocks and experiencing the flow.</p>
+        <img src="/assets/images/rhine-catfish.jpg" alt="A large Wels catfish swimming over the riverbed in the Rhine" style="width: 100%; border-radius: 6px; margin: 1rem 0; border: 1px solid var(--border-light); aspect-ratio: 4/3; object-fit: cover;">
+        <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem;">
           <strong>Difficulty:</strong> Advanced (Excellent buoyancy & drysuit required)<br>
           <strong>Diving Style:</strong> Active drift diving, river navigation
         </div>
