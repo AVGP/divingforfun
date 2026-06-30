@@ -31,16 +31,33 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
     </div>
     <div class="bio-visual">
       <div class="split-frame">
-        <img src="/assets/images/pike.jpg" alt="Northern pike resting in Lake Zurich" class="split-img">
+        <img src="/assets/images/personal-phone.jpg" alt="Martin Splitt diving underwater" class="split-img">
       </div>
-      <p style="font-size: 0.85rem; text-align: center; margin-top: 0.75rem; font-style: italic;">A northern pike (Hecht) hovering near branches in the shallows of Lake Zurich.</p>
+      <p style="font-size: 0.85rem; text-align: center; margin-top: 0.75rem; font-style: italic;">Martin Splitt calling from the deep in Lake Zurich.</p>
     </div>
   </div>
 </section>
 
-<section class="section section-alt" id="diving-with-me">
+<section class="section section-alt" id="swiss-diving-overview">
   <div class="container grid-2" style="align-items: center; gap: 4rem;">
-    <div class="photo-collage-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+    <div class="text-content">
+      <span class="hero-tag" style="border-color: var(--color-primary); color: var(--color-primary); background: rgba(0, 240, 255, 0.02);">Freshwater Wonders</span>
+      <h2>Diving in Switzerland</h2>
+      <p style="font-size: 1.15rem; margin-bottom: 1.5rem;">We have a diverse, beautiful underwater world right at our doorstep, and we can explore and enjoy it all year round.</p>
+      <p>From crystal-clear alpine rivers cutting through ancient granite, to deep lake walls plunging into silent depths, Swiss waters offer stunning freshwater environments. Best of all, we can explore and enjoy it all year round—whether it's spotting massive pike in the summer weed beds, or diving on silent wrecks in crystal-clear winter visibility.</p>
+    </div>
+    <div class="visual-frame">
+      <div class="split-frame">
+        <img src="/assets/images/pike.jpg" alt="A northern pike hovering in Lake Zurich" class="split-img">
+      </div>
+      <p style="font-size: 0.85rem; text-align: center; margin-top: 0.75rem; font-style: italic;">A northern pike (Hecht) hovering in the clear shallows of Lake Zurich.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="diving-with-me">
+  <div class="container grid-2" style="align-items: center; gap: 4rem;">
+    <div class="photo-collage-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
       <div class="split-frame">
         <img src="/assets/images/personal-ok.jpg" alt="Martin giving an OK sign underwater" class="split-img" style="aspect-ratio: 1/1;">
       </div>
@@ -49,9 +66,6 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
       </div>
       <div class="split-frame">
         <img src="/assets/images/personal-selfie.jpg" alt="Happy buddy selfie diving in Swiss lake" class="split-img" style="aspect-ratio: 1/1;">
-      </div>
-      <div class="split-frame">
-        <img src="/assets/images/personal-phone.jpg" alt="Diver at a submerged telephone booth" class="split-img" style="aspect-ratio: 1/1;">
       </div>
     </div>
     <div>
@@ -66,11 +80,11 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
         </li>
         <li style="margin-bottom: 0.5rem; position: relative; padding-left: 1.5rem;">
           <span style="position: absolute; left: 0; color: var(--color-primary);">✓</span>
-          <strong>Drysuit Systems</strong> ensuring warm, dry, and relaxed dives even in deep alpine lakes.
+          <strong>Drysuit</strong> ensuring warm, dry, and relaxed dives even in deep alpine lakes.
         </li>
         <li style="margin-bottom: 0.5rem; position: relative; padding-left: 1.5rem;">
           <span style="position: absolute; left: 0; color: var(--color-primary);">✓</span>
-          <strong>Nitrox Gas Mixtures</strong> for extended bottom times and reduced decompression fatigue.
+          <strong>Nitrox Gas Mixtures</strong> for more safety margins or a bit of extra bottom time.
         </li>
         <li style="margin-bottom: 0.5rem; position: relative; padding-left: 1.5rem;">
           <span style="position: absolute; left: 0; color: var(--color-primary);">✓</span>
@@ -82,7 +96,7 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
   </div>
 </section>
 
-<section class="section" id="services-section">
+<section class="section section-alt" id="services-section">
   <div class="container">
     <h2 class="text-center">Diving Offerings</h2>
     <div class="grid-3" style="margin-top: 3rem;">
@@ -127,7 +141,7 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
   </div>
 </section>
 
-<section class="section section-alt" id="swiss-waters">
+<section class="section" id="swiss-waters">
   <div class="container grid-2">
     <div class="visual-frame">
       <div class="split-frame">
@@ -136,7 +150,7 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
       <p style="font-size: 0.85rem; text-align: center; margin-top: 0.75rem; font-style: italic;">A Burbot (Trüsche) resting on the bottom of Lake Zurich. Night diving is perfect to spot them!</p>
     </div>
     <div class="text-content">
-      <h2>Diving in Switzerland</h2>
+      <h2>Alpine Diving Conditions</h2>
       <p>Switzerland is home to some of the most spectacular freshwater diving in the world. However, diving in alpine lakes and fast-flowing rivers requires specialized knowledge. Temperatures range from 4°C at depth year-round to 20°C+ at the surface in summer, making <strong>dry suit diving</strong> the local standard.</p>
       <p>From the sheer walls of Walensee to the ancient stone formations of the Verzasca river, local diving is challenging but incredibly rewarding. With proper training, you will unlock year-round access to these freshwater wonders.</p>
       <a href="/guided-dives/" class="btn btn-secondary" id="btn-explore-swiss">Swiss Dive Guide</a>
@@ -144,7 +158,7 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
   </div>
 </section>
 
-<section class="section text-center" id="cta-section">
+<section class="section section-alt text-center" id="cta-section">
   <div class="container" style="max-width: 600px; margin: 0 auto;">
     <h2>Ready to Dive?</h2>
     <p style="font-size: 1.15rem; margin-bottom: 2rem;">Get in touch to discuss your training goals, book a guided dive, or arrange a personalized coaching session in Zurich or surrounding areas.</p>
