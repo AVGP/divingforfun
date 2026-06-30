@@ -99,8 +99,7 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
 <section class="section section-alt" id="services-section">
   <div class="container">
     <h2 class="text-center">Diving Offerings</h2>
-    <div class="grid-2" style="margin-top: 3rem;">
-      
+    <div class="grid-2-cards" style="margin-top: 3rem;">
       <!-- Card 1: Beginners -->
       <div class="card" id="card-beginners">
         <span class="card-icon">🤿</span>
@@ -108,27 +107,21 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
         <h3 class="card-title">Beginners & Advanced</h3>
         <p>Start your journey with the SDI Open Water Diver course or adapt to local conditions with our Dry Suit and Advanced Adventure specialties.</p>
         <a href="/courses/recreational/" class="card-link" id="card-link-beginners">Learn to Dive &rarr;</a>
-      </div>
-
-      <!-- Card 2: Technical -->
+      </div><!-- Card 2: Technical -->
       <div class="card" id="card-advanced">
         <span class="card-icon">🧪</span>
         <span class="card-meta">TDI Courses</span>
         <h3 class="card-title">Technical Diving</h3>
         <p>Cross the threshold into technical diving. Learn advanced nitrox, planned decompression, and specialized gear configs.</p>
         <a href="/courses/technical/" class="card-link" id="card-link-advanced">Technical Diving &rarr;</a>
-      </div>
-
-      <!-- Card 3: Guided Dives -->
+      </div><!-- Card 3: Guided Dives -->
       <div class="card" id="card-guided">
         <span class="card-icon">🗺️</span>
         <span class="card-meta">Guided Trips</span>
         <h3 class="card-title">Swiss Guided Dives</h3>
         <p>Explore Swiss lakes (Zurich, Zug, Walen, Lucerne) and the Rhine, or request custom excursions to Ticino rivers (Verzasca & Maggia).</p>
         <a href="/guided-dives/" class="card-link" id="card-link-guided">Explore Sites &rarr;</a>
-      </div>
-
-      <!-- Card 4: Coaching (Centered below or part of grid) -->
+      </div><!-- Card 4: Coaching (Centered below or part of grid) -->
       <div class="card" id="card-coaching">
         <span class="card-icon">📈</span>
         <span class="card-meta">Skill Refinement</span>
@@ -136,7 +129,6 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
         <p>Personalized sessions focusing on buoyancy control, clean trim, propulsion techniques (frog kick, back kick), and gear configuration tuning.</p>
         <a href="/coaching/" class="card-link" id="card-link-coaching">Refine Skills &rarr;</a>
       </div>
-
     </div>
   </div>
 </section>

@@ -35,7 +35,6 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
   <div class="container">
     <h2 class="text-center">Featured Swiss Dive Sites</h2>
     <div class="grid-3" style="margin-top: 3rem;">
-      
       <!-- Destination 1: Zürichsee -->
       <div class="card" id="site-zuerichsee">
         <span class="card-icon">🌊</span>
@@ -46,9 +45,7 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
           <strong>Difficulty:</strong> Beginner-friendly<br>
           <strong>Diving Style:</strong> Shore entries, night dives, silt flats
         </div>
-      </div>
-
-      <!-- Destination 2: Zugersee -->
+      </div><!-- Destination 2: Zugersee -->
       <div class="card" id="site-zugersee">
         <span class="card-icon">🐠</span>
         <h3 class="card-title">Zugersee</h3>
@@ -58,9 +55,7 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
           <strong>Difficulty:</strong> Beginner-friendly<br>
           <strong>Diving Style:</strong> Steep wall diving, fish schools, technical drills
         </div>
-      </div>
-
-      <!-- Destination 3: Walensee -->
+      </div><!-- Destination 3: Walensee -->
       <div class="card" id="site-walensee">
         <span class="card-icon">🏔️</span>
         <h3 class="card-title">Walensee</h3>
@@ -70,9 +65,7 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
           <strong>Difficulty:</strong> Advanced<br>
           <strong>Diving Style:</strong> Deep wall diving, cold water, wreck exploration
         </div>
-      </div>
-
-      <!-- Destination 4: Vierwaldstättersee -->
+      </div><!-- Destination 4: Vierwaldstättersee -->
       <div class="card" id="site-vierwaldstaettersee">
         <span class="card-icon">🌲</span>
         <h3 class="card-title">Vierwaldstättersee (Lake Lucerne)</h3>
@@ -82,9 +75,7 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
           <strong>Difficulty:</strong> Beginner-friendly<br>
           <strong>Diving Style:</strong> Wall diving, macro photography, dropoffs
         </div>
-      </div>
-
-      <!-- Destination 5: Rhein (Rhine River) -->
+      </div><!-- Destination 5: Rhein (Rhine River) -->
       <div class="card" id="site-rhein">
         <span class="card-icon">⚡</span>
         <h3 class="card-title">Rhein (Rhine River)</h3>
@@ -112,23 +103,19 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
   <div class="container" style="max-width: 800px; margin: 0 auto;">
     <h2 class="text-center">Guided Dive Pricing</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
-      
       <!-- Single Dive -->
       <div class="card" style="text-align: center; border-color: var(--border-light);" id="pricing-single-dive">
         <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🐠</span>
         <h3 class="card-title" style="margin-bottom: 0.5rem;">Single Guided Dive</h3>
         <p style="font-size: 2rem; font-weight: 700; color: var(--color-primary); font-family: var(--font-family-display); margin-bottom: 1rem;">200 CHF</p>
         <p style="font-size: 0.9rem; margin-bottom: 0; color: var(--color-text-muted);">Perfect for local site checkouts, a specific night dive, or a quick excursion in Lake Zurich.</p>
-      </div>
-
-      <!-- Two Dives same day -->
+      </div><!-- Two Dives same day -->
       <div class="card" style="text-align: center; border-color: var(--color-secondary); box-shadow: var(--shadow-neon);" id="pricing-double-dive">
         <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🚤</span>
         <h3 class="card-title" style="margin-bottom: 0.5rem;">Two Dives (Same Day)</h3>
         <p style="font-size: 2rem; font-weight: 700; color: var(--color-primary); font-family: var(--font-family-display); margin-bottom: 1rem;">350 CHF</p>
         <p style="font-size: 0.9rem; margin-bottom: 0; color: var(--color-text-muted);">Our most popular option. Ideal for double wall dives in Walensee or Lake Lucerne, or a full day of drift diving in the Rhine.</p>
       </div>
-      
     </div>
     
     <!-- Gear Policy note -->

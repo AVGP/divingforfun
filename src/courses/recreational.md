@@ -19,14 +19,12 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
     
     <div class="courses-list">
       
-      <div class="grid-2" style="margin-bottom: 3rem; gap: 3rem;">
-      
+      <div class="grid-2-cards" style="margin-bottom: 3rem; gap: 3rem;">
       <!-- Open Water Diver -->
-      <div class="card" style="margin-bottom: 3rem;" id="course-owd">
+      <div class="card" id="course-owd">
         <span class="card-meta">SDI Entry Level</span>
         <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">SDI Open Water Scuba Diver</h3>
         <p>The Open Water Scuba Diver course is your gateway to underwater exploration. This certification is globally recognized and allows you to dive down to 18 meters with a buddy.</p>
-        
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; padding: 1rem; background: rgba(2, 6, 23, 0.4); border-radius: 8px;">
           <div><strong>Price:</strong> 1600 CHF</div>
           <div><strong>Prerequisites:</strong> Min. age 10, medical clearance</div>
@@ -34,58 +32,45 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           <div><strong>Max Depth:</strong> 18 meters</div>
           <div><strong>Equipment:</strong> Rented or owned (not provided)</div>
         </div>
-        
         <h4 style="color: var(--color-primary); margin-top: 1rem; margin-bottom: 0.5rem;">What you will learn:</h4>
         <p>You will complete online academic training at your own pace, followed by pool/confined water sessions to master basic skills, and finally 4 open water dives in a local lake (such as Lake Zurich) to put your skills into practice.</p>
-      </div>
-
-      <!-- Rescue Diver -->
-      <div class="card" style="margin-bottom: 3rem; border-color: #ff5252;" id="course-rescue">
+      </div><!-- Rescue Diver -->
+      <div class="card" style="border-color: #ff5252;" id="course-rescue">
         <span class="card-meta" style="color: #ff5252;">Safety & Preparedness</span>
         <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">SDI Rescue Diver</h3>
         <p>Learn to look beyond yourself and consider the safety and well-being of other divers. This course is challenging and realistic, teaching you to anticipate, prevent, and manage diving emergencies.</p>
-        
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; padding: 1rem; background: rgba(2, 6, 23, 0.4); border-radius: 8px;">
           <div><strong>Price:</strong> 1200 CHF</div>
           <div><strong>Prerequisites:</strong> OWD, First Aid/CPR certification, Min. age 18 (or 15 with parental consent)</div>
           <div><strong>Duration:</strong> 3-4 Days</div>
           <div><strong>Focus:</strong> Self-rescue, stress management, unresponsive diver recovery, first aid</div>
         </div>
-        
         <h4 style="color: var(--color-primary); margin-top: 1rem; margin-bottom: 0.5rem;">What you will learn:</h4>
         <p>We practice scenarios on land and in local lakes, covering search patterns, bringing up an unconscious diver, administering oxygen, coordinating emergency services, and performing rescue breaths in the water.</p>
-      </div>
-
-      <!-- First Response CPR & First Aid -->
-      <div class="card" style="margin-bottom: 3rem; border-color: #ff5252;" id="course-first-response">
+      </div><!-- First Response CPR & First Aid -->
+      <div class="card" style="border-color: #ff5252;" id="course-first-response">
         <span class="card-meta" style="color: #ff5252;">Emergency Care</span>
         <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">First Response (CPR & First Aid)</h3>
         <p>A comprehensive course covering primary care (CPR) and secondary care (First Aid) for adults, children, and infants. Necessary prerequisite for the SDI Rescue Diver course and highly recommended for all active divers.</p>
-        
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; padding: 1rem; background: rgba(2, 6, 23, 0.4); border-radius: 8px;">
           <div><strong>Price:</strong> 250 CHF <span style="font-size: 0.8rem; color: var(--color-primary); display: block;">(Bundle: 350 CHF with O2)</span></div>
           <div><strong>Prerequisites:</strong> None (open to divers and non-divers)</div>
           <div><strong>Duration:</strong> 1 Day (classroom & practical scenarios)</div>
           <div><strong>Certification:</strong> FRTI (First Response Training International)</div>
         </div>
-        
         <h4 style="color: var(--color-primary); margin-top: 1rem; margin-bottom: 0.5rem;">What you will learn:</h4>
         <p>Cardiopulmonary Resuscitation (CPR), chest compressions, rescue breathing, AED operation, choking management, bleeding control, shock management, and secondary assessment.</p>
-      </div>
-
-      <!-- Emergency Oxygen Provider -->
-      <div class="card" style="margin-bottom: 3rem; border-color: #ff5252;" id="course-oxygen-provider">
+      </div><!-- Emergency Oxygen Provider -->
+      <div class="card" style="border-color: #ff5252;" id="course-oxygen-provider">
         <span class="card-meta" style="color: #ff5252;">Oxygen Administration</span>
         <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Emergency Oxygen Provider</h3>
         <p>Administering 100% emergency oxygen is the most critical first aid step for decompression illness (DCI) and other scuba diving injuries. Learn to identify diving illnesses and safely administer emergency oxygen.</p>
-        
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; padding: 1rem; background: rgba(2, 6, 23, 0.4); border-radius: 8px;">
           <div><strong>Price:</strong> 150 CHF <span style="font-size: 0.8rem; color: var(--color-primary); display: block;">(Bundle: 350 CHF with CPR/FA)</span></div>
           <div><strong>Prerequisites:</strong> None (open to divers and non-divers)</div>
           <div><strong>Duration:</strong> Half Day (classroom & practical runs)</div>
           <div><strong>Focus:</strong> Oxygen systems, demand valves, pocket masks</div>
         </div>
-        
         <h4 style="color: var(--color-primary); margin-top: 1rem; margin-bottom: 0.5rem;">What you will learn:</h4>
         <p>Recognizing decompression sickness and arterial gas embolism, assembly and disassembly of emergency oxygen equipment, using demand inhalator valves, constant flow masks, and pocket masks on breathing and non-breathing divers.</p>
       </div>
@@ -93,8 +78,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
 
       <!-- Specialties Grid -->
       <h2 style="margin-top: 4rem; margin-bottom: 2rem;">SDI Specialty Courses</h2>
-      <div class="grid-2" style="margin-bottom: 3rem; gap: 2rem;">
-        
+      <div class="grid-2-cards" style="margin-bottom: 3rem; gap: 2rem;">
         <!-- Specialty 1: Nitrox (150 CHF) -->
         <div class="card" id="spec-nitrox" style="border-color: var(--color-primary);">
           <span class="card-meta">Gas Specialty</span>
@@ -105,9 +89,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
             <strong>Duration:</strong> 1 Day (Online study + practical gas analysis)<br>
             <strong>Prerequisites:</strong> Open Water Diver, Min. age 10
           </div>
-        </div>
-
-        <!-- Specialty 2: Dry Suit -->
+        </div><!-- Specialty 2: Dry Suit -->
         <div class="card" id="spec-drysuit" style="border-color: var(--color-secondary);">
           <span class="card-meta">Highly Recommended for Swiss Lakes</span>
           <h3 class="card-title">SDI Dry Suit Diver</h3>
@@ -117,9 +99,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
             <strong>Duration:</strong> 1 Day (1 pool + 2 lake dives)<br>
             <strong>Prerequisites:</strong> Open Water Diver, Min. age 12
           </div>
-        </div>
-
-        <!-- Specialty 3: Navigator -->
+        </div><!-- Specialty 3: Navigator -->
         <div class="card" id="spec-navigator">
           <span class="card-meta">Navigation</span>
           <h3 class="card-title">SDI Underwater Navigator</h3>
@@ -129,9 +109,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
             <strong>Duration:</strong> 1 Day (2 lake dives)<br>
             <strong>Prerequisites:</strong> Open Water Diver, Min. age 10
           </div>
-        </div>
-
-        <!-- Specialty 4: Deep -->
+        </div><!-- Specialty 4: Deep -->
         <div class="card" id="spec-deep">
           <span class="card-meta">Depth Exploration</span>
           <h3 class="card-title">SDI Deep Diver</h3>
@@ -141,9 +119,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
             <strong>Duration:</strong> 1 Day (2 lake dives)<br>
             <strong>Prerequisites:</strong> Open Water Diver, Min. age 15
           </div>
-        </div>
-
-        <!-- Specialty 5: Night -->
+        </div><!-- Specialty 5: Night -->
         <div class="card" id="spec-night">
           <span class="card-meta">Nocturnal Diving</span>
           <h3 class="card-title">SDI Night Diver</h3>
@@ -153,9 +129,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
             <strong>Duration:</strong> 1 Night (2 night dives)<br>
             <strong>Prerequisites:</strong> Open Water Diver, Min. age 10
           </div>
-        </div>
-
-        <!-- Specialty 6: Sidemount -->
+        </div><!-- Specialty 6: Sidemount -->
         <div class="card" id="spec-sidemount">
           <span class="card-meta">Configuration Specialty</span>
           <h3 class="card-title">SDI Sidemount Diver</h3>
@@ -165,9 +139,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
             <strong>Duration:</strong> 1 Day (2 lake dives)<br>
             <strong>Prerequisites:</strong> Open Water Diver, Min. age 18
           </div>
-        </div>
-
-        <!-- Specialty 7: Solo -->
+        </div><!-- Specialty 7: Solo -->
         <div class="card" id="spec-solo">
           <span class="card-meta">Self-Sufficiency</span>
           <h3 class="card-title">SDI Solo Diver</h3>
@@ -177,9 +149,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
             <strong>Duration:</strong> 1 Day (2 lake dives)<br>
             <strong>Prerequisites:</strong> SDI Advanced Adventure (or equiv.), 100 logged dives, Min. age 21
           </div>
-        </div>
-
-        <!-- Specialty 8: Underwater Photography (400 CHF) -->
+        </div><!-- Specialty 8: Underwater Photography (400 CHF) -->
         <div class="card" id="spec-photography">
           <span class="card-meta">Creative Specialty</span>
           <h3 class="card-title">SDI Underwater Photographer</h3>
@@ -191,7 +161,6 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
             <strong>Prerequisites:</strong> Open Water Diver, Min. age 10
           </div>
         </div>
-
       </div>
 
       <!-- Advanced Adventure (Sampler Pathway) -->

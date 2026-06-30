@@ -376,6 +376,13 @@ strong {
   align-items: center;
 }
 
+.grid-2-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  align-items: stretch;
+}
+
 /* ==========================================
    CARDS & COMPONENTS
    ========================================== */
@@ -671,7 +678,7 @@ textarea.form-control {
     transform: translateY(-9px) rotate(-45deg);
   }
   
-  .grid-2, .grid-3 {
+  .grid-2, .grid-3, .grid-2-cards {
     grid-template-columns: 1fr;
     gap: 2rem;
   }

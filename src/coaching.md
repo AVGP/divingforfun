@@ -14,9 +14,7 @@ description: "Refine your scuba skills in Zurich, Switzerland. Personalized coac
       <h2>Why Focus on Fundamentals?</h2>
       <p>Excellent fundamentals are the foundation of all safe, advanced diving. Sticking to a flat horizontal trim reduces water resistance, cuts gas consumption, and prevents your fins from disturbing delicate silt or lake bottom ecology (like the local burbots!).</p>
       <p>My coaching sessions are open to divers of any certification level—from open water divers looking to build solid habits to technical divers preparing for decompression programs.</p>
-    </div>
-    
-    <div class="visual-frame">
+    </div><div class="visual-frame">
       <div class="split-frame">
         <img src="/assets/images/coaching-trim.jpg" alt="A diver in excellent horizontal trim using a sidemount cylinder configuration" class="split-img">
       </div>
@@ -28,32 +26,27 @@ description: "Refine your scuba skills in Zurich, Switzerland. Personalized coac
 <section class="section section-alt" id="coaching-focus">
   <div class="container">
     <h2 class="text-center">Coaching Focus Areas</h2>
-    <div class="grid-2" style="margin-top: 3rem; gap: 2.5rem;">
-      
+    <div class="grid-2-cards" style="margin-top: 3rem; gap: 3rem;">
       <div class="card" id="focus-buoyancy">
         <span class="card-icon">🎈</span>
         <h3 class="card-title">Buoyancy Control</h3>
         <p>Learn to use your lungs as your primary buoyancy adjustment tool. Stay stable within inches at any depth, execute steady safety stops, and glide effortlessly over the bottom.</p>
-      </div>
-
+      </div><!-- Card 2: Horizontal Trim -->
       <div class="card" id="focus-trim">
         <span class="card-icon">📐</span>
         <h3 class="card-title">Horizontal Trim</h3>
         <p>Adjust weight distribution, cylinder positioning, and harness settings. We work to align your body perfectly flat in the water, stopping you from swimming "head-up" and fighting your own gravity.</p>
-      </div>
-
+      </div><!-- Card 3: Propulsion -->
       <div class="card" id="focus-propulsion">
         <span class="card-icon">👣</span>
         <h3 class="card-title">Propulsion Techniques</h3>
         <p>Master clean kick cycles to avoid stirring up the bottom. We practice the frog kick, modified frog kick, modified flutter kick, back kick (for reversing out of spots), and helicopter turns.</p>
-      </div>
-
+      </div><!-- Card 4: Gear Configuration -->
       <div class="card" id="focus-gear">
         <span class="card-icon">🔧</span>
         <h3 class="card-title">Gear Configuration</h3>
         <p>Optimize your setup for streamlining and accessibility. Fine-tune backplate/wing systems, dry suit hose routings, twinset valve reachability, or sidemount harness adjustments.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -67,14 +60,12 @@ description: "Refine your scuba skills in Zurich, Switzerland. Personalized coac
         <span class="card-icon" style="font-size: 2rem; color: var(--color-primary);">1</span>
         <h3 class="card-title">Land Briefing & Dry Runs</h3>
         <p>We review your current diving problems and goals. On land, we practice body positioning, leg angles for the back kick, and evaluate your harness fit before stepping into the water.</p>
-      </div>
-
+      </div><!-- Card 2 -->
       <div class="card" id="coaching-step-2">
         <span class="card-icon" style="font-size: 2rem; color: var(--color-primary);">2</span>
         <h3 class="card-title">In-Water Video Analysis</h3>
         <p>During a dedicated lake session, we run skills while recording video footage of your trim, buoyancy, and kick cycles. Seeing yourself in the water is the fastest way to learn.</p>
-      </div>
-
+      </div><!-- Card 3 -->
       <div class="card" id="coaching-step-3">
         <span class="card-icon" style="font-size: 2rem; color: var(--color-primary);">3</span>
         <h3 class="card-title">Debrief & Feedback</h3>
