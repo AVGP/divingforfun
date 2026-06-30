@@ -99,7 +99,7 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
 <section class="section section-alt" id="services-section">
   <div class="container">
     <h2 class="text-center">Diving Offerings</h2>
-    <div class="grid-3" style="margin-top: 3rem;">
+    <div class="grid-2" style="margin-top: 3rem;">
       
       <!-- Card 1: Beginners -->
       <div class="card" id="card-beginners">
