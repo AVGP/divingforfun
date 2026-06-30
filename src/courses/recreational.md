@@ -88,23 +88,6 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
         <p>Recognizing decompression sickness and arterial gas embolism, assembly and disassembly of emergency oxygen equipment, using demand inhalator valves, constant flow masks, and pocket masks on breathing and non-breathing divers.</p>
       </div>
 
-      <!-- Dry Suit Diver -->
-      <div class="card" style="margin-bottom: 3rem; border-color: var(--color-secondary);" id="course-drysuit">
-        <span class="card-meta">Highly Recommended for Swiss Lakes</span>
-        <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">SDI Dry Suit Diver</h3>
-        <p>Swiss lakes are cold, especially below the thermocline. A dry suit keeps you warm and dry, allowing you to dive comfortably year-round and enjoy the superior visibility of Swiss winter diving.</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; padding: 1rem; background: rgba(2, 6, 23, 0.4); border-radius: 8px;">
-          <div><strong>Price:</strong> 400 CHF</div>
-          <div><strong>Prerequisites:</strong> Open Water Diver, Min. age 12</div>
-          <div><strong>Duration:</strong> 1 Day (1 pool + 2 lake dives)</div>
-          <div><strong>Focus:</strong> Buoyancy, suit control, emergency drills</div>
-        </div>
-        
-        <h4 style="color: var(--color-primary); margin-top: 1rem; margin-bottom: 0.5rem;">Why take this course?</h4>
-        <p>A dry suit changes how your body handles buoyancy. We cover suit seal care, zipper maintenance, undergarment selection, buoyancy control using the suit vs. BCD, and recovering from inverted (feet-first) air migration safely.</p>
-      </div>
-
       <!-- Specialties Grid -->
       <h2 style="margin-top: 4rem; margin-bottom: 2rem;">SDI Specialty Courses</h2>
       <div class="grid-2" style="margin-bottom: 3rem; gap: 2rem;">
@@ -121,7 +104,19 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           </div>
         </div>
 
-        <!-- Specialty 2: Navigator -->
+        <!-- Specialty 2: Dry Suit -->
+        <div class="card" id="spec-drysuit" style="border-color: var(--color-secondary);">
+          <span class="card-meta">Highly Recommended for Swiss Lakes</span>
+          <h3 class="card-title">SDI Dry Suit Diver</h3>
+          <p>Swiss lakes are cold, especially below the thermocline. A dry suit keeps you warm and dry year-round. We cover buoyancy control using the suit vs. BCD, suit seal and zipper care, and recovering from inverted (feet-first) air migration safely.</p>
+          <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem; margin-top: 1rem;">
+            <strong>Price:</strong> 400 CHF<br>
+            <strong>Duration:</strong> 1 Day (1 pool + 2 lake dives)<br>
+            <strong>Prerequisites:</strong> Open Water Diver, Min. age 12
+          </div>
+        </div>
+
+        <!-- Specialty 3: Navigator -->
         <div class="card" id="spec-navigator">
           <span class="card-meta">Navigation</span>
           <h3 class="card-title">SDI Underwater Navigator</h3>
@@ -133,7 +128,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           </div>
         </div>
 
-        <!-- Specialty 3: Deep -->
+        <!-- Specialty 4: Deep -->
         <div class="card" id="spec-deep">
           <span class="card-meta">Depth Exploration</span>
           <h3 class="card-title">SDI Deep Diver</h3>
@@ -145,7 +140,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           </div>
         </div>
 
-        <!-- Specialty 4: Night -->
+        <!-- Specialty 5: Night -->
         <div class="card" id="spec-night">
           <span class="card-meta">Nocturnal Diving</span>
           <h3 class="card-title">SDI Night Diver</h3>
@@ -157,7 +152,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           </div>
         </div>
 
-        <!-- Specialty 5: Sidemount -->
+        <!-- Specialty 6: Sidemount -->
         <div class="card" id="spec-sidemount">
           <span class="card-meta">Configuration Specialty</span>
           <h3 class="card-title">SDI Sidemount Diver</h3>
@@ -169,7 +164,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           </div>
         </div>
 
-        <!-- Specialty 6: Solo -->
+        <!-- Specialty 7: Solo -->
         <div class="card" id="spec-solo">
           <span class="card-meta">Self-Sufficiency</span>
           <h3 class="card-title">SDI Solo Diver</h3>
@@ -181,7 +176,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           </div>
         </div>
 
-        <!-- Specialty 7: Underwater Photography (400 CHF) -->
+        <!-- Specialty 8: Underwater Photography (400 CHF) -->
         <div class="card" id="spec-photography">
           <span class="card-meta">Creative Specialty</span>
           <h3 class="card-title">SDI Underwater Photographer</h3>
