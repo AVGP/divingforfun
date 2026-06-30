@@ -65,7 +65,7 @@ description: "Get in touch with Martin Splitt for SDI/TDI scuba diving training,
     
     <div style="margin-top: 4rem; text-align: center; color: var(--color-text-muted);">
       <p>Direct Email: <a href="mailto:martin@divingfor.fun" id="direct-email-link">martin@divingfor.fun</a></p>
-      <p>Based in Zurich, Switzerland. We conduct dives in Lake Zurich, Lake Zug, Lake Thun, and Ticino rivers.</p>
+      <p>Based in Zurich, Switzerland. We conduct guided dives and courses in Zürichsee, Zugersee, Walensee, Vierwaldstättersee, Rhein, and Ticino rivers (special request).</p>
     </div>
   </div>
 </section>

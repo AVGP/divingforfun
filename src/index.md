@@ -94,7 +94,7 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
     <div class="text-content">
       <h2>Diving in Switzerland</h2>
       <p>Switzerland is home to some of the most spectacular freshwater diving in the world. However, diving in alpine lakes and fast-flowing rivers requires specialized knowledge. Temperatures range from 4°C at depth year-round to 20°C+ at the surface in summer, making <strong>dry suit diving</strong> the local standard.</p>
-      <p>From the sheer walls of Lake Thun to the ancient stone formations of the Verzasca river, local diving is challenging but incredibly rewarding. With proper training, you will unlock year-round access to these freshwater wonders.</p>
+      <p>From the sheer walls of Walensee to the ancient stone formations of the Verzasca river, local diving is challenging but incredibly rewarding. With proper training, you will unlock year-round access to these freshwater wonders.</p>
       <a href="/guided-dives/" class="btn btn-secondary" id="btn-explore-swiss">Swiss Dive Guide</a>
     </div>
   </div>
