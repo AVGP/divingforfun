@@ -38,7 +38,51 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
   </div>
 </section>
 
-<section class="section section-alt" id="services-section">
+<section class="section section-alt" id="diving-with-me">
+  <div class="container grid-2" style="align-items: center; gap: 4rem;">
+    <div class="photo-collage-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+      <div class="split-frame">
+        <img src="/assets/images/personal-ok.jpg" alt="Martin giving an OK sign underwater" class="split-img" style="aspect-ratio: 1/1;">
+      </div>
+      <div class="split-frame">
+        <img src="/assets/images/personal-ccr.jpg" alt="Martin diving his Liberty CCR rebreather" class="split-img" style="aspect-ratio: 1/1;">
+      </div>
+      <div class="split-frame">
+        <img src="/assets/images/personal-selfie.jpg" alt="Happy buddy selfie diving in Swiss lake" class="split-img" style="aspect-ratio: 1/1;">
+      </div>
+      <div class="split-frame">
+        <img src="/assets/images/personal-phone.jpg" alt="Diver at a submerged telephone booth" class="split-img" style="aspect-ratio: 1/1;">
+      </div>
+    </div>
+    <div>
+      <span class="hero-tag" style="border-color: var(--color-secondary); color: var(--color-secondary); background: rgba(0, 240, 255, 0.05);">Diver Experience</span>
+      <h2>Diving with me</h2>
+      <p style="font-size: 1.15rem; margin-bottom: 1.5rem;">Diving in Switzerland shouldn't just be about surviving the cold—it should be a fun, relaxing, and absolutely memorable experience. When you dive with me, my priority is ensuring you feel safe, comfortable, and have a fantastic time exploring the beautiful underwater world.</p>
+      <p>I dive all year round regularly in Switzerland. To make these excursions and courses as comfortable and capable as possible, I utilize modern diving tools and configurations including:</p>
+      <ul style="margin-top: 1rem; margin-bottom: 2rem; padding-left: 1.5rem; list-style-type: none;">
+        <li style="margin-bottom: 0.5rem; position: relative; padding-left: 1.5rem;">
+          <span style="position: absolute; left: 0; color: var(--color-primary);">✓</span>
+          <strong>Sidemount Configuration</strong> for maximum trim, flexibility, and back comfort.
+        </li>
+        <li style="margin-bottom: 0.5rem; position: relative; padding-left: 1.5rem;">
+          <span style="position: absolute; left: 0; color: var(--color-primary);">✓</span>
+          <strong>Drysuit Systems</strong> ensuring warm, dry, and relaxed dives even in deep alpine lakes.
+        </li>
+        <li style="margin-bottom: 0.5rem; position: relative; padding-left: 1.5rem;">
+          <span style="position: absolute; left: 0; color: var(--color-primary);">✓</span>
+          <strong>Nitrox Gas Mixtures</strong> for extended bottom times and reduced decompression fatigue.
+        </li>
+        <li style="margin-bottom: 0.5rem; position: relative; padding-left: 1.5rem;">
+          <span style="position: absolute; left: 0; color: var(--color-primary);">✓</span>
+          <strong>Liberty CCR</strong> (Closed Circuit Rebreather) for completely silent, bubble-free interactions with local marine life.
+        </li>
+      </ul>
+      <a href="/contact/" class="btn btn-primary" id="btn-diving-me-cta">Plan a Dive Session</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services-section">
   <div class="container">
     <h2 class="text-center">Diving Offerings</h2>
     <div class="grid-3" style="margin-top: 3rem;">
@@ -83,7 +127,7 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
   </div>
 </section>
 
-<section class="section" id="swiss-waters">
+<section class="section section-alt" id="swiss-waters">
   <div class="container grid-2">
     <div class="visual-frame">
       <div class="split-frame">
@@ -100,7 +144,7 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
   </div>
 </section>
 
-<section class="section section-alt text-center" id="cta-section">
+<section class="section text-center" id="cta-section">
   <div class="container" style="max-width: 600px; margin: 0 auto;">
     <h2>Ready to Dive?</h2>
     <p style="font-size: 1.15rem; margin-bottom: 2rem;">Get in touch to discuss your training goals, book a guided dive, or arrange a personalized coaching session in Zurich or surrounding areas.</p>
