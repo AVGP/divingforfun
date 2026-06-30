@@ -97,7 +97,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; padding: 1rem; background: rgba(2, 6, 23, 0.4); border-radius: 8px;">
           <div><strong>Price:</strong> 400 CHF</div>
           <div><strong>Prerequisites:</strong> Open Water Diver, Min. age 12</div>
-          <div><strong>Duration:</strong> 1-2 Days (1 pool + 2 lake dives)</div>
+          <div><strong>Duration:</strong> 1 Day (1 pool + 2 lake dives)</div>
           <div><strong>Focus:</strong> Buoyancy, suit control, emergency drills</div>
         </div>
         
@@ -126,7 +126,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           <h3 class="card-title">SDI Underwater Navigator</h3>
           <p>Find your way back to the shore or boat without surfacing. Master compass navigation, natural references, and distance tracking in Swiss visibility.</p>
           <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem; margin-top: 1rem;">
-            <strong>Duration:</strong> 1-2 Days (3 lake dives)<br>
+            <strong>Duration:</strong> 1 Day (2 lake dives)<br>
             <strong>Prerequisites:</strong> Open Water Diver, Min. age 10
           </div>
         </div>
@@ -137,7 +137,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           <h3 class="card-title">SDI Deep Diver</h3>
           <p>Safely explore depth limits up to 40 meters. We cover nitrogen narcosis management, gas planning, descent lines, and safety stop schedules.</p>
           <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem; margin-top: 1rem;">
-            <strong>Duration:</strong> 2 Days (4 lake dives)<br>
+            <strong>Duration:</strong> 1 Day (2 lake dives)<br>
             <strong>Prerequisites:</strong> Open Water Diver, Min. age 15
           </div>
         </div>
@@ -148,7 +148,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           <h3 class="card-title">SDI Night Diver</h3>
           <p>Experience Swiss lakes after dark. Spot nocturnal predators like the Burbot (Trüsche) and active pike. We focus on light signals and dark navigation.</p>
           <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem; margin-top: 1rem;">
-            <strong>Duration:</strong> 1-2 Nights (3 night dives)<br>
+            <strong>Duration:</strong> 1 Night (2 night dives)<br>
             <strong>Prerequisites:</strong> Open Water Diver, Min. age 10
           </div>
         </div>
@@ -159,7 +159,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           <h3 class="card-title">SDI Sidemount Diver</h3>
           <p>Move your cylinders to your sides. Reduces back strain and provides clean redundancy. Ideal preparation for technical or cave diving.</p>
           <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem; margin-top: 1rem;">
-            <strong>Duration:</strong> 2 Days (4 lake dives)<br>
+            <strong>Duration:</strong> 1 Day (2 lake dives)<br>
             <strong>Prerequisites:</strong> Open Water Diver, Min. age 18
           </div>
         </div>
@@ -170,7 +170,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           <h3 class="card-title">SDI Solo Diver</h3>
           <p>Learn independent diving safety, redundancy layouts (pony bottles, dual valves), gas consumption calculations, and self-rescue techniques.</p>
           <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem; margin-top: 1rem;">
-            <strong>Duration:</strong> 2 Days (2 lake dives)<br>
+            <strong>Duration:</strong> 1 Day (2 lake dives)<br>
             <strong>Prerequisites:</strong> SDI Advanced Adventure (or equiv.), 100 logged dives, Min. age 21
           </div>
         </div>
@@ -182,7 +182,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           <p>Capture the beauty of Swiss freshwater systems. Learn camera housing preparation, seal care, lighting/strobe placement, backscatter reduction, and composition for local wildlife.</p>
           <img src="/assets/images/photography.jpg" alt="Diver using an underwater camera housing" style="width: 100%; border-radius: 6px; margin: 1rem 0; border: 1px solid var(--border-light); aspect-ratio: 16/10; object-fit: cover;">
           <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem;">
-            <strong>Duration:</strong> 1-2 Days (Online study + 2 lake dives)<br>
+            <strong>Duration:</strong> 1 Day (2 lake dives)<br>
             <strong>Prerequisites:</strong> Open Water Diver, Min. age 10
           </div>
         </div>
