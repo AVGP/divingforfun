@@ -24,7 +24,7 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
 <section class="section" style="padding-top: 0; padding-bottom: 3rem;" id="guided-video-section">
   <div class="container" style="max-width: 800px; margin: 0 auto;">
     <h2 class="text-center">Dive Excursions Preview</h2>
-    <p style="text-align: center; margin-bottom: 1.5rem; color: var(--color-text-muted);">Get a look at what diving in cold Swiss waters is like—featuring crystal-clear river currents and local lake species.</p>
+    <p style="text-align: center; margin-bottom: 1.5rem; color: var(--color-text-muted);">Get a look at what diving in cold Swiss waters is like—featuring lots of fish in the local lakes.</p>
     <div class="video-wrapper">
       <iframe src="https://www.youtube.com/embed/mmTYBIafxlM" title="Diving in Switzerland Video Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
