@@ -9,7 +9,7 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <span class="hero-tag">Zurich, Switzerland</span>
-    <h1 class="hero-title">Dive Deeper. Dive Safer.</h1>
+    <h1 class="hero-title">Come dive with me</h1>
     <p class="hero-subtitle">Professional SDI & TDI Scuba instruction, technical dive training, and guided cold-water adventures in Switzerland.</p>
     <div class="hero-actions">
       <a href="/courses/recreational/" class="btn btn-primary" id="hero-btn-beginners">Start Diving</a>
