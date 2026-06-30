@@ -5,44 +5,60 @@ description: "Refine your scuba skills in Zurich, Switzerland. Personalized coac
 ---
 
 <section class="section" id="coaching-intro">
-  <div class="container">
-    <span class="hero-tag">Skill Refinement</span>
-    <h1>Diver Coaching</h1>
-    <p style="font-size: 1.2rem; max-width: 800px; margin-bottom: 3rem;">Getting certified is just the start. Many divers find themselves struggling with buoyancy control, dynamic horizontal trim, or inefficient kick cycles that stir up silt. Diver coaching is not about ticking off boxes for a card; it is dedicated time focusing entirely on making you a cleaner, calmer, and more efficient diver.</p>
-    
-    <div class="grid-2" style="margin-top: 3rem; gap: 4rem;">
-      <div>
-        <h2>Why Focus on Fundamentals?</h2>
-        <p>Excellent fundamentals are the foundation of all safe, advanced diving. Sticking to a flat horizontal trim reduces water resistance, cuts gas consumption, and prevents your fins from disturbing delicate silt or lake bottom ecology (like the local burbots!).</p>
-        <p>My coaching sessions are open to divers of any certification level—from open water divers looking to build solid habits to technical divers preparing for decompression programs.</p>
-      </div>
+  <div class="container grid-2" style="align-items: center; gap: 4rem;">
+    <div>
+      <span class="hero-tag">Skill Refinement</span>
+      <h1>Diver Coaching</h1>
+      <p style="font-size: 1.15rem; margin-bottom: 2rem;">Getting certified is just the start. Many divers find themselves struggling with buoyancy control, dynamic horizontal trim, or inefficient kick cycles that stir up silt. Diver coaching is not about ticking off boxes for a card; it is dedicated time focusing entirely on making you a cleaner, calmer, and more efficient diver.</p>
       
-      <div class="card" style="background: rgba(0, 240, 255, 0.03); border-color: var(--border-active);" id="coaching-focus-card">
-        <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Coaching Focus Areas</h3>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
-          <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
-            <span style="color: var(--color-primary);">✓</span>
-            <div><strong>Buoyancy Control:</strong> Learn to use your lungs as your primary buoyancy adjustment tool and stay stable within inches at any depth.</div>
-          </li>
-          <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
-            <span style="color: var(--color-primary);">✓</span>
-            <div><strong>Horizontal Trim:</strong> Adjust weight distribution, tank position, and harness settings to rest flat in the water without constant kicking.</div>
-          </li>
-          <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
-            <span style="color: var(--color-primary);">✓</span>
-            <div><strong>Propulsion Techniques:</strong> Master the frog kick, modified frog, modified flutter, back kick (for reversing), and helicopter turns.</div>
-          </li>
-          <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
-            <span style="color: var(--color-primary);">✓</span>
-            <div><strong>Gear Configuration:</strong> Optimize backplate/wing setups, dry suit valves, twinsets, or sidemount rigs for maximum streamling.</div>
-          </li>
-        </ul>
+      <h2>Why Focus on Fundamentals?</h2>
+      <p>Excellent fundamentals are the foundation of all safe, advanced diving. Sticking to a flat horizontal trim reduces water resistance, cuts gas consumption, and prevents your fins from disturbing delicate silt or lake bottom ecology (like the local burbots!).</p>
+      <p>My coaching sessions are open to divers of any certification level—from open water divers looking to build solid habits to technical divers preparing for decompression programs.</p>
+    </div>
+    
+    <div class="visual-frame">
+      <div class="split-frame">
+        <img src="/assets/images/coaching-trim.jpg" alt="A diver in excellent horizontal trim using a sidemount cylinder configuration" class="split-img">
       </div>
+      <p style="font-size: 0.85rem; text-align: center; margin-top: 0.75rem; font-style: italic;">Demonstrating perfect horizontal trim and buoyancy control in a sidemount configuration.</p>
     </div>
   </div>
 </section>
 
-<section class="section section-alt" id="coaching-structure">
+<section class="section section-alt" id="coaching-focus">
+  <div class="container">
+    <h2 class="text-center">Coaching Focus Areas</h2>
+    <div class="grid-2" style="margin-top: 3rem; gap: 2.5rem;">
+      
+      <div class="card" id="focus-buoyancy">
+        <span class="card-icon">🎈</span>
+        <h3 class="card-title">Buoyancy Control</h3>
+        <p>Learn to use your lungs as your primary buoyancy adjustment tool. Stay stable within inches at any depth, execute steady safety stops, and glide effortlessly over the bottom.</p>
+      </div>
+
+      <div class="card" id="focus-trim">
+        <span class="card-icon">📐</span>
+        <h3 class="card-title">Horizontal Trim</h3>
+        <p>Adjust weight distribution, cylinder positioning, and harness settings. We work to align your body perfectly flat in the water, stopping you from swimming "head-up" and fighting your own gravity.</p>
+      </div>
+
+      <div class="card" id="focus-propulsion">
+        <span class="card-icon">👣</span>
+        <h3 class="card-title">Propulsion Techniques</h3>
+        <p>Master clean kick cycles to avoid stirring up the bottom. We practice the frog kick, modified frog kick, modified flutter kick, back kick (for reversing out of spots), and helicopter turns.</p>
+      </div>
+
+      <div class="card" id="focus-gear">
+        <span class="card-icon">🔧</span>
+        <h3 class="card-title">Gear Configuration</h3>
+        <p>Optimize your setup for streamlining and accessibility. Fine-tune backplate/wing systems, dry suit hose routings, twinset valve reachability, or sidemount harness adjustments.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="coaching-structure">
   <div class="container">
     <h2 class="text-center">How a Coaching Session Works</h2>
     

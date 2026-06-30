@@ -106,7 +106,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
       </div>
 
       <!-- Specialties Grid -->
-      <h2 style="margin-top: 4rem; margin-bottom: 2rem;">Recreational Specialties (400 CHF each)</h2>
+      <h2 style="margin-top: 4rem; margin-bottom: 2rem;">SDI Specialty Courses & Pricing</h2>
       <div class="grid-2" style="margin-bottom: 3rem; gap: 2rem;">
         
         <!-- Specialty 1: Nitrox (150 CHF) -->
@@ -172,6 +172,18 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem; margin-top: 1rem;">
             <strong>Duration:</strong> 2 Days (2 lake dives)<br>
             <strong>Prerequisites:</strong> SDI Advanced Adventure (or equiv.), 100 logged dives, Min. age 21
+          </div>
+        </div>
+
+        <!-- Specialty 7: Underwater Photography (350 CHF) -->
+        <div class="card" id="spec-photography">
+          <span class="card-meta">Creative Specialty — Special Price: 350 CHF</span>
+          <h3 class="card-title">SDI Underwater Photographer</h3>
+          <p>Capture the beauty of Swiss freshwater systems. Learn camera housing preparation, seal care, lighting/strobe placement, backscatter reduction, and composition for local wildlife.</p>
+          <img src="/assets/images/photography.jpg" alt="Diver using an underwater camera housing" style="width: 100%; border-radius: 6px; margin: 1rem 0; border: 1px solid var(--border-light); aspect-ratio: 16/10; object-fit: cover;">
+          <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem;">
+            <strong>Duration:</strong> 1-2 Days (Online study + 2 lake dives)<br>
+            <strong>Prerequisites:</strong> Open Water Diver, Min. age 10
           </div>
         </div>
 
