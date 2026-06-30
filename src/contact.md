@@ -14,7 +14,7 @@ description: "Get in touch with Martin Splitt for SDI/TDI scuba diving training,
 
 <section class="section section-alt" id="contact-form-section">
   <div class="container">
-    <form class="contact-form" action="mailto:martin@divingfor.fun" method="post" enctype="text/plain" id="booking-form">
+    <form class="contact-form" action="https://formspree.io/f/xgojzyle" method="post" id="booking-form">
       
       <div class="form-group">
         <label for="form-name" class="form-label">Full Name</label>
