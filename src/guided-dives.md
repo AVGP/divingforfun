@@ -9,7 +9,7 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
     <div>
       <span class="hero-tag">Guided Excursions</span>
       <h1>Guided Dives in Switzerland</h1>
-      <p style="font-size: 1.15rem;">Switzerland offers some of the most unique freshwater diving spots in Europe, ranging from dramatic, deep lake walls to crystal-clear river canyons. However, local conditions require familiarity with mountain hydrology, currents, low temperatures, and specific dive site logistics.</p>
+      <p style="font-size: 1.15rem;">Switzerland offers some of the most unique freshwater diving spots in Europe, ranging from dramatic, deep lake walls to crystal-clear river canyons. However, local conditions require familiarity with local dive sites, currents, and low temperatures.</p>
       <p>I offer private guided dives for individuals and small teams. I will handle the dive site planning, route navigation, and safety briefing, so you can focus entirely on enjoying the environment.</p>
     </div>
     <div class="visual-frame">
