@@ -106,7 +106,7 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
       </div>
 
       <!-- Specialties Grid -->
-      <h2 style="margin-top: 4rem; margin-bottom: 2rem;">SDI Specialty Courses & Pricing</h2>
+      <h2 style="margin-top: 4rem; margin-bottom: 2rem;">SDI Specialty Courses (400 CHF each, except Nitrox)</h2>
       <div class="grid-2" style="margin-bottom: 3rem; gap: 2rem;">
         
         <!-- Specialty 1: Nitrox (150 CHF) -->
@@ -175,9 +175,9 @@ description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. 
           </div>
         </div>
 
-        <!-- Specialty 7: Underwater Photography (350 CHF) -->
+        <!-- Specialty 7: Underwater Photography (400 CHF) -->
         <div class="card" id="spec-photography">
-          <span class="card-meta">Creative Specialty — Special Price: 350 CHF</span>
+          <span class="card-meta">Creative Specialty</span>
           <h3 class="card-title">SDI Underwater Photographer</h3>
           <p>Capture the beauty of Swiss freshwater systems. Learn camera housing preparation, seal care, lighting/strobe placement, backscatter reduction, and composition for local wildlife.</p>
           <img src="/assets/images/photography.jpg" alt="Diver using an underwater camera housing" style="width: 100%; border-radius: 6px; margin: 1rem 0; border: 1px solid var(--border-light); aspect-ratio: 16/10; object-fit: cover;">
