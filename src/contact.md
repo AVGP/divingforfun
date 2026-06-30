@@ -14,6 +14,15 @@ description: "Get in touch with Martin Splitt for SDI/TDI scuba diving training,
 
 <section class="section section-alt" id="contact-form-section">
   <div class="container">
+    
+    <!-- Form Status Messages -->
+    <div id="form-status" style="display: none; margin-bottom: 2rem; padding: 1.5rem; border-radius: var(--border-radius); text-align: center; border: 1px solid transparent;">
+      <p id="form-status-text" style="margin-bottom: 1rem; font-size: 1.1rem;"></p>
+      <div id="form-fallback-action" style="display: none;">
+        <a id="btn-mailto-fallback" class="btn btn-secondary" style="display: inline-block; background: linear-gradient(135deg, var(--color-secondary), #00a2cc); box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);">Send via Email Client</a>
+      </div>
+    </div>
+
     <form class="contact-form" action="https://formspree.io/f/xgojzyle" method="post" id="booking-form">
       
       <div class="form-group">
@@ -60,3 +69,81 @@ description: "Get in touch with Martin Splitt for SDI/TDI scuba diving training,
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('booking-form');
+    const statusDiv = document.getElementById('form-status');
+    const statusText = document.getElementById('form-status-text');
+    const fallbackAction = document.getElementById('form-fallback-action');
+    const mailtoFallbackBtn = document.getElementById('btn-mailto-fallback');
+    const submitBtn = document.getElementById('btn-form-submit');
+
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Update UI to loading state
+      submitBtn.disabled = true;
+      const originalSubmitText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      statusDiv.style.display = 'none';
+      fallbackAction.style.display = 'none';
+
+      // Gather form values for backup mailto
+      const name = document.getElementById('form-name').value;
+      const email = document.getElementById('form-email').value;
+      const interest = document.getElementById('form-subject').value;
+      const certification = document.getElementById('form-cert').value;
+      const message = document.getElementById('form-message').value;
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          // Success!
+          form.reset();
+          form.style.display = 'none';
+          statusDiv.style.display = 'block';
+          statusDiv.style.backgroundColor = 'rgba(16, 185, 129, 0.1)';
+          statusDiv.style.borderColor = '#10b981';
+          statusText.style.color = '#10b981';
+          statusText.innerHTML = '<strong>Success!</strong> Your inquiry has been sent. I will get back to you shortly!';
+        } else {
+          throw new Error('Server returned error status');
+        }
+      } catch (err) {
+        // Error handling
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalSubmitText;
+
+        statusDiv.style.display = 'block';
+        statusDiv.style.backgroundColor = 'rgba(239, 68, 68, 0.1)';
+        statusDiv.style.borderColor = '#ef4444';
+        statusText.style.color = '#ef4444';
+        statusText.innerHTML = '<strong>Notice:</strong> We encountered an issue submitting your form automatically. You can send it directly using your email client instead without losing your message:';
+        
+        // Configure fallback mailto link
+        const subject = `Diver Inquiry: ${interest}`;
+        const body = `Name: ${name}
+Email: ${email}
+Interest: ${interest}
+Certification & Dives: ${certification}
+
+Message:
+${message}`;
+        
+        const mailtoUrl = `mailto:martin@divingfor.fun?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        mailtoFallbackBtn.href = mailtoUrl;
+        fallbackAction.style.display = 'block';
+      }
+    });
+  });
+</script>
