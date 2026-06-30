@@ -34,7 +34,7 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
 <section class="section section-alt" id="dive-destinations">
   <div class="container">
     <h2 class="text-center">Featured Swiss Dive Sites</h2>
-    <div class="grid-3" style="margin-top: 3rem;">
+    <div class="grid-2" style="margin-top: 3rem;">
       
       <!-- Destination 1: Zuerichsee & Zugersee -->
       <div class="card" id="site-zuerichsee-zugersee">
@@ -47,19 +47,31 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
         </div>
       </div>
 
-      <!-- Destination 2: Walensee & Vierwaldstättersee -->
-      <div class="card" id="site-walensee-vierwaldstaettersee">
+      <!-- Destination 2: Walensee -->
+      <div class="card" id="site-walensee">
         <span class="card-icon">🏔️</span>
-        <h3 class="card-title">Walensee & Vierwaldstättersee</h3>
-        <p>Lake Walen features massive vertical rock walls plummeting straight down. Lake Lucerne (Vierwaldstättersee) offers dramatic underwater topography, deep dropoffs, and encounters with local toad migrations over green weed beds.</p>
-        <img src="/assets/images/lucerne-toad.jpg" alt="A common toad walking over bottom vegetation in Lake Lucerne" style="width: 100%; border-radius: 6px; margin: 1rem 0; border: 1px solid var(--border-light); aspect-ratio: 4/3; object-fit: cover;">
+        <h3 class="card-title">Walensee</h3>
+        <p>Lake Walen features massive, sheer vertical rock walls plummeting straight down into the cold deep water. In its dark depths lie historically preserved shipwrecks (such as old cargo barges), offering incredible wreck diving for technical and advanced divers.</p>
+        <img src="/assets/images/walensee-wreck.jpg" alt="A diver with a dive light examining a historic cargo wreck in Walensee" style="width: 100%; border-radius: 6px; margin: 1rem 0; border: 1px solid var(--border-light); aspect-ratio: 4/3; object-fit: cover;">
         <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem;">
           <strong>Difficulty:</strong> Advanced to Technical<br>
-          <strong>Diving Style:</strong> Wall diving, deep cold water
+          <strong>Diving Style:</strong> Deep wall diving, cold water, wreck exploration
         </div>
       </div>
 
-      <!-- Destination 3: Rhein (Rhine River) -->
+      <!-- Destination 3: Vierwaldstättersee -->
+      <div class="card" id="site-vierwaldstaettersee">
+        <span class="card-icon">🌲</span>
+        <h3 class="card-title">Vierwaldstättersee (Lake Lucerne)</h3>
+        <p>Lake Lucerne offers dramatic underwater topography, deep dropoffs, and complex freshwater walls. During spring, you can observe fascinating seasonal toad migrations crawling over green weed beds in the shallows.</p>
+        <img src="/assets/images/lucerne-toad.jpg" alt="A common toad walking over bottom vegetation in Lake Lucerne" style="width: 100%; border-radius: 6px; margin: 1rem 0; border: 1px solid var(--border-light); aspect-ratio: 4/3; object-fit: cover;">
+        <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem;">
+          <strong>Difficulty:</strong> Beginner to Technical<br>
+          <strong>Diving Style:</strong> Wall diving, macro photography, dropoffs
+        </div>
+      </div>
+
+      <!-- Destination 4: Rhein (Rhine River) -->
       <div class="card" id="site-rhein">
         <span class="card-icon">⚡</span>
         <h3 class="card-title">Rhein (Rhine River)</h3>
