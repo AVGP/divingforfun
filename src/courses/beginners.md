@@ -1,13 +1,13 @@
 ---
 layout: layouts/base.njk
-title: "Recreational Courses & Pricing"
-description: "Recreational scuba diving courses in Zurich, Switzerland. SDI Open Water, Drysuit, Nitrox, Deep, Night, Navigator, Sidemount, Solo, and Rescue Diver pricing."
+title: "Beginners & Advanced Courses"
+description: "Beginners & Advanced scuba diving courses in Zurich, Switzerland. SDI Open Water, Drysuit, Nitrox, Deep, Night, Navigator, Sidemount, Solo, and Rescue Diver pricing."
 ---
 
 <section class="section" id="beginners-overview">
   <div class="container">
-    <span class="hero-tag">SDI Recreational Courses</span>
-    <h1>Recreational Courses & Pricing</h1>
+    <span class="hero-tag">SDI Beginners & Advanced</span>
+    <h1>Beginners & Advanced Courses</h1>
     
     <!-- Gear Policy Disclaimer -->
     <div class="card" style="background: rgba(255, 82, 82, 0.05); border-color: rgba(255, 82, 82, 0.3); margin-bottom: 3rem;" id="gear-disclaimer">

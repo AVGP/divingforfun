@@ -1,13 +1,13 @@
 ---
 layout: layouts/base.njk
-title: "Technical & Advanced Courses"
-description: "Cross into technical diving in Switzerland. TDI Advanced Nitrox, Decompression Procedures, Helitrox, and Sidemount training in Zurich with Martin Splitt."
+title: "Technical Diving"
+description: "Technical diving courses in Switzerland. TDI Advanced Nitrox, Decompression Procedures, and Sidemount training in Zurich with Martin Splitt."
 ---
 
 <section class="section" id="technical-overview">
   <div class="container">
-    <span class="hero-tag" style="border-color: #ff5252; color: #ff5252; background: rgba(255, 82, 82, 0.1);">TDI Technical Training</span>
-    <h1>Technical & Advanced Courses</h1>
+    <span class="hero-tag" style="border-color: #ff5252; color: #ff5252; background: rgba(255, 82, 82, 0.1);">TDI Technical Diving</span>
+    <h1>Technical Diving</h1>
     <p style="font-size: 1.2rem; max-width: 800px; margin-bottom: 3rem;">Technical diving is about extending your depth, duration, and safety envelopes by adopting redundancy, strict dive planning, and advanced gas mixtures. As a TDI Technical Instructor, I provide training that emphasizes safety margins, gas management, and critical thinking.</p>
     
     <!-- Gear Policy Disclaimer -->

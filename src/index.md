@@ -47,7 +47,7 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
       <div class="card" id="card-beginners">
         <span class="card-icon">🤿</span>
         <span class="card-meta">SDI Courses</span>
-        <h3 class="card-title">Beginner & Recreational</h3>
+        <h3 class="card-title">Beginners & Advanced</h3>
         <p>Start your journey with the SDI Open Water Diver course or adapt to local conditions with our Dry Suit and Advanced Adventure specialties.</p>
         <a href="/courses/beginners/" class="card-link" id="card-link-beginners">Learn to Dive &rarr;</a>
       </div>
@@ -56,9 +56,9 @@ description: "SDI & TDI Scuba Diving Instruction, Technical Diving, and Guided L
       <div class="card" id="card-advanced">
         <span class="card-icon">🧪</span>
         <span class="card-meta">TDI Courses</span>
-        <h3 class="card-title">Advanced & Technical</h3>
+        <h3 class="card-title">Technical Diving</h3>
         <p>Cross the threshold into technical diving. Learn advanced nitrox, planned decompression, helitrox mixtures, and specialized gear configs.</p>
-        <a href="/courses/advanced/" class="card-link" id="card-link-advanced">Go Technical &rarr;</a>
+        <a href="/courses/advanced/" class="card-link" id="card-link-advanced">Technical Diving &rarr;</a>
       </div>
 
       <!-- Card 3: Guided Dives -->
