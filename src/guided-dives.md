@@ -67,7 +67,7 @@ description: "Experience guided lake and river diving in Switzerland. Dive Lake 
         <p>Lake Walen features massive, sheer vertical rock walls plummeting straight down into the cold deep water. In its dark depths lie historically preserved shipwrecks (such as old cargo barges), offering incredible wreck diving for technical and advanced divers.</p>
         <img src="/assets/images/walensee-wreck.jpg" alt="A diver with a dive light examining a historic cargo wreck in Walensee" style="width: 100%; border-radius: 6px; margin: 1rem 0; border: 1px solid var(--border-light); aspect-ratio: 4/3; object-fit: cover;">
         <div style="font-size: 0.85rem; border-top: 1px solid var(--border-light); padding-top: 0.75rem;">
-          <strong>Difficulty:</strong> Beginner-friendly<br>
+          <strong>Difficulty:</strong> Advanced<br>
           <strong>Diving Style:</strong> Deep wall diving, cold water, wreck exploration
         </div>
       </div>
